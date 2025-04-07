@@ -81,8 +81,6 @@ class BaseTest(unittest.TestCase):
         NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH_I2I_HOME_DESIGN,SIZE_OF_GENERATION_BUTTON_XPATH_T2I,NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH_T2I
     )
 
-
-
     @classmethod
     def setUpClass(cls):
         """Initialize the test environment and perform login."""
@@ -92,7 +90,6 @@ class BaseTest(unittest.TestCase):
         cls.driver = webdriver.Chrome(options=options)
         cls.wait = WebDriverWait(cls.driver, 10)
         cls.actions=ActionChains(cls.driver)
-
         # 尝试加载cookie，如果cookie不存在或失效则重新登录
         try:
             cls.driver.get(cls.LOGIN_URL)
