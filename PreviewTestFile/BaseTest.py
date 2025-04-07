@@ -518,7 +518,7 @@ class BaseTest(unittest.TestCase):
         # Choose the style of generated image
         self.click_action_check_by_visibility(style_selection_XPATH)
         # Input the SKIN TEXTURE
-        self.click_action_check_by_visibility(skin_texture_input_XPATH)
+        skin_texture_input= self.click_action_check_by_visibility(skin_texture_input_XPATH)
         skin_texture_input.send_keys("0.67")  
     def click_create_button_xpath(self, button_Xpath):
         self.click_action_check_by_element_to_be_clickable(button_Xpath)
