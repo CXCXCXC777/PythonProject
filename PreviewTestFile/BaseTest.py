@@ -224,10 +224,7 @@ class BaseTest(unittest.TestCase):
             ).perform()
             
             # Wait for and click specific language option
-            wait.until(
-                EC.element_to_be_clickable((By.XPATH, language_switch_xpath))
-            )
-            driver.find_element(By.XPATH, language_switch_xpath).click()
+            self.click_action_check_by_element_to_be_clickable(language_switch_xpath)
             
             # Verify language switch
             check_language = wait.until(
@@ -261,6 +258,8 @@ class BaseTest(unittest.TestCase):
             )
         ).is_displayed()
         return HistoryCheck_list
+
+
     def perform_click_and_check_tab(self, element, max_retries=3):
         """点击元素并检查是否出现新标签页，如果失败则重试
         Args:
@@ -286,6 +285,8 @@ class BaseTest(unittest.TestCase):
                     print(f"Failed to open new tab after {max_retries} attempts: {str(e)}")
                     return False
                 time.sleep(2)
+
+
     def switch_tab(self, driver, wait):
         max_retries = 3
         retry_count = 0
@@ -302,26 +303,25 @@ class BaseTest(unittest.TestCase):
                 if retry_count == max_retries:
                     raise Exception(f"Failed to switch to new tab after {max_retries} retries: {str(e)}")
                 time.sleep(2)
+
+
+
     def TOP_UP_ON_PE_actions(self):
         driver = self.driver
         wait = self.wait
 
         # 测试充值界面跳转
-        wait.until(EC.visibility_of_element_located((By.XPATH,self.BUY_HAIBIT_BUTTON_ON_PE_XPATH)))
-        driver.find_element(By.XPATH,self.BUY_HAIBIT_BUTTON_ON_PE_XPATH).click()
-        purchase_haibit_click = wait.until(
-            EC.visibility_of_element_located(
-                (By.XPATH,self.PURCHASE_HAIBIT_ON_BILLING_HISTORY)
-            )
-        )
-        purchase_haibit_click.click()
+        self.click_action_check_by_visibility(self.BUY_HAIBIT_BUTTON_ON_PE_XPATH)
+        self.click_action_check_by_visibility(self.PURCHASE_HAIBIT_ON_BILLING_HISTORY)
+        self.click_action_check_by_visibility(self.HAIBIT_PURCHASE_SELECTION_XPATH)
 
-        wait.until(EC.visibility_of_element_located((By.XPATH, self.HAIBIT_PURCHASE_SELECTION_XPATH)))
-        driver.find_element(By.XPATH, self.HAIBIT_PURCHASE_SELECTION_XPATH).click()
+        self.click_action_check_by_visibility(self.COMFIRM_PAYMENT_IN_PURCHASE_HAIBIT_XPATH)
 
-        driver.find_element(By.XPATH, self.COMFIRM_PAYMENT_IN_PURCHASE_HAIBIT_XPATH).click()
         wait.until(EC.visibility_of_element_located((By.XPATH,"/html/body/div[1]/div/div[5]/div[2]/div[1]/form/div/div/iframe")))
         driver.switch_to.frame(driver.find_element(By.XPATH,"/html/body/div[1]/div/div[5]/div[2]/div[1]/form/div/div/iframe"))
+        
+        self.switch_frame_by_xpath("/html/body/div[1]/div/div[5]/div[2]/div[1]/form/div/div/iframe")
+
         input_card_number=wait.until(EC.visibility_of_element_located((By.XPATH,self.PURCHASE_HAIBIT_INPUT_CARD_NUMBER_XPATH)))
         ActionChains(driver).double_click(driver.find_element(By.XPATH, self.PURCHASE_HAIBIT_INPUT_CARD_NUMBER_XPATH)).perform()
         input_card_number.send_keys("4242 4242 4242 4242")
@@ -389,15 +389,9 @@ class BaseTest(unittest.TestCase):
         actions.move_to_element(
             driver.find_element(By.XPATH, item_to_publish_XPATH)
         ).perform()
-        publish_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, publish_button_Xpath))
-        )
-        publish_button_click.click()
+        self.click_action_check_by_visibility(publish_button_Xpath)
         # Publish on HAIMETA community
-        Publick_on_HAIMETA_community_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, publish_on_community_Xpath))
-        )
-        Publick_on_HAIMETA_community_button_click.click()
+        self.click_action_check_by_visibility(publish_on_community_Xpath)
         
         # Input the title
         title_input = wait.until(
@@ -410,23 +404,15 @@ class BaseTest(unittest.TestCase):
         )
         description_input.send_keys("Test")
         # Click the publish button
-        confirm_publish_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, self.CONFIRM_PUBLISH_BUTTON_XPATH))
-        )
-        confirm_publish_button_click.click()
+        self.click_action_check_by_visibility(self.CONFIRM_PUBLISH_BUTTON_XPATH)
 
         # Cancel the publish
         actions.move_to_element(
             driver.find_element(By.XPATH, item_to_publish_XPATH)
         ).perform()
-        publish_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, publish_button_Xpath))
-        )
-        publish_button_click.click()
-        cancel_publish_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, cancel_button_Xpath))
-        )
-        cancel_publish_button_click.click()
+        self.click_action_check_by_visibility(publish_button_Xpath)
+        # cancel publish button click
+        self.click_action_check_by_visibility(cancel_button_Xpath)
     def download_image(self,item_to_download_XPATH,download_button_xpath):
         """下载图片"""
         wait = self.wait
@@ -440,10 +426,8 @@ class BaseTest(unittest.TestCase):
         actions.move_to_element(
             driver.find_element(By.XPATH, item_to_download_XPATH)
         ).pause(3).perform()
-        download_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, download_button_xpath))
-        )
-        download_button_click.click()
+        self.click_action_check_by_visibility(download_button_xpath)
+
     def publish_on_style_library(self,item_to_publish_XPATH):
         """发布到风格库"""
         wait = self.wait
@@ -467,15 +451,11 @@ class BaseTest(unittest.TestCase):
         style_name_input.send_keys("Test")
     
         # Agree the terms
-        agree_terms_button_click = wait.until(
-            EC.element_to_be_clickable((By.XPATH, self.AGREE_TERMS_BUTTON_XPATH))
-        )
-        agree_terms_button_click.click()
+        self.click_action_check_by_element_to_be_clickable(self.AGREE_TERMS_BUTTON_XPATH)
+
         # Click the publish button
-        confirm_publish_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, self.PUBLISH_ON_STYLE_LIBRARY_CONFIRM_BUTTON_XPATH))
-        )
-        confirm_publish_button_click.click()
+        self.click_action_check_by_visibility(self.PUBLISH_ON_STYLE_LIBRARY_CONFIRM_BUTTON_XPATH)
+
     def report_the_image(self,item_to_report_XPATH,three_dots_button_Xpath,report_button_Xpath):
         """举报图片"""
         wait = self.wait
@@ -492,16 +472,12 @@ class BaseTest(unittest.TestCase):
         actions.move_to_element(
            three_dots_button_click
         ).click().perform()
-        report_button_click = wait.until(
-            EC.element_to_be_clickable((By.XPATH, report_button_Xpath))
-        )
-        report_button_click.click()
+        
+        # click report button
+        self.click_action_check_by_element_to_be_clickable(report_button_Xpath)
         
         # Select the report type
-        report_type_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, self.REPORT_TYPE_BUTTON_XPATH))
-        )
-        report_type_button_click.click()
+        self.click_action_check_by_visibility(self.REPORT_TYPE_BUTTON_XPATH)
         # Input the report reason
         report_reason_input = wait.until(
             EC.visibility_of_element_located((By.XPATH, self.REPORT_REASON_INPUT_XPATH))
@@ -509,10 +485,8 @@ class BaseTest(unittest.TestCase):
         report_reason_input.send_keys("Test")
         time.sleep(3)
         # Click the report button
-        confirm_report_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, self.CONFIRM_REPORT_BUTTON_XPATH))
-        )
-        confirm_report_button_click.click()
+        self.click_action_check_by_visibility( self.CONFIRM_REPORT_BUTTON_XPATH)
+
     def upload_image(self, upload_way_XPATH, upload_image_paths):
         """上传单张或多张图片
         Args:
@@ -542,50 +516,30 @@ class BaseTest(unittest.TestCase):
         driver = self.driver
         actions= self.actions
         # Choose the style of generated image
-        style_skin_texture_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, style_selection_XPATH))
-        )
-        style_skin_texture_button_click.click()
+        self.click_action_check_by_visibility(style_selection_XPATH)
         # Input the SKIN TEXTURE
-        skin_texture_input = wait.until(
-            EC.visibility_of_element_located((By.XPATH, skin_texture_input_XPATH))
-        )
-        skin_texture_input.clear()
+        self.click_action_check_by_visibility(skin_texture_input_XPATH)
         skin_texture_input.send_keys("0.67")  
     def click_create_button_xpath(self, button_Xpath):
         self.click_action_check_by_element_to_be_clickable(button_Xpath)
     
     def click_create_button_class_name(self, button_class_name):
         wait = self.wait
-        create_button_click = wait.until(
-            EC.element_to_be_clickable((By.CLASS_NAME, button_class_name))
-        )
-        create_button_click.click()
+        self.click_action_check_by_element_to_be_clickable(button_class_name)
 
     def set_up_the_size_of_the_generated_image(self,size_button_Xpath,certain_size_Xpath):
-        wait = self.wait
         # Set up the size of the generated image
-        size_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, size_button_Xpath))
-        )
-        size_button_click.click()
-        certain_size_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, certain_size_Xpath))
-        )
-        certain_size_click.click()
+        self.click_action_check_by_visibility(size_button_Xpath)
+        self.click_action_check_by_visibility(certain_size_Xpath)
+
     def set_up_the_layout_of_the_generated_image(self,layout_button_Xpath,certain_layout_Xpath):
         wait = self.wait
         driver = self.driver
         actions = self.actions
         # Set up the layout of the generated image
-        layout_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, layout_button_Xpath))
-        )
-        layout_button_click.click()
-        certain_layout_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, certain_layout_Xpath))
-        )
-        certain_layout_click.click()
+        self.click_action_check_by_visibility(layout_button_Xpath)
+        self.click_action_check_by_visibility(certain_layout_Xpath)
+
     def adjust_the_position_of_the_generated_image(self,adjusted_image_XPATH):
         wait = self.wait
         driver = self.driver
@@ -598,8 +552,8 @@ class BaseTest(unittest.TestCase):
         #     EC.visibility_of_element_located((By.XPATH, self.ADJUST_BUTTON_XPATH))
         # )
         # adjust_button_click.click()
-        driver.switch_to.frame(
-            driver.find_element(By.XPATH, "/html/body/div[1]/div/div[1]/div[2]/div[2]/div[3]/div/iframe"))
+        
+        self.switch_frame_by_xpath("/html/body/div[1]/div/div[1]/div[2]/div[2]/div[3]/div/iframe")
         wait.until(EC.element_to_be_clickable((By.XPATH,"/html/body/flutter-view")))
         actions.click_and_hold(driver.find_element(By.XPATH, "/html/body/flutter-view"))  # 点击并按住元素
         actions.move_by_offset(10, 20)  # 移动到目标元素
@@ -608,6 +562,8 @@ class BaseTest(unittest.TestCase):
         actions.perform()
         # can not locate th save button after adjusting the position of the generated image
         # end the code here
+
+
     def delete_the_generated_image(self,item_to_delete_XPATH,three_dots_button_Xpath,delete_button_Xpath):
         wait = self.wait
         driver = self.driver
@@ -718,3 +674,9 @@ class BaseTest(unittest.TestCase):
             EC.element_to_be_clickable((By.XPATH, item_xpath))
         )
         actions.move_to_element(second_item_selected).double_click().perform()
+
+    def switch_frame_by_xpath(self,frame_xpath):
+        driver= self.driver
+        wait = self.wait
+        wait.until(EC.frame_to_be_available_and_switch_to_it((By.XPATH, frame_xpath)))
+        driver.switch_to.frame(driver.find_element(By.XPATH,frame_xpath))

@@ -27,8 +27,7 @@ class Basic_Tool_Test(BaseTest):
 
         driver.find_element(By.CLASS_NAME, "iconfont.ic_drag_storke.icon_style").click()  # MoveSpaceButtonCheck
 
-        driver.switch_to.frame(
-            driver.find_element(By.XPATH, "/html/body/div[1]/div/div[1]/div[2]/div[2]/div/div[2]/div/div/div/iframe"))
+        self.switch_frame_by_xpath("/html/body/div[1]/div/div[1]/div[2]/div[2]/div/div[2]/div/div/div/iframe")
         wait.until(EC.element_to_be_clickable((By.XPATH,"/html/body/flutter-view")))
         actions.click_and_hold(driver.find_element(By.XPATH, "/html/body/flutter-view"))  # 点击并按住元素
         actions.move_by_offset(10, 20)  # 移动到目标元素
@@ -63,7 +62,7 @@ class Basic_Tool_Test(BaseTest):
 
         #Delete the Edited picture
         actions.move_to_element(driver.find_element(By.XPATH,
-                                                                 "/html/body/div[1]/div/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[1]/div/div")).perform()
+         "/html/body/div[1]/div/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[1]/div/div")).perform()
         driver.find_element(By.CLASS_NAME, "item-box-delete").click()
         delete_button = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.CLASS_NAME, "button.global-font-mask-medium.confirm"))
@@ -147,7 +146,6 @@ class Basic_Tool_Test(BaseTest):
             EC.element_to_be_clickable((By.CLASS_NAME, "button.global-font-mask-medium.confirm"))
         )
         delete_button.click()
-
         # Switch to English
         self.switch_language(
             target_language="English",
@@ -169,14 +167,9 @@ class Basic_Tool_Test(BaseTest):
         driver = self.driver
         wait = self.wait
         actions = self.actions
-        driver.get(self.HOME_URL)
-        Smart_Eraser_button_click = wait.until(
-            EC.element_to_be_clickable((By.XPATH, self.SMART_ERASER_ON_HOME_BUTTON_XPATH))
-        )
-        if not self.perform_click_and_check_tab(Smart_Eraser_button_click):
-            raise Exception("Failed to open Smart Eraser in new tab after 3 attempts")
-        # 切换到新标签页
-        tab = self.switch_tab(driver, wait)
+
+
+        self.open_the_certain_function(self.BUZZ_SECTION_BUTTON_XPATH, self.SMART_ERASER_ON_HOME_BUTTON_XPATH)
         self.upload_image(self.SMART_ERASER_UPLOAD_BUTTON_XPATH, self.TEST_IMAGE)
         self.check_history()
 
@@ -298,26 +291,13 @@ class Basic_Tool_Test(BaseTest):
         driver = self.driver
         wait = self.wait
         actions = self.actions
-        driver.get(self.HOME_URL)
-        HD_repair_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, self.HD_REPAIR_ON_HOME_BUTTON_XPATH))
-        )
-        if not self.perform_click_and_check_tab(HD_repair_button_click):
-            raise Exception("Failed to open HD Repair in new tab after 3 attempts")
+        self.open_the_certain_function(self.BUZZ_SECTION_BUTTON_XPATH, self.HD_REPAIR_ON_HOME_BUTTON_XPATH)
         
-        tab = self.switch_tab(driver, wait)
-
-        upload_button = wait.until(
-            EC.presence_of_element_located((By.XPATH, self.HD_REPAIR_UPLOAD_BUTTON_XPATH))
-        )
-        upload_button.send_keys(self.TEST_IMAGE)
+        self.click_action_check_by_presence(self.HD_REPAIR_UPLOAD_BUTTON_XPATH)
         self.check_history()
 
         #Click HD repair button
-        HD_repair_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, self.HD_REPAIR_BUTTON_XPATH))
-        )
-        HD_repair_button_click.click()
+        self.click_action_check_by_visibility(self.HD_REPAIR_BUTTON_XPATH)
         # Wait for the loading to finish
         wait.until(
             EC.invisibility_of_element((By.CLASS_NAME, "carousel-secondtip"))
