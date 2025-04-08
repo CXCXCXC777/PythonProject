@@ -1,9 +1,9 @@
+import unittest
+
 from BaseTest import BaseTest
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
-import time
-from selenium.webdriver.support.ui import WebDriverWait
+
 
 class Image2ImageTest(BaseTest):
 
@@ -127,3 +127,5 @@ class Image2ImageTest(BaseTest):
         self.common_step_for_I2I(self.WORK_SECTION_BUTTON_XPATH,self.CREATE_PRODUCT_UNDER_WORK_BUTTON_XPATH, self.TEST_PRODUCT_IMAGE,self.STYLE_CHOICE_BUTTON_XPATH_I2I)
     def test_dream_home_design(self):
         self.common_step_for_I2I_home_design(self.BUZZ_SECTION_BUTTON_XPATH,self.DREAM_HOME_DESIGN_UNDER_BUZZ_SECTION_XPATH,self.TEST_HOME_DESIGN_IMAGE,self.STYLE_CHOICE_BUTTON_XPATH_I2I_HOME_DESIGN)
+if __name__ == "__main__":
+    unittest.main()

@@ -21,10 +21,7 @@ class Text2Image_Test(BaseTest):
 
         # Refine your idea
         try:
-            Refine_your_idea_button_click = wait.until(
-                EC.visibility_of_element_located((By.XPATH, self.REFINE_YOUR_IDEA_BUTTON_XPATH))
-            )
-            Refine_your_idea_button_click.click()
+            self.click_action_check_by_visibility(self.REFINE_YOUR_IDEA_BUTTON_XPATH)
             # Wait for the loading to finish
             WebDriverWait(driver, 50).until(
                 EC.visibility_of_element_located((By.XPATH, self.REFINE_YOUR_IDEA_BUTTON_XPATH))

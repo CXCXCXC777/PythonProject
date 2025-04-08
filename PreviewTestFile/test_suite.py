@@ -39,10 +39,6 @@ def create_test_suite():
     return test_cases
 
 if __name__ == '__main__':
-    # 在创建进程池之前先执行一次登录，保存cookie
-    test_case = Photo_Album_Test('test_id_photo')
-    test_case.setUpClass()
-    
     # 设置并行进程数，可以根据CPU核心数和实际需求调整
     process_count = 4
     
@@ -52,6 +48,3 @@ if __name__ == '__main__':
         test_cases = create_test_suite()
         # 并行执行测试用例
         pool.map(run_test, test_cases)
-        
-    # 清理资源
-    test_case.tearDownClass()

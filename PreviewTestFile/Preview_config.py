@@ -2,34 +2,35 @@
 from selenium.webdriver.remote.switch_to import SwitchTo
 
 # Login page locators
-EMAIL_INPUT_XPATH = "/html/body/div/div/div[3]/div/div/div/form/div[1]/div/input"
-CONTINUE_BUTTON_XPATH = "/html/body/div/div/div[3]/div/div/div/form/div[2]/button"
-PASSWORD_INPUT_XPATH = "/html/body/div/div/div[3]/div/div/div[1]/form/div[1]/div/div/input"
-LOGIN_BUTTON_XPATH = "/html/body/div/div/div[3]/div/div/div[1]/form/button"
+EMAIL_INPUT_XPATH = "//input[@id='first-email']"
+CONTINUE_BUTTON_XPATH = "//div[@id='first-page']/form/div[2]/button"
+PASSWORD_INPUT_XPATH = "//input[@id='login-password']"
+LOGIN_BUTTON_XPATH = "//form[@class='login-form']/button"
 USER_DISPLAY_ClASS_NAME = "clip-path"
 
 # Third party login locators
-THIRD_PARTY_BUTTON_XPATH = "/html/body/div/div/div[3]/div/div/div/form/div[3]/div/div[2]/button"
+THIRD_PARTY_BUTTON_XPATH = "//*[@id='first-page']/button"
 THIRD_PARTY_NEXT_BUTTON_XPATH = "/html/body/div/div/div[3]/div/div/div/button"
 
 # Privacy policy and USER SERVICE locators
-PRIVACY_POLICY_LINK_XPATH = "/html/body/div/div/div[3]/div/div/div/div[4]/div/div/span[2]"
+PRIVACY_POLICY_LINK_XPATH = "//*[@id='first-page']/div[4]/div/div/span[2]"
 PRIVACY_POLICY_CHECK_MESSAGE = "/html/body/div/div/div/div/p[1]/span[37]"
-PRIVACY_POLICY_BACK_BUTTON = "/html/body/div/div/button"
-USER_SERVICE_PRIVACY_LINK_XPATH = "/html/body/div/div/div[3]/div/div/div/div[4]/div/div/span[1]"
+PRIVACY_POLICY_BACK_BUTTON = "//*[@id='root']/div/button"
+USER_SERVICE_PRIVACY_LINK_XPATH = "//*[@id='first-page']/div[4]/div/div/span[1]"
 USER_SERVICE_PRIVACY_CHECK_MESSAGE = "/html/body/div/div/div/div/p[3]/span[44]"
-USER_SERVICE_BACK_BUTTON = "/html/body/div/div/button"
+USER_SERVICE_BACK_BUTTON = "//*[@id='root']/div/button"
 ERROR_MESSAGE_ON_LOGIN_PAGE_XPATH = "/div/div/div/span[2]"
 GET_VERIFICATION_CODE_BUTTON_XPATH = "/html/body/div/div/div[3]/div/div/div[1]/div[2]"
 
 # Home page locators
 
 # Basic Tools section locators
-EDITION_ON_HOME_BUTTON_XPATH = "/html/body/div[1]/div/div[1]/main/div/div/div/div/div/div/div[1]/div[1]/div/div[1]/span/div[1]"
-BG_REMOVER_ON_HOME_BUTTON_XPATH = "/html/body/div[1]/div/div[1]/main/div/div/div/div/div/div/div[1]/div[1]/div/div[2]/span/div[1]"
-SMART_ERASER_ON_HOME_BUTTON_XPATH = "/html/body/div[1]/div/div[1]/main/div/div/div/div/div/div/div[1]/div[1]/div/div[3]/span/div[1]"
-HD_ENLARGE_ON_HOME_BUTTON_XPATH = "/html/body/div[1]/div/div[1]/main/div/div/div/div/div/div/div[1]/div[1]/div/div[4]/span/div[1]"
-HD_REPAIR_ON_HOME_BUTTON_XPATH = "/html/body/div[1]/div/div[1]/main/div/div/div/div/div/div/div[1]/div[1]/div/div[5]/span/div[1]"
+EDITION_ON_HOME_BUTTON_XPATH = "//*[@id='scrollContainer']/div/div/div[1]/div[1]/div[2]/div[1]/span/div[1]"
+BG_REMOVER_ON_HOME_BUTTON_XPATH = "//*[@id='scrollContainer']/div/div/div[1]/div[1]/div[2]/div[2]/span/div[1]"
+SMART_ERASER_ON_HOME_BUTTON_XPATH = "//*[@id='scrollContainer']/div/div/div[1]/div[1]/div[2]/div[3]/span/div[1]"
+HD_ENLARGE_ON_HOME_BUTTON_XPATH = "//*[@id='scrollContainer']/div/div/div[1]/div[1]/div[2]/div[4]/span/div[1]"
+HD_REPAIR_ON_HOME_BUTTON_XPATH = "//*[@id='scrollContainer']/div/div/div[1]/div[1]/div[2]/div[5]/span/div[1]"
+
 # sections button locators
 LIFE_BUTTON_ON_HOME_XPATH="/html/body/div[1]/div/div[1]/main/div/div/div/div/div/div/div[1]/div[2]/div[1]/div/div[1]/div[1]/div/div[3]"
 WORK_SECTION_BUTTON_XPATH="/html/body/div[1]/div/div[1]/main/div/div/div/div/div/div/div[1]/div[2]/div[1]/div/div[1]/div[1]/div/div[4]/div"

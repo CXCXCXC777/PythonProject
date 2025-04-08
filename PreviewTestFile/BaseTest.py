@@ -4,6 +4,8 @@ import unittest
 import json
 from selenium import webdriver
 from selenium.common import TimeoutException, ElementClickInterceptedException, StaleElementReferenceException
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common import service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -81,28 +83,95 @@ class BaseTest(unittest.TestCase):
         NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH_I2I_HOME_DESIGN,SIZE_OF_GENERATION_BUTTON_XPATH_T2I,NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH_T2I
     )
 
+
+
     @classmethod
     def setUpClass(cls):
         """Initialize the test environment and perform login."""
         # 启动浏览器
+        service=Service(r'D:\PycharmProjects\PythonProject\chromedriver.exe')
         options = webdriver.ChromeOptions()
         options.add_argument('--start-maximized')
-        cls.driver = webdriver.Chrome(options=options)
-        cls.wait = WebDriverWait(cls.driver, 10)
-        cls.actions=ActionChains(cls.driver)
-        # 尝试加载cookie，如果cookie不存在或失效则重新登录
+        options.add_argument(r'--user-data-dir=E:\User Data') #加载本地文件
+        options.add_experimental_option('excludeSwitches',["enable-logging","enable-automation"])
+        cls.driver = webdriver.Chrome(service=service,options=options)
+        cls.wait = WebDriverWait(cls.driver, 15)  # 增加默认等待时间
+        cls.actions = ActionChains(cls.driver)
+        
+        # 先访问首页检查是否已登录
+        cls.driver.get(cls.HOME_URL)
         try:
-            cls.driver.get(cls.LOGIN_URL)
-            cls.load_cookies()
-            cls.driver.get(cls.HOME_URL)  # 访问主页以验证cookie是否有效
-            if not cls.is_logged_in():
+            if cls.is_logged_in():
+                print("用户已登录，跳过登录步骤")
+                return
+        except TimeoutException:
+            print("用户未登录，执行登录流程")
+            
+        # 执行登录流程
+        max_retries = 3
+        retry_count = 0
+        while retry_count < max_retries:
+            try:
+                cls.driver.get(cls.LOGIN_URL)
                 cls.do_login()
-                cls.save_cookies()
+                if cls.is_logged_in():
+                    print("登录成功")
+                    return
+            except Exception as e:
+                retry_count += 1
+                if retry_count < max_retries:
+                    print(f"登录尝试 {retry_count}/{max_retries} 失败: {str(e)}，等待后重试...")
+                    time.sleep(5)
+                else:
+                    raise Exception(f"登录失败，已重试{max_retries}次: {str(e)}")
+
+    @classmethod
+    def do_login(cls):
+        """执行登录流程，使用显式等待替代固定时间等待"""
+        wait = cls.wait
+        driver = cls.driver
+
+        try:
+            # 等待页面加载完成
+            wait.until(lambda driver: driver.execute_script('return document.readyState') == 'complete')
+            
+            # 等待邮箱输入框可见并可交互
+            email_input = wait.until(
+                EC.presence_of_element_located((By.XPATH, cls.EMAIL_INPUT_XPATH))
+            )
+            wait.until(EC.element_to_be_clickable((By.XPATH, cls.EMAIL_INPUT_XPATH)))
+            email_input.clear()
+            email_input.send_keys(cls.VALID_EMAIL_ACCOUNT)
+            
+            # 等待继续按钮可点击并点击
+            continue_button = wait.until(
+                EC.element_to_be_clickable((By.XPATH, cls.CONTINUE_BUTTON_XPATH))
+            )
+            continue_button.click()
+            
+            # 等待密码输入框出现并可交互
+            wait.until(EC.visibility_of_element_located((By.XPATH, cls.PASSWORD_INPUT_XPATH)))
+            password_input = wait.until(
+                EC.presence_of_element_located((By.XPATH, cls.PASSWORD_INPUT_XPATH))
+            )
+            wait.until(EC.element_to_be_clickable((By.XPATH, cls.PASSWORD_INPUT_XPATH)))
+            password_input.clear()
+            password_input.send_keys(cls.VALID_PASSWORD)
+            
+            # 等待登录按钮可点击并点击
+            login_button = wait.until(
+                EC.element_to_be_clickable((By.XPATH, cls.LOGIN_BUTTON_XPATH))
+            )
+            login_button.click()
+            
+            # 等待登录成功标志
+            wait.until(
+                EC.presence_of_element_located((By.CLASS_NAME, cls.USER_DISPLAY_ClASS_NAME)),
+                "登录成功标志未出现"
+            )
         except Exception as e:
-            print(f"加载cookie失败: {str(e)}，执行登录流程")
-            cls.driver.get(cls.LOGIN_URL)
-            cls.do_login()
-            cls.save_cookies()
+            print(f"登录过程出错: {str(e)}")
+            raise
 
     @classmethod
     def tearDownClass(cls):
@@ -177,29 +246,6 @@ class BaseTest(unittest.TestCase):
                 else:
                     raise Exception(f"登录失败，已重试{max_retries}次: {str(e)}")
 
-    @classmethod
-    def save_cookies(cls):
-        """将当前浏览器的 Cookie 保存到本地文件"""
-        cookies = cls.driver.get_cookies()
-        with open(cls.COOKIE_FILE, "w", encoding="utf-8") as f:
-            json.dump(cookies, f, ensure_ascii=False, indent=2)
-        print("Cookies 已保存到", cls.COOKIE_FILE)
-
-    @classmethod
-    def load_cookies(cls):
-        """从本地文件加载 Cookie 到浏览器"""
-        try:
-            with open(cls.COOKIE_FILE, "r", encoding="utf-8") as f:
-                cookies = json.load(f)
-                for cookie in cookies:
-                    cls.driver.add_cookie(cookie)
-                print("成功加载 Cookies")
-        except FileNotFoundError:
-            print("Cookie 文件不存在")
-            raise
-        except Exception as e:
-            print(f"加载 Cookie 时出错: {str(e)}")
-            raise
 
     def switch_language(self, target_language="en", language_selection_class_name=None, language_switch_xpath=None, expected_title_text=None, expected_title_class_name=None):
 
@@ -571,8 +617,7 @@ class BaseTest(unittest.TestCase):
         wait.until(EC.visibility_of_element_located((By.XPATH, three_dots_button_Xpath)))
         actions.move_to_element(
             driver.find_element(By.XPATH, three_dots_button_Xpath)
-        ).perform()
-        driver.find_element(By.XPATH, three_dots_button_Xpath).click()
+        ).click().perform()
 
         self.click_action_check_by_visibility(delete_button_Xpath)
         
