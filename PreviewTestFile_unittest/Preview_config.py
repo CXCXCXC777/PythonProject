@@ -1,12 +1,12 @@
 
-from selenium.webdriver.remote.switch_to import SwitchTo
-
 # Login page locators
 EMAIL_INPUT_XPATH = "//input[@id='first-email']"
 CONTINUE_BUTTON_XPATH = "//div[@id='first-page']/form/div[2]/button"
 PASSWORD_INPUT_XPATH = "//input[@id='login-password']"
 LOGIN_BUTTON_XPATH = "//form[@class='login-form']/button"
 USER_DISPLAY_ClASS_NAME = "clip-path"
+
+logout_button_xpath=""
 
 # Third party login locators
 THIRD_PARTY_BUTTON_XPATH = "//*[@id='first-page']/button"

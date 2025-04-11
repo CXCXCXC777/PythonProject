@@ -12,7 +12,6 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 
 class BaseTest(unittest.TestCase):
-    # 从Test_config导入所需的配置变量和常量
     from Preview_config import (
         LOGIN_URL, VALID_EMAIL_ACCOUNT, VALID_PASSWORD, COOKIE_FILE,
         USER_DISPLAY_ClASS_NAME, EMAIL_INPUT_XPATH, CONTINUE_BUTTON_XPATH,
@@ -386,6 +385,8 @@ class BaseTest(unittest.TestCase):
             print("No feedback found")
 
         driver.switch_to.default_content()
+
+
     def delete_history_item(self, item_xpath):
         """删除历史记录中的指定项目
         Args:

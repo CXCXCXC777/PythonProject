@@ -1,11 +1,13 @@
+import time
 import unittest
 import json
+from argparse import Action
 from selenium import webdriver
 from selenium.common import TimeoutException
+from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from Preview_config import (EMAIL_INPUT_XPATH, CONTINUE_BUTTON_XPATH, PASSWORD_INPUT_XPATH, LOGIN_BUTTON_XPATH, THIRD_PARTY_BUTTON_XPATH, PRIVACY_POLICY_LINK_XPATH, PRIVACY_POLICY_CHECK_MESSAGE, PRIVACY_POLICY_BACK_BUTTON, USER_SERVICE_PRIVACY_LINK_XPATH, USER_SERVICE_PRIVACY_CHECK_MESSAGE, USER_SERVICE_BACK_BUTTON, ERROR_MESSAGE_ON_LOGIN_PAGE_XPATH, THIRD_PARTY_NEXT_BUTTON_XPATH)
 
 
 class LoginTest(unittest.TestCase):
@@ -23,6 +25,7 @@ class LoginTest(unittest.TestCase):
         self.driver = webdriver.Chrome(options=options)
         self.wait = WebDriverWait(self.driver, 15)
         self.driver.get("https://test.haimeta.com/login")
+        self.actions=ActionChains(self.driver)
 
     # 测试结束后运行，关闭浏览器
     def tearDown(self):
@@ -67,10 +70,15 @@ class LoginTest(unittest.TestCase):
             )
         )
 
-        # 然后再断言元素确实显示了
-        self.assertTrue(user_name_displayed.is_displayed())
-        print("邮箱密码登录成功！")
-        self.save_cookies()
+        profile_button=wait.until(
+            EC.visibility_of_element_located(
+                (By.XPATH, '//div[@class="avatar-wrap"]')
+            )
+        )
+        self.actions.move_to_element(profile_button).perform()
+        time.sleep(10)
+        driver.find_element(By.XPATH,'/html/body/div[3]/div/div/div/div/div/ul/li[4]/span').click()
+
 
     # 用例2：异常输入超长且没有测试资格的用户
     def test_invalid_email_input(self):

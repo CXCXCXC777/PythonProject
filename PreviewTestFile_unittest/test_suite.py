@@ -2,7 +2,7 @@ import unittest
 import multiprocessing
 from functools import partial
 from BaseTest import BaseTest
-from PreviewTestFile.BasicToolTest import Basic_Tool_Test
+from PreviewTestFile_unittest.BasicToolTest import Basic_Tool_Test
 from SpecialToolTest import Special_Tool_Test
 from Text2ImageToolTest import Text2Image_Test
 from PhotoalbumTest import Photo_Album_Test
