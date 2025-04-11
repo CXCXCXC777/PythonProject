@@ -1,62 +1,82 @@
 [
   {
     "domain": ".haimeta.com",
-    "expiry": 1778211908,
+    "expiry": 1778659804,
     "httpOnly": false,
     "name": "_ga_0DB1D54FDT",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "GS1.1.1743651352.1.1.1743651908.0.0.0"
-  },
-  {
-    "domain": ".haimeta.com",
-    "expiry": 1778211908,
-    "httpOnly": false,
-    "name": "_ga",
-    "path": "/",
-    "sameSite": "Lax",
-    "secure": false,
-    "value": "GA1.1.127631609.1743651353"
+    "value": "GS1.1.1744098857.5.1.1744099804.0.0.0"
   },
   {
     "domain": ".preview.haimeta.com",
-    "expiry": 1743738308,
-    "httpOnly": false,
-    "name": "token",
-    "path": "/",
-    "sameSite": "Lax",
-    "secure": false,
-    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJoYWltZXRhIiwiZXhwIjoxNzQzNzM4MzA3LCJ1c2VySWQiOiIxOTAyMTgxOTA2Nzk0OTk5ODEwIiwiaWF0IjoxNzQzNjUxOTA3LCJ1c2VybmFtZSI6IjE5NzQ0NDA3MTlAcXEuY29tIn0.JqmSbQBZLdKMCf9ruCFWzFkmIbBnuLVRxiEb7oSuLwc"
-  },
-  {
-    "domain": ".preview.haimeta.com",
-    "expiry": 1743738308,
+    "expiry": 1744186203,
     "httpOnly": false,
     "name": "userInfo",
     "path": "/",
     "sameSite": "Lax",
     "secure": false,
-    "value": "{\"gameUserId\":\"1902181906794999810\",\"id\":\"1902181906761445377\",\"avatar\":\"https://oss.haimeta.com/common/default_profile_picture.jpg\",\"gender\":null,\"headImgUrl\":\"https://oss.haimeta.com/preview/0c654787-4525-49a9-bd5e-2f75f2c68577.png\",\"hold\":null,\"nickName\":\"铁甲小宝\",\"signature\":null,\"avatarId\":\"52\",\"settingCfg\":null,\"creationScore\":97619,\"aiAvatarId\":null,\"coin\":60569,\"level\":41,\"platformIncentiveCoin\":0,\"rechargeCoin\":49537,\"memberRightsCoin\":11032,\"memberName\":\"高级会员\",\"memberCode\":\"premium\",\"memberStartTime\":\"2025-03-19 10:18:43\",\"memberEndTime\":\"2025-07-18 10:18:43\",\"renewType\":2,\"storageVal\":\"10\",\"usedStorageVal\":\"1683958\",\"taskSubmitNum\":6,\"generationSpeedNum\":null,\"memberRoleLevel\":2,\"memberRoleAuthId\":\"1855152538864746497\",\"notifyStatus\":1,\"levelName\":null,\"nextLevelScore\":null,\"diffScore\":null,\"nextLevelCreationScore\":null,\"avatarInfo\":{\"createBy\":null,\"createTime\":\"2024-01-22 16:34:27\",\"modifyBy\":\"-1\",\"modifyTime\":\"2025-01-10 11:17:35\",\"id\":\"52\",\"avatarUrl\":\"https://oss.haimeta.com/preview/e85f66e9-6c81-4e1b-a494-57f17b18731c.glb\",\"gender\":0,\"name\":\"2-1-机能风-少年\",\"state\":1,\"userId\":null,\"cover\":\"https://oss.haimeta.com/preview/c4c6f169-f59d-4a49-884b-ba04a8804ea6.png\",\"deleteTime\":null,\"size\":\"8.19MB\",\"origin\":0,\"useNumber\":null,\"sort\":0,\"fitMobile\":0,\"actionList\":\"Applaud,Salute,Cheer,Dance,Boxing,Greet,Headspin,Breaking\"},\"aiAvatarInfo\":null}"
+    "value": "{\"gameUserId\":\"1902181906794999810\",\"id\":\"1902181906761445377\",\"avatar\":\"https://oss.haimeta.com/common/default_profile_picture.jpg\",\"gender\":null,\"headImgUrl\":\"https://oss.haimeta.com/preview/0c654787-4525-49a9-bd5e-2f75f2c68577.png\",\"hold\":null,\"nickName\":\"铁甲小宝\",\"signature\":null,\"avatarId\":\"52\",\"settingCfg\":null,\"creationScore\":98855,\"aiAvatarId\":null,\"coin\":60549,\"level\":41,\"platformIncentiveCoin\":0,\"rechargeCoin\":49537,\"memberRightsCoin\":11012,\"memberName\":\"高级会员\",\"memberCode\":\"premium\",\"memberStartTime\":\"2025-03-19 10:18:43\",\"memberEndTime\":\"2025-07-18 10:18:43\",\"renewType\":2,\"storageVal\":\"10\",\"usedStorageVal\":\"1705403\",\"taskSubmitNum\":6,\"generationSpeedNum\":null,\"memberRoleLevel\":2,\"memberRoleAuthId\":\"1855152538864746497\",\"notifyStatus\":1,\"levelName\":null,\"nextLevelScore\":null,\"diffScore\":null,\"nextLevelCreationScore\":null,\"avatarInfo\":{\"createBy\":null,\"createTime\":\"2024-01-22 16:34:27\",\"modifyBy\":\"-1\",\"modifyTime\":\"2025-01-10 11:17:35\",\"id\":\"52\",\"avatarUrl\":\"https://oss.haimeta.com/preview/e85f66e9-6c81-4e1b-a494-57f17b18731c.glb\",\"gender\":0,\"name\":\"2-1-机能风-少年\",\"state\":1,\"userId\":null,\"cover\":\"https://oss.haimeta.com/preview/c4c6f169-f59d-4a49-884b-ba04a8804ea6.png\",\"deleteTime\":null,\"size\":\"8.19MB\",\"origin\":0,\"useNumber\":null,\"sort\":0,\"fitMobile\":0,\"actionList\":\"Applaud,Salute,Cheer,Dance,Boxing,Greet,Headspin,Breaking\"},\"aiAvatarInfo\":null}"
   },
   {
     "domain": ".preview.haimeta.com",
-    "expiry": 1743653708,
-    "httpOnly": false,
-    "name": "__stripe_sid",
-    "path": "/",
-    "sameSite": "Strict",
-    "secure": true,
-    "value": "57d7eabe-d105-4192-a306-e57dc39277254bcc04"
-  },
-  {
-    "domain": ".preview.haimeta.com",
-    "expiry": 1775187908,
+    "expiry": 1775635803,
     "httpOnly": false,
     "name": "__stripe_mid",
     "path": "/",
     "sameSite": "Strict",
     "secure": true,
     "value": "24e13457-e49e-470c-9f96-9bf43663a6981aca19"
+  },
+  {
+    "domain": ".haimeta.com",
+    "expiry": 1778659770,
+    "httpOnly": false,
+    "name": "_ga_LCX8PEKVLV",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "GS1.1.1744099770.22.1.1744099770.0.0.0"
+  },
+  {
+    "domain": ".preview.haimeta.com",
+    "expiry": 1744101603,
+    "httpOnly": false,
+    "name": "__stripe_sid",
+    "path": "/",
+    "sameSite": "Strict",
+    "secure": true,
+    "value": "6185bd9f-6170-4fe6-9b93-df39f09254fee4ea0e"
+  },
+  {
+    "domain": ".haimeta.com",
+    "expiry": 1778659775,
+    "httpOnly": false,
+    "name": "_ga_MCBRJHJXPT",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "GS1.1.1744099770.67.1.1744099775.0.0.0"
+  },
+  {
+    "domain": ".preview.haimeta.com",
+    "expiry": 1744186203,
+    "httpOnly": false,
+    "name": "token",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJoYWltZXRhIiwiZXhwIjoxNzQ0MTg2MjAzLCJ1c2VySWQiOiIxOTAyMTgxOTA2Nzk0OTk5ODEwIiwiaWF0IjoxNzQ0MDk5ODAzLCJ1c2VybmFtZSI6IjE5NzQ0NDA3MTlAcXEuY29tIn0.DVRAD5sDjcdo219rdOKm58H2D4CDtcGTUMKnUQyH_nM"
+  },
+  {
+    "domain": ".haimeta.com",
+    "expiry": 1778659803,
+    "httpOnly": false,
+    "name": "_ga",
+    "path": "/",
+    "sameSite": "Lax",
+    "secure": false,
+    "value": "GA1.1.127631609.1743651353"
   }
 ]
