@@ -51,6 +51,7 @@ def run(file_name):
                         else:
                             fail_(sheet.cell(row=values[0]+2,column=6))
                             fail += 1
+                            failed_cases.append(file_name+':'+name)
                         excel.save(file_name)
                     else:
                         getattr(wk, values[1])(**test_data)
@@ -71,4 +72,9 @@ def sum_info():
 失败用例具体情况如下：{failed_cases}
     
     ''')
+    return f'''
+成功用例数：{success}条
+失败用例数：{fail}条
+失败用例具体情况如下：{failed_cases}
+'''
     
