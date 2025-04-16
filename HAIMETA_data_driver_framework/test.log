@@ -1,694 +1,382 @@
-2025-04-10 18:29:08 - fileLogger - INFO - 正在执行login测试用例
-2025-04-10 18:29:08 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:29:08 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:29:10 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:29:10 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:29:10 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:29:10 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:29:10 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:29:10 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:29:10 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:29:10 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:29:10 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:29:10 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:29:10 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:29:10 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:29:10 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:10 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:10 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:10 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:10 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:10 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:10 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:10 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:10 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:29:12 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:29:12 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:29:12 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:29:12 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:29:12 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:29:12 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:12 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:12 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:12 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:12 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:12 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:12 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:12 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:12 - fileLogger - INFO - 等待2秒
-2025-04-10 18:29:14 - fileLogger - INFO - 等待完成
-2025-04-10 18:29:14 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:29:14 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:29:14 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:14 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:14 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:14 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:14 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:14 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:14 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:14 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:14 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
-2025-04-10 18:29:14 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:29:14 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:29:15 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:29:16 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:29:16 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:29:16 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
-2025-04-10 18:29:16 - fileLogger - INFO - 关闭浏览器
-2025-04-10 18:29:18 - fileLogger - INFO - 浏览器已成功关闭
-2025-04-10 18:29:18 - fileLogger - INFO - 正在执行Sheet1测试用例
-2025-04-10 18:29:18 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:29:18 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:29:19 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:29:19 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:29:19 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:29:19 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:29:19 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:29:19 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:29:19 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:29:20 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:29:20 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:29:20 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:29:20 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:29:20 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:29:20 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:20 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:20 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:20 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:20 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:20 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:20 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:20 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:29:20 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:29:21 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:29:21 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:29:21 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:29:21 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:29:21 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:29:21 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:21 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:21 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:21 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:21 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:21 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:21 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:21 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:29:21 - fileLogger - INFO - 等待2秒
-2025-04-10 18:29:23 - fileLogger - INFO - 等待完成
-2025-04-10 18:29:23 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:29:23 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:29:24 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:24 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:24 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:24 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:24 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:24 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:24 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:24 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:29:24 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
-2025-04-10 18:29:24 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:29:24 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:29:24 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:29:25 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:29:25 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:29:25 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
-2025-04-10 18:29:25 - fileLogger - INFO - 关闭浏览器
-2025-04-10 18:29:27 - fileLogger - INFO - 浏览器已成功关闭
-2025-04-10 18:39:36 - fileLogger - INFO - 正在执行login测试用例
-2025-04-10 18:39:36 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:39:36 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:39:37 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:39:37 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:39:37 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:39:37 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:39:37 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:39:43 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:39:43 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:39:44 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:39:44 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:39:44 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:39:44 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:39:44 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:39:44 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:44 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:44 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:44 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:44 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:44 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:44 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:44 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:44 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:39:45 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:39:45 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:39:45 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:39:45 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:39:45 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:39:45 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:45 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:45 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:45 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:45 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:45 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:46 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:46 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:46 - fileLogger - INFO - 等待2秒
-2025-04-10 18:39:48 - fileLogger - INFO - 等待完成
-2025-04-10 18:39:48 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:39:48 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:39:48 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:48 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:48 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:48 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:48 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:48 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:48 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:48 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:48 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
-2025-04-10 18:39:48 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:39:48 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:39:48 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:39:49 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:39:49 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:39:49 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
-2025-04-10 18:39:49 - fileLogger - INFO - 关闭浏览器
-2025-04-10 18:39:51 - fileLogger - INFO - 浏览器已成功关闭
-2025-04-10 18:39:51 - fileLogger - WARNING - 
-成功用例数：0条
-失败用例数：0条
-失败用例具体情况如下：[]
-    
-    
-2025-04-10 18:39:51 - fileLogger - INFO - 正在执行Sheet1测试用例
-2025-04-10 18:39:51 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:39:51 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:39:52 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:39:52 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:39:52 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:39:52 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:39:52 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:39:52 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:39:52 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:39:53 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:39:53 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:39:53 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:39:53 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:39:53 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:39:53 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:53 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:53 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:53 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:53 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:53 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:53 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:53 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:39:53 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:39:54 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:39:54 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:39:54 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:39:54 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:39:54 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:39:54 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:54 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:54 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:54 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:54 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:54 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:54 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:54 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:39:54 - fileLogger - INFO - 等待2秒
-2025-04-10 18:39:56 - fileLogger - INFO - 等待完成
-2025-04-10 18:39:56 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:39:56 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:39:57 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:57 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:57 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:57 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:57 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:57 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:57 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:57 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:39:57 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
-2025-04-10 18:39:57 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:39:57 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:39:58 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:39:58 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:39:58 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:39:58 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
-2025-04-10 18:39:58 - fileLogger - INFO - 关闭浏览器
-2025-04-10 18:40:00 - fileLogger - INFO - 浏览器已成功关闭
-2025-04-10 18:40:00 - fileLogger - WARNING - 
-成功用例数：0条
-失败用例数：0条
-失败用例具体情况如下：[]
-    
-    
-2025-04-10 18:45:40 - fileLogger - INFO - 正在执行login测试用例
-2025-04-10 18:45:40 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:45:40 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:45:41 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:45:41 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:45:41 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:45:41 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:45:41 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:45:42 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:45:42 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:45:43 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:45:43 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:45:43 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:45:43 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:45:43 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:45:43 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:45:43 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:45:43 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:45:43 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:45:43 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:45:43 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:45:43 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:45:43 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:45:43 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:45:44 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:45:44 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:45:44 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:45:44 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:45:44 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:45:44 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:45:44 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:45:44 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:45:44 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:45:44 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:45:44 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:45:44 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:45:44 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:45:44 - fileLogger - INFO - 等待2秒
-2025-04-10 18:45:46 - fileLogger - INFO - 等待完成
-2025-04-10 18:45:46 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:45:46 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:45:46 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:45:46 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:45:46 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:45:46 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:45:46 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:45:47 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:45:47 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:45:47 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:45:47 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
-2025-04-10 18:45:47 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:45:47 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:45:47 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:45:48 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:45:48 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:45:48 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
-2025-04-10 18:45:48 - fileLogger - ERROR - Traceback (most recent call last):
-  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\excel_driver\excel_driver.py", line 49, in run
-    success += 1
-    ^^^^^^^
-UnboundLocalError: cannot access local variable 'success' where it is not associated with a value
+2025-04-15 18:31:47 - fileLogger - INFO - 正在执行case1测试用例
+2025-04-15 18:31:47 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-15 18:31:47 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-15 18:31:48 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-15 18:31:48 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-15 18:31:48 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-15 18:31:48 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-15 18:31:48 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-15 18:31:49 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-15 18:31:49 - fileLogger - INFO - 等待元素存在并输入: 1974440719@qq.com
+2025-04-15 18:31:49 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-15 18:31:49 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-15 18:31:49 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
+2025-04-15 18:31:49 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-15 18:31:49 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-15 18:31:49 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-15 18:31:49 - fileLogger - INFO - 元素存在并已成功输入: 1974440719@qq.com
+2025-04-15 18:31:49 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:49 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:49 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:49 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:49 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:49 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:49 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:49 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:49 - fileLogger - INFO - 等待元素存在并输入: Tiejiayu666
+2025-04-15 18:31:49 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
+2025-04-15 18:31:51 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
+2025-04-15 18:31:51 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
+2025-04-15 18:31:51 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
+2025-04-15 18:31:51 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
+2025-04-15 18:31:51 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
+2025-04-15 18:31:51 - fileLogger - INFO - 元素存在并已成功输入: Tiejiayu666
+2025-04-15 18:31:51 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
+2025-04-15 18:31:51 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
+2025-04-15 18:31:51 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
+2025-04-15 18:31:51 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
+2025-04-15 18:31:51 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
+2025-04-15 18:31:51 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
+2025-04-15 18:31:51 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
+2025-04-15 18:31:51 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
+2025-04-15 18:31:51 - fileLogger - INFO - 移动到元素: xpath=//div[@class="avatar-wrap"]
+2025-04-15 18:31:51 - fileLogger - INFO - 等待元素可见: xpath=//div[@class="avatar-wrap"]
+2025-04-15 18:31:52 - fileLogger - INFO - 元素已可见: xpath=//div[@class="avatar-wrap"]
+2025-04-15 18:31:52 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
+2025-04-15 18:31:52 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
+2025-04-15 18:31:52 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-15 18:31:52 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-15 18:31:52 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-15 18:31:52 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-15 18:31:52 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-15 18:31:52 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-15 18:31:52 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-15 18:31:52 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-15 18:31:52 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
+2025-04-15 18:31:52 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div/main/section[1]/h1/span[1]
+2025-04-15 18:31:53 - fileLogger - INFO - 元素已可见: xpath=/html/body/div/div/main/section[1]/h1/span[1]
+2025-04-15 18:31:53 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
+2025-04-15 18:31:53 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
+2025-04-15 18:31:53 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
+2025-04-15 18:31:53 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
+2025-04-15 18:31:53 - fileLogger - INFO - 获取到实际文本: Type or Click,
+2025-04-15 18:31:53 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
+2025-04-15 18:31:53 - fileLogger - INFO - 关闭浏览器
+2025-04-15 18:31:55 - fileLogger - INFO - 浏览器已成功关闭
+2025-04-15 18:31:55 - fileLogger - INFO - 正在执行case2测试用例
+2025-04-15 18:31:55 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-15 18:31:55 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-15 18:31:57 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-15 18:31:57 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-15 18:31:57 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-15 18:31:57 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-15 18:31:57 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-15 18:31:57 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-15 18:31:57 - fileLogger - INFO - 等待元素存在并输入: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@invalid.com
+2025-04-15 18:31:57 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-15 18:31:57 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-15 18:31:57 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@invalid.com
+2025-04-15 18:31:57 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-15 18:31:57 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-15 18:31:57 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-15 18:31:57 - fileLogger - INFO - 元素存在并已成功输入: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@invalid.com
+2025-04-15 18:31:57 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:57 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:57 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:57 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:57 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:57 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:57 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:57 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:31:57 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div[2]/form/div[2]/div/div[1]/div/div[2]/div[1]/div/span[1]
+2025-04-15 18:32:00 - fileLogger - INFO - 元素已可见: xpath=/html/body/div/div[2]/form/div[2]/div/div[1]/div/div[2]/div[1]/div/span[1]
+2025-04-15 18:32:00 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div[2]/form/div[2]/div/div[1]/div/div[2]/div[1]/div/span[1], 预期文本: Join Haimeta Beta Test
+2025-04-15 18:32:00 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div[2]/form/div[2]/div/div[1]/div/div[2]/div[1]/div/span[1]
+2025-04-15 18:32:00 - fileLogger - INFO - 元素已可见: xpath=/html/body/div/div[2]/form/div[2]/div/div[1]/div/div[2]/div[1]/div/span[1]
+2025-04-15 18:32:00 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div[2]/form/div[2]/div/div[1]/div/div[2]/div[1]/div/span[1]
+2025-04-15 18:32:00 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div[2]/form/div[2]/div/div[1]/div/div[2]/div[1]/div/span[1]
+2025-04-15 18:32:00 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div[2]/form/div[2]/div/div[1]/div/div[2]/div[1]/div/span[1]
+2025-04-15 18:32:00 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div[2]/form/div[2]/div/div[1]/div/div[2]/div[1]/div/span[1], 文本内容: Join Haimeta Beta Test
+2025-04-15 18:32:00 - fileLogger - INFO - 获取到实际文本: Join Haimeta Beta Test
+2025-04-15 18:32:00 - fileLogger - INFO - 断言成功: 预期文本 'Join Haimeta Beta Test' 与实际文本 'Join Haimeta Beta Test' 匹配
+2025-04-15 18:32:00 - fileLogger - INFO - 关闭浏览器
+2025-04-15 18:32:02 - fileLogger - INFO - 浏览器已成功关闭
+2025-04-15 18:32:02 - fileLogger - INFO - 正在执行case3测试用例
+2025-04-15 18:32:02 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-15 18:32:02 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-15 18:32:04 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-15 18:32:04 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-15 18:32:04 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-15 18:32:04 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-15 18:32:04 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-15 18:32:04 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-15 18:32:04 - fileLogger - INFO - 等待元素可见并点击: xpath=//*[@id='first-page']/button
+2025-04-15 18:32:04 - fileLogger - INFO - 等待元素可见: xpath=//*[@id='first-page']/button
+2025-04-15 18:32:04 - fileLogger - INFO - 元素已可见: xpath=//*[@id='first-page']/button
+2025-04-15 18:32:04 - fileLogger - INFO - 点击元素: xpath=//*[@id='first-page']/button
+2025-04-15 18:32:04 - fileLogger - INFO - 定位元素: xpath=//*[@id='first-page']/button
+2025-04-15 18:32:04 - fileLogger - INFO - 元素定位成功: xpath=//*[@id='first-page']/button
+2025-04-15 18:32:04 - fileLogger - INFO - 元素点击成功: xpath=//*[@id='first-page']/button
+2025-04-15 18:32:04 - fileLogger - INFO - 元素可见并已成功点击: xpath=//*[@id='first-page']/button
+2025-04-15 18:32:05 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[1]/c-wiz/div/div/div[2], 预期文本: 使用 Google 账号登录
+2025-04-15 18:32:05 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[1]/c-wiz/div/div/div[2]
+2025-04-15 18:32:14 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[1]/c-wiz/div/div/div[2]
+2025-04-15 18:32:14 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[1]/c-wiz/div/div/div[2]
+2025-04-15 18:32:14 - fileLogger - INFO - 定位元素: xpath=/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[1]/c-wiz/div/div/div[2]
+2025-04-15 18:32:14 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[1]/c-wiz/div/div/div[2]
+2025-04-15 18:32:14 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div[1]/div[1]/div[2]/c-wiz/div/div[1]/c-wiz/div/div/div[2], 文本内容: 使用 Google 账号登录
+2025-04-15 18:32:14 - fileLogger - INFO - 获取到实际文本: 使用 Google 账号登录
+2025-04-15 18:32:14 - fileLogger - INFO - 断言成功: 预期文本 '使用 Google 账号登录' 与实际文本 '使用 Google 账号登录' 匹配
+2025-04-15 18:32:14 - fileLogger - INFO - 关闭浏览器
+2025-04-15 18:32:16 - fileLogger - INFO - 浏览器已成功关闭
+2025-04-15 18:32:16 - fileLogger - INFO - 正在执行case4测试用例
+2025-04-15 18:32:16 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-15 18:32:16 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-15 18:32:18 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-15 18:32:18 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-15 18:32:18 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-15 18:32:18 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-15 18:32:18 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-15 18:32:18 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-15 18:32:18 - fileLogger - INFO - 等待元素可见并点击: xpath=//*[@id='first-page']/div[4]/div/div/span[2]
+2025-04-15 18:32:18 - fileLogger - INFO - 等待元素可见: xpath=//*[@id='first-page']/div[4]/div/div/span[2]
+2025-04-15 18:32:18 - fileLogger - INFO - 元素已可见: xpath=//*[@id='first-page']/div[4]/div/div/span[2]
+2025-04-15 18:32:18 - fileLogger - INFO - 点击元素: xpath=//*[@id='first-page']/div[4]/div/div/span[2]
+2025-04-15 18:32:18 - fileLogger - INFO - 定位元素: xpath=//*[@id='first-page']/div[4]/div/div/span[2]
+2025-04-15 18:32:18 - fileLogger - INFO - 元素定位成功: xpath=//*[@id='first-page']/div[4]/div/div/span[2]
+2025-04-15 18:32:18 - fileLogger - INFO - 元素点击成功: xpath=//*[@id='first-page']/div[4]/div/div/span[2]
+2025-04-15 18:32:18 - fileLogger - INFO - 元素可见并已成功点击: xpath=//*[@id='first-page']/div[4]/div/div/span[2]
+2025-04-15 18:32:18 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div/div/div/p[1]/span[37]
+2025-04-15 18:32:19 - fileLogger - INFO - 元素已可见: xpath=/html/body/div/div/div/div/p[1]/span[37]
+2025-04-15 18:32:19 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/div/div/p[1]/span[2], 预期文本: 隐私政策
+2025-04-15 18:32:19 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div/div/div/p[1]/span[2]
+2025-04-15 18:32:19 - fileLogger - INFO - 元素已可见: xpath=/html/body/div/div/div/div/p[1]/span[2]
+2025-04-15 18:32:19 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/div/div/p[1]/span[2]
+2025-04-15 18:32:19 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/div/div/p[1]/span[2]
+2025-04-15 18:32:19 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/div/div/p[1]/span[2]
+2025-04-15 18:32:19 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/div/div/p[1]/span[2], 文本内容: 隐私政策
+2025-04-15 18:32:19 - fileLogger - INFO - 获取到实际文本: 隐私政策
+2025-04-15 18:32:19 - fileLogger - INFO - 断言成功: 预期文本 '隐私政策' 与实际文本 '隐私政策' 匹配
+2025-04-15 18:32:19 - fileLogger - INFO - 关闭浏览器
+2025-04-15 18:32:21 - fileLogger - INFO - 浏览器已成功关闭
+2025-04-15 18:32:21 - fileLogger - INFO - 正在执行case5测试用例
+2025-04-15 18:32:21 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-15 18:32:21 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-15 18:32:22 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-15 18:32:22 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-15 18:32:22 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-15 18:32:22 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-15 18:32:22 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-15 18:32:23 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-15 18:32:23 - fileLogger - INFO - 等待元素可见并点击: xpath=//*[@id='first-page']/div[4]/div/div/span[1]
+2025-04-15 18:32:23 - fileLogger - INFO - 等待元素可见: xpath=//*[@id='first-page']/div[4]/div/div/span[1]
+2025-04-15 18:32:23 - fileLogger - INFO - 元素已可见: xpath=//*[@id='first-page']/div[4]/div/div/span[1]
+2025-04-15 18:32:23 - fileLogger - INFO - 点击元素: xpath=//*[@id='first-page']/div[4]/div/div/span[1]
+2025-04-15 18:32:23 - fileLogger - INFO - 定位元素: xpath=//*[@id='first-page']/div[4]/div/div/span[1]
+2025-04-15 18:32:23 - fileLogger - INFO - 元素定位成功: xpath=//*[@id='first-page']/div[4]/div/div/span[1]
+2025-04-15 18:32:23 - fileLogger - INFO - 元素点击成功: xpath=//*[@id='first-page']/div[4]/div/div/span[1]
+2025-04-15 18:32:23 - fileLogger - INFO - 元素可见并已成功点击: xpath=//*[@id='first-page']/div[4]/div/div/span[1]
+2025-04-15 18:32:23 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div/div/div/p[3]/span[44]
+2025-04-15 18:32:24 - fileLogger - INFO - 元素已可见: xpath=/html/body/div/div/div/div/p[3]/span[44]
+2025-04-15 18:32:24 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/div/div/p[1]/span[2], 预期文本: 用户服务协议
+2025-04-15 18:32:24 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div/div/div/p[1]/span[2]
+2025-04-15 18:32:24 - fileLogger - INFO - 元素已可见: xpath=/html/body/div/div/div/div/p[1]/span[2]
+2025-04-15 18:32:24 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/div/div/p[1]/span[2]
+2025-04-15 18:32:24 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/div/div/p[1]/span[2]
+2025-04-15 18:32:24 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/div/div/p[1]/span[2]
+2025-04-15 18:32:24 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/div/div/p[1]/span[2], 文本内容: 用户服务协议
+2025-04-15 18:32:24 - fileLogger - INFO - 获取到实际文本: 用户服务协议
+2025-04-15 18:32:24 - fileLogger - INFO - 断言成功: 预期文本 '用户服务协议' 与实际文本 '用户服务协议' 匹配
+2025-04-15 18:32:24 - fileLogger - INFO - 关闭浏览器
+2025-04-15 18:32:26 - fileLogger - INFO - 浏览器已成功关闭
+2025-04-15 18:32:26 - fileLogger - INFO - 正在执行case6 test_invalid_email_format测试用例
+2025-04-15 18:32:26 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-15 18:32:26 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-15 18:32:27 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-15 18:32:27 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-15 18:32:27 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-15 18:32:27 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-15 18:32:27 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-15 18:32:27 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-15 18:32:28 - fileLogger - INFO - ✅ 非邮箱格式输入 'invalidemail.com' 后，错误提示成功显示！
+2025-04-15 18:32:28 - fileLogger - INFO - ✅ 非邮箱格式输入 'invalid@com' 后，错误提示成功显示！
+2025-04-15 18:32:28 - fileLogger - INFO - ✅ 非邮箱格式输入 '123456789' 后，错误提示成功显示！
+2025-04-15 18:32:28 - fileLogger - INFO - ✅ 非邮箱格式输入 '@invalid.com' 后，错误提示成功显示！
+2025-04-15 18:32:28 - fileLogger - INFO - ✅ 非邮箱格式输入 'invalid@.com' 后，错误提示成功显示！
+2025-04-15 18:32:28 - fileLogger - INFO - ✅ 非邮箱格式输入 'invalid@domain..com' 后，错误提示成功显示！
+2025-04-15 18:32:28 - fileLogger - INFO - 断言元素文本: class name=error-text.global-font-body-small, 预期文本: 邮箱格式不正确，请检查后再输入
+2025-04-15 18:32:28 - fileLogger - INFO - 等待元素可见: class name=error-text.global-font-body-small
+2025-04-15 18:32:28 - fileLogger - INFO - 元素已可见: class name=error-text.global-font-body-small
+2025-04-15 18:32:28 - fileLogger - INFO - 获取元素文本: class name=error-text.global-font-body-small
+2025-04-15 18:32:28 - fileLogger - INFO - 定位元素: class name=error-text.global-font-body-small
+2025-04-15 18:32:28 - fileLogger - INFO - 元素定位成功: class name=error-text.global-font-body-small
+2025-04-15 18:32:28 - fileLogger - INFO - 获取到元素文本: class name=error-text.global-font-body-small, 文本内容: 邮箱格式不正确，请检查后再输入
+2025-04-15 18:32:28 - fileLogger - INFO - 获取到实际文本: 邮箱格式不正确，请检查后再输入
+2025-04-15 18:32:28 - fileLogger - INFO - 断言成功: 预期文本 '邮箱格式不正确，请检查后再输入' 与实际文本 '邮箱格式不正确，请检查后再输入' 匹配
+2025-04-15 18:32:28 - fileLogger - INFO - 关闭浏览器
+2025-04-15 18:32:30 - fileLogger - INFO - 浏览器已成功关闭
+2025-04-15 18:32:30 - fileLogger - INFO - 跳过工作表: case7_template
+2025-04-15 18:32:30 - fileLogger - INFO - 正在执行case8测试用例
+2025-04-15 18:32:30 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-15 18:32:30 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-15 18:32:32 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-15 18:32:32 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-15 18:32:32 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-15 18:32:32 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-15 18:32:32 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-15 18:32:32 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-15 18:32:32 - fileLogger - INFO - 等待元素存在并输入: 1974440719@qq.com
+2025-04-15 18:32:32 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-15 18:32:32 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-15 18:32:32 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
+2025-04-15 18:32:32 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-15 18:32:32 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-15 18:32:32 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-15 18:32:32 - fileLogger - INFO - 元素存在并已成功输入: 1974440719@qq.com
+2025-04-15 18:32:32 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:32 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:32 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:32 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:32 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:32 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:32 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:32 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:32 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@class='code-button']
+2025-04-15 18:32:32 - fileLogger - INFO - 等待元素可见: xpath=//div[@class='code-button']
+2025-04-15 18:32:34 - fileLogger - INFO - 元素已可见: xpath=//div[@class='code-button']
+2025-04-15 18:32:34 - fileLogger - INFO - 点击元素: xpath=//div[@class='code-button']
+2025-04-15 18:32:34 - fileLogger - INFO - 定位元素: xpath=//div[@class='code-button']
+2025-04-15 18:32:34 - fileLogger - INFO - 元素定位成功: xpath=//div[@class='code-button']
+2025-04-15 18:32:34 - fileLogger - INFO - 元素点击成功: xpath=//div[@class='code-button']
+2025-04-15 18:32:34 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@class='code-button']
+2025-04-15 18:32:34 - fileLogger - INFO - 等待元素存在并输入: 123456
+2025-04-15 18:32:34 - fileLogger - INFO - 等待元素存在: xpath=//input[@type='text']
+2025-04-15 18:32:34 - fileLogger - INFO - 元素已存在: xpath=//input[@type='text']
+2025-04-15 18:32:34 - fileLogger - INFO - 输入文本: xpath=//input[@type='text'], 文本内容: 123456
+2025-04-15 18:32:34 - fileLogger - INFO - 定位元素: xpath=//input[@type='text']
+2025-04-15 18:32:34 - fileLogger - INFO - 元素定位成功: xpath=//input[@type='text']
+2025-04-15 18:32:34 - fileLogger - INFO - 文本输入成功: xpath=//input[@type='text']
+2025-04-15 18:32:34 - fileLogger - INFO - 元素存在并已成功输入: 123456
+2025-04-15 18:32:34 - fileLogger - INFO - 等待元素可见: xpath=//div[@class='error-text']
+2025-04-15 18:32:34 - fileLogger - INFO - 元素已可见: xpath=//div[@class='error-text']
+2025-04-15 18:32:34 - fileLogger - INFO - 断言元素文本: xpath=//div[@class='error-text'], 预期文本: 验证码错误，请检查后再试
+2025-04-15 18:32:34 - fileLogger - INFO - 等待元素可见: xpath=//div[@class='error-text']
+2025-04-15 18:32:34 - fileLogger - INFO - 元素已可见: xpath=//div[@class='error-text']
+2025-04-15 18:32:34 - fileLogger - INFO - 获取元素文本: xpath=//div[@class='error-text']
+2025-04-15 18:32:34 - fileLogger - INFO - 定位元素: xpath=//div[@class='error-text']
+2025-04-15 18:32:34 - fileLogger - INFO - 元素定位成功: xpath=//div[@class='error-text']
+2025-04-15 18:32:34 - fileLogger - INFO - 获取到元素文本: xpath=//div[@class='error-text'], 文本内容: 验证码错误，请检查后再试
+2025-04-15 18:32:34 - fileLogger - INFO - 获取到实际文本: 验证码错误，请检查后再试
+2025-04-15 18:32:34 - fileLogger - INFO - 断言成功: 预期文本 '验证码错误，请检查后再试' 与实际文本 '验证码错误，请检查后再试' 匹配
+2025-04-15 18:32:34 - fileLogger - INFO - 关闭浏览器
+2025-04-15 18:32:37 - fileLogger - INFO - 浏览器已成功关闭
+2025-04-15 18:32:37 - fileLogger - INFO - 跳过工作表: case9_template
+2025-04-15 18:32:37 - fileLogger - INFO - 正在执行case10测试用例
+2025-04-15 18:32:37 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-15 18:32:37 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-15 18:32:38 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-15 18:32:38 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-15 18:32:38 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-15 18:32:38 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-15 18:32:38 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-15 18:32:38 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-15 18:32:38 - fileLogger - INFO - 等待元素存在并输入: 1974440719@qq.com
+2025-04-15 18:32:38 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-15 18:32:38 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-15 18:32:38 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
+2025-04-15 18:32:38 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-15 18:32:38 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-15 18:32:38 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-15 18:32:38 - fileLogger - INFO - 元素存在并已成功输入: 1974440719@qq.com
+2025-04-15 18:32:38 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:38 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:38 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:38 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:38 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:38 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:39 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:39 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-15 18:32:39 - fileLogger - INFO - 等待元素存在并输入: Tiejiayu666
+2025-04-15 18:32:39 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
+2025-04-15 18:32:42 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
+2025-04-15 18:32:42 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
+2025-04-15 18:32:42 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
+2025-04-15 18:32:42 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
+2025-04-15 18:32:42 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
+2025-04-15 18:32:42 - fileLogger - INFO - 元素存在并已成功输入: Tiejiayu666
+2025-04-15 18:32:42 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
+2025-04-15 18:32:42 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
+2025-04-15 18:32:42 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
+2025-04-15 18:32:42 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
+2025-04-15 18:32:42 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
+2025-04-15 18:32:42 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
+2025-04-15 18:32:43 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
+2025-04-15 18:32:43 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
+2025-04-15 18:32:43 - fileLogger - INFO - 断言元素文本: xpath=//div[@class="error-text global-font-body-small"], 预期文本: 密码或者账号错误，请检查后再试
+2025-04-15 18:32:43 - fileLogger - INFO - 等待元素可见: xpath=//div[@class="error-text global-font-body-small"]
+2025-04-15 18:32:53 - fileLogger - ERROR - 等待元素可见超时: xpath=//div[@class="error-text global-font-body-small"], 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E7ECDF85+26693]
+	(No symbol) [0x00007FF6E7E2EAD0]
+	(No symbol) [0x00007FF6E7CB91CA]
+	(No symbol) [0x00007FF6E7D0F747]
+	(No symbol) [0x00007FF6E7D0F97C]
+	(No symbol) [0x00007FF6E7D633C7]
+	(No symbol) [0x00007FF6E7D3792F]
+	(No symbol) [0x00007FF6E7D600B8]
+	(No symbol) [0x00007FF6E7D376C3]
+	(No symbol) [0x00007FF6E7D00490]
+	(No symbol) [0x00007FF6E7D01743]
+	GetHandleVerifier [0x00007FF6E822436D+3525677]
+	GetHandleVerifier [0x00007FF6E8237F3B+3606523]
+	GetHandleVerifier [0x00007FF6E822CEE3+3561379]
+	GetHandleVerifier [0x00007FF6E7F97C0A+853194]
+	(No symbol) [0x00007FF6E7E3990F]
+	(No symbol) [0x00007FF6E7E35674]
+	(No symbol) [0x00007FF6E7E35816]
+	(No symbol) [0x00007FF6E7E24D89]
+	BaseThreadInitThunk [0x00007FFD7B4F7034+20]
+	RtlUserThreadStart [0x00007FFD7B6E2651+33]
 
-2025-04-10 18:45:48 - fileLogger - WARNING - 
-成功用例数：0条
-失败用例数：0条
-失败用例具体情况如下：[]
-    
-    
-2025-04-10 18:48:49 - fileLogger - INFO - 正在执行login测试用例
-2025-04-10 18:48:49 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:48:49 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:48:50 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:48:50 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:48:50 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:48:50 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:48:50 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:48:50 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:48:50 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:48:51 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:48:51 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:48:51 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:48:51 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:48:51 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:48:51 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:48:51 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:48:51 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:48:51 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:48:51 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:48:51 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:48:51 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:48:51 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:48:51 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:48:53 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:48:53 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:48:53 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:48:53 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:48:53 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:48:53 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:48:53 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:48:53 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:48:53 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:48:53 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:48:53 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:48:53 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:48:53 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:48:53 - fileLogger - INFO - 等待2秒
-2025-04-10 18:48:55 - fileLogger - INFO - 等待完成
-2025-04-10 18:48:55 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:48:55 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:48:55 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:48:55 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:48:55 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:48:55 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:48:55 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:48:55 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:48:55 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:48:55 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:48:55 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
-2025-04-10 18:48:55 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:48:55 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:48:56 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:48:56 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:48:56 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:48:56 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
-2025-04-10 18:48:56 - fileLogger - INFO - 关闭浏览器
-2025-04-10 18:48:58 - fileLogger - INFO - 浏览器已成功关闭
-2025-04-10 18:48:58 - fileLogger - WARNING - 
-成功用例数：1条
-失败用例数：0条
-失败用例具体情况如下：[]
-    
-    
-2025-04-10 18:48:58 - fileLogger - INFO - 正在执行Sheet1测试用例
-2025-04-10 18:48:58 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:48:58 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:48:59 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:48:59 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:48:59 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:48:59 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:48:59 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:49:00 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:49:00 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:49:00 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:49:00 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:49:00 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:49:00 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:49:01 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:49:01 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:49:01 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:49:01 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:49:01 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:49:01 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:49:01 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:49:01 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:49:01 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:49:01 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:49:02 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:49:02 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:49:02 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:49:02 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:49:02 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:49:02 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:49:02 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:49:02 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:49:02 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:49:02 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:49:02 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:49:02 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:49:02 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:49:02 - fileLogger - INFO - 等待2秒
-2025-04-10 18:49:04 - fileLogger - INFO - 等待完成
-2025-04-10 18:49:04 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:49:04 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:49:04 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:49:04 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:49:04 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:49:04 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:49:04 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:49:04 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:49:04 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:49:04 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:49:04 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
-2025-04-10 18:49:04 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:49:04 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:49:05 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:49:05 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:49:05 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:49:05 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
-2025-04-10 18:49:05 - fileLogger - INFO - 关闭浏览器
-2025-04-10 18:49:07 - fileLogger - INFO - 浏览器已成功关闭
-2025-04-10 18:49:07 - fileLogger - WARNING - 
-成功用例数：2条
-失败用例数：0条
-失败用例具体情况如下：[]
-    
-    
-2025-04-10 18:55:58 - fileLogger - INFO - 正在执行login测试用例
-2025-04-10 18:55:58 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:55:58 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:55:59 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:55:59 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:55:59 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:55:59 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:55:59 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:56:00 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:56:00 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:56:00 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:56:00 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:56:00 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:56:00 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:56:01 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:56:01 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:01 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:01 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:01 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:01 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:01 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:01 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:01 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:01 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:56:02 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:56:02 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:56:02 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:56:02 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:56:02 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:56:02 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:02 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:02 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:02 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:02 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:02 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:02 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:02 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:02 - fileLogger - INFO - 等待2秒
-2025-04-10 18:56:04 - fileLogger - INFO - 等待完成
-2025-04-10 18:56:04 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:56:04 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:56:04 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:04 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:04 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:04 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:04 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:04 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:04 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:04 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:04 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
-2025-04-10 18:56:04 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:56:04 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:56:05 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:56:05 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:56:05 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:56:05 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
-2025-04-10 18:56:05 - fileLogger - INFO - 关闭浏览器
-2025-04-10 18:56:07 - fileLogger - INFO - 浏览器已成功关闭
-2025-04-10 18:56:07 - fileLogger - INFO - 正在执行Sheet1测试用例
-2025-04-10 18:56:07 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:56:07 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:56:08 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:56:08 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:56:08 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:56:08 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:56:08 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:56:09 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:56:09 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:56:09 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:56:09 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:56:09 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:56:09 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:56:09 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:56:09 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:09 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:09 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:09 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:09 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:09 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:09 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:09 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:09 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:56:11 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:56:11 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:56:11 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:56:11 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:56:11 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:56:11 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:11 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:11 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:11 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:11 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:11 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:11 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:11 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:11 - fileLogger - INFO - 等待2秒
-2025-04-10 18:56:13 - fileLogger - INFO - 等待完成
-2025-04-10 18:56:13 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:56:13 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:56:13 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:13 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:13 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:13 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:13 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:13 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:13 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:13 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:56:13 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
-2025-04-10 18:56:13 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:56:13 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:56:14 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:56:14 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:56:14 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:56:14 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
-2025-04-10 18:56:14 - fileLogger - INFO - 关闭浏览器
-2025-04-10 18:56:16 - fileLogger - INFO - 浏览器已成功关闭
-2025-04-10 18:56:16 - fileLogger - WARNING - 
-成功用例数：2条
-失败用例数：0条
-失败用例具体情况如下：[]
-    
-    
-2025-04-10 18:56:56 - fileLogger - INFO - 正在执行login测试用例
-2025-04-10 18:56:56 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:56:56 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:56:57 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:56:57 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:56:57 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:56:57 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:56:57 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:56:58 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:56:58 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:56:58 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:56:58 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:56:58 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:56:58 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:56:58 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:56:58 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:58 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:58 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:58 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:58 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:58 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:58 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:58 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:56:58 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:56:59 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:56:59 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:56:59 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:56:59 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:56:59 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:56:59 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:59 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:59 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:59 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:59 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:59 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:59 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:59 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:56:59 - fileLogger - INFO - 等待2秒
-2025-04-10 18:57:01 - fileLogger - INFO - 等待完成
-2025-04-10 18:57:01 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:57:01 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:57:01 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:01 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:02 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:02 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:02 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:02 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:02 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:02 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:02 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
-2025-04-10 18:57:02 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:57:02 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:57:03 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:57:03 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:57:03 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:57:03 - fileLogger - INFO - 断言成功: 预期文本 'Type or Click,' 与实际文本 'Type or Click,' 匹配
-2025-04-10 18:57:03 - fileLogger - INFO - 关闭浏览器
-2025-04-10 18:57:05 - fileLogger - INFO - 浏览器已成功关闭
-2025-04-10 18:57:05 - fileLogger - INFO - 正在执行Sheet1测试用例
-2025-04-10 18:57:05 - fileLogger - INFO - 初始化WebKeys实例
-2025-04-10 18:57:05 - fileLogger - INFO - 正在打开浏览器: chrome
-2025-04-10 18:57:06 - fileLogger - INFO - Chrome浏览器已成功启动
-2025-04-10 18:57:06 - fileLogger - INFO - 设置隐式等待时间: 5秒
-2025-04-10 18:57:06 - fileLogger - INFO - 设置显式等待时间: 10秒
-2025-04-10 18:57:06 - fileLogger - INFO - WebKeys实例初始化完成
-2025-04-10 18:57:06 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
-2025-04-10 18:57:06 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
-2025-04-10 18:57:06 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
-2025-04-10 18:57:07 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
-2025-04-10 18:57:07 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
-2025-04-10 18:57:07 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
-2025-04-10 18:57:07 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
-2025-04-10 18:57:07 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
-2025-04-10 18:57:07 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:57:07 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:57:07 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:57:07 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:57:07 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:57:07 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:57:07 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:57:07 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
-2025-04-10 18:57:07 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
-2025-04-10 18:57:08 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
-2025-04-10 18:57:08 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
-2025-04-10 18:57:08 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
-2025-04-10 18:57:08 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
-2025-04-10 18:57:08 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
-2025-04-10 18:57:08 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:57:08 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:57:08 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
-2025-04-10 18:57:08 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:57:08 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
-2025-04-10 18:57:08 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:57:08 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
-2025-04-10 18:57:08 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
-2025-04-10 18:57:08 - fileLogger - INFO - 等待2秒
-2025-04-10 18:57:10 - fileLogger - INFO - 等待完成
-2025-04-10 18:57:10 - fileLogger - INFO - 定位元素: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:57:10 - fileLogger - INFO - 元素定位成功: xpath=//div[@class="avatar-wrap"]
-2025-04-10 18:57:11 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:11 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:11 - fileLogger - INFO - 元素已可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:11 - fileLogger - INFO - 点击元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:11 - fileLogger - INFO - 定位元素: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:11 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:11 - fileLogger - INFO - 元素点击成功: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:11 - fileLogger - INFO - 元素可见并已成功点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
-2025-04-10 18:57:11 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本:  or Click,
-2025-04-10 18:57:11 - fileLogger - INFO - 获取元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:57:11 - fileLogger - INFO - 定位元素: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:57:12 - fileLogger - INFO - 元素定位成功: xpath=/html/body/div/div/main/section[1]/h1/span[1]
-2025-04-10 18:57:12 - fileLogger - INFO - 获取到元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 文本内容: Type or Click,
-2025-04-10 18:57:12 - fileLogger - INFO - 获取到实际文本: Type or Click,
-2025-04-10 18:57:12 - fileLogger - ERROR - 断言失败: 预期文本 ' or Click,' 与实际文本 'Type or Click,' 不匹配
-2025-04-10 18:57:12 - fileLogger - ERROR - Traceback (most recent call last):
-  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 174, in assert_text
-    assert reality == expected, f'''
-           ^^^^^^^^^^^^^^^^^^^
-AssertionError: 
-            预期结果： or Click,
-            实际结果：Type or Click,
-            断言结果：Type or Click, !=  or Click,
-            
+2025-04-15 18:32:53 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\excel_driver\excel_driver.py", line 54, in run
+    status=getattr(wk, values[1])(**test_data, expected=values[4])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 177, in assert_text
+    self.wait_visible(by, value)
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 108, in wait_visible
+    element = self.wait.until(EC.visibility_of_element_located((by, value)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6E7ECDF85+26693]
+	(No symbol) [0x00007FF6E7E2EAD0]
+	(No symbol) [0x00007FF6E7CB91CA]
+	(No symbol) [0x00007FF6E7D0F747]
+	(No symbol) [0x00007FF6E7D0F97C]
+	(No symbol) [0x00007FF6E7D633C7]
+	(No symbol) [0x00007FF6E7D3792F]
+	(No symbol) [0x00007FF6E7D600B8]
+	(No symbol) [0x00007FF6E7D376C3]
+	(No symbol) [0x00007FF6E7D00490]
+	(No symbol) [0x00007FF6E7D01743]
+	GetHandleVerifier [0x00007FF6E822436D+3525677]
+	GetHandleVerifier [0x00007FF6E8237F3B+3606523]
+	GetHandleVerifier [0x00007FF6E822CEE3+3561379]
+	GetHandleVerifier [0x00007FF6E7F97C0A+853194]
+	(No symbol) [0x00007FF6E7E3990F]
+	(No symbol) [0x00007FF6E7E35674]
+	(No symbol) [0x00007FF6E7E35816]
+	(No symbol) [0x00007FF6E7E24D89]
+	BaseThreadInitThunk [0x00007FFD7B4F7034+20]
+	RtlUserThreadStart [0x00007FFD7B6E2651+33]
 
-2025-04-10 18:57:12 - fileLogger - INFO - 关闭浏览器
-2025-04-10 18:57:14 - fileLogger - INFO - 浏览器已成功关闭
-2025-04-10 18:57:14 - fileLogger - WARNING - 
-成功用例数：1条
+
+2025-04-15 18:32:53 - fileLogger - WARNING - 
+成功用例数：7条
 失败用例数：1条
-失败用例具体情况如下：[]
+失败用例具体情况如下：['./test_data\\Login_test_cases.xlsx:case10']
     
     

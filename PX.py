@@ -13,6 +13,8 @@ def setting():
     options = webdriver.ChromeOptions()
     options.add_argument('--start-maximized')
     options.add_experimental_option('detach', True)
+    options.add_argument('--user-data-dir=D:\\ChromeUserData')  # 使用双反斜杠
+
     options.add_argument(r"--profile-directory=Default")
     a1 = webdriver.Chrome(service=Service('chromedriver.exe'), options=options)
     return a1

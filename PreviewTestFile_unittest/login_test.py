@@ -21,6 +21,7 @@ class LoginTest(unittest.TestCase):
     def setUp(self):
         options = webdriver.ChromeOptions()
         options.add_argument('--start-maximized')
+        options.add_argument('--user-data-dir=D:\\ChromeUserData')  # 使用双反斜杠
         # options.add_argument('--headless')  # 如需无界面运行
         self.driver = webdriver.Chrome(options=options)
         self.wait = WebDriverWait(self.driver, 15)

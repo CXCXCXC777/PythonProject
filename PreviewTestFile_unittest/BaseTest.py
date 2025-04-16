@@ -634,8 +634,8 @@ class BaseTest(unittest.TestCase):
             EC.visibility_of_element_located((By.XPATH, function_button_xpath))
         )
         if not self.perform_click_and_check_tab(function_button_click):
-            raise Exception("Failed to open ID Photo in new tab after 3 attempts")
-        tab = self.switch_tab(driver, wait)
+            raise Exception("Failed to open the section in new tab after 3 attempts")
+        self.switch_tab(driver, wait)
 
     def interact_with_single_photo_album(self):
         wait = self.wait
