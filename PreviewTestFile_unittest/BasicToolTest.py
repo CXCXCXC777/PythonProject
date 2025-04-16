@@ -4,6 +4,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.common import TimeoutException, ElementClickInterceptedException, StaleElementReferenceException
 from selenium.webdriver.support.ui import WebDriverWait
+from Preview_config import ElementLocators
 
 
 class Basic_Tool_Test(BaseTest):
@@ -12,12 +13,13 @@ class Basic_Tool_Test(BaseTest):
         driver = self.driver
         wait = self.wait
         actions=self.actions
-        self.open_the_certain_function(self.BUZZ_SECTION_BUTTON_XPATH, self.EDITION_ON_HOME_BUTTON_XPATH)    
+        self.open_the_certain_function(ElementLocators.BUZZ_SECTION_BUTTON_XPATH, ElementLocators.EDITION_ON_HOME_BUTTON_XPATH)
 
-        self.upload_image(self.PICTURE_EDITION_UPLOAD_BUTTON_XPATH,self.TEST_IMAGE)
+        self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH,ElementLocators.TEST_IMAGE)
 
         self.check_history()
 
+        # Click the select button
         select_button_click = wait.until(
             EC.visibility_of_element_located(
                 (By.CLASS_NAME, "iconfont.ic_mouse.icon_style")
@@ -60,6 +62,8 @@ class Basic_Tool_Test(BaseTest):
         except TimeoutException:
             print("❌ 超时，保存失败！")
 
+
+
         #Delete the Edited picture
         actions.move_to_element(driver.find_element(By.XPATH,
          "/html/body/div[1]/div/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[1]/div/div")).perform()
@@ -79,8 +83,8 @@ class Basic_Tool_Test(BaseTest):
         # Switch to English
         self.switch_language(
             target_language="English",
-            language_selection_class_name=self.LANGUAGE_SELECTION_CLASS_NAME,
-            language_switch_xpath=self.SWITCH_TO_ENGLISH_LANGUAGE_XPATH_UNDER_PE,
+            language_selection_XPATH=ElementLocators.LANGUAGE_SELECTION_XPATH,
+            language_switch_xpath=ElementLocators.SWITCH_TO_ENGLISH_LANGUAGE_XPATH,
             expected_title_text="Image Edit",
             expected_title_class_name="default-box-title"
         )
@@ -88,8 +92,8 @@ class Basic_Tool_Test(BaseTest):
         # Switch to Chinese
         self.switch_language(
             target_language="Chinese",
-            language_selection_class_name=self.LANGUAGE_SELECTION_CLASS_NAME,
-            language_switch_xpath=self.SWITCH_TO_CHINESE_LANGUAGE_PE_HOME_XPATH,
+            language_selection_XPATH=ElementLocators.LANGUAGE_SELECTION_XPATH,
+            language_switch_xpath=ElementLocators.SWITCH_TO_TRADITIONAL_CHINESE_LANGUAGE_XPATH,
             expected_title_text="图片编辑"
         )
 
@@ -99,9 +103,9 @@ class Basic_Tool_Test(BaseTest):
         driver = self.driver
         wait= self.wait
         actions=self.actions
-        self.open_the_certain_function(self.BUZZ_SECTION_BUTTON_XPATH, self.BG_REMOVER_ON_HOME_BUTTON_XPATH)
+        self.open_the_certain_function(ElementLocators.BUZZ_SECTION_BUTTON_XPATH, ElementLocators.BG_REMOVER_ON_HOME_BUTTON_XPATH)
         
-        self.upload_image(self.BG_REMOVER_UPLOAD_BUTTON_XPATH, self.TEST_IMAGE)
+        self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH, ElementLocators.TEST_IMAGE)
         #存在的问题：工具栏界面还没加载完就可以点击，导致脚本执行了点击按钮的操作但是没有任何的效果
         wait.until(
             EC.invisibility_of_element_located(
@@ -149,8 +153,8 @@ class Basic_Tool_Test(BaseTest):
         # Switch to English
         self.switch_language(
             target_language="English",
-            language_selection_class_name=self.LANGUAGE_SELECTION_CLASS_NAME,
-            language_switch_xpath=self.SWITCH_TO_ENGLISH_LANGUAGE_XPATH_UNDER_AI_CUT,
+            language_selection_XPATH=ElementLocators.LANGUAGE_SELECTION_XPATH,
+            language_switch_xpath=ElementLocators.SWITCH_TO_ENGLISH_LANGUAGE_XPATH,
             expected_title_text="Background elimination",
             expected_title_class_name="upload-top-title"
         )
@@ -158,8 +162,8 @@ class Basic_Tool_Test(BaseTest):
         # Switch to Chinese
         self.switch_language(
             target_language="Chinese",
-            language_selection_class_name=self.LANGUAGE_SELECTION_CLASS_NAME,
-            language_switch_xpath=self.SWITCH_TO_CHINESE_LANGUAGE_XPATH_ON_AI_CUT_HOME,
+            language_selection_XPATH=ElementLocators.LANGUAGE_SELECTION_XPATH,
+            language_switch_xpath=ElementLocators.SWITCH_TO_TRADITIONAL_CHINESE_LANGUAGE_XPATH,
             expected_title_text="背景消除",
             expected_title_class_name="upload-top-title"
         )
@@ -169,8 +173,8 @@ class Basic_Tool_Test(BaseTest):
         actions = self.actions
 
 
-        self.open_the_certain_function(self.BUZZ_SECTION_BUTTON_XPATH, self.SMART_ERASER_ON_HOME_BUTTON_XPATH)
-        self.upload_image(self.SMART_ERASER_UPLOAD_BUTTON_XPATH, self.TEST_IMAGE)
+        self.open_the_certain_function(ElementLocators.BUZZ_SECTION_BUTTON_XPATH, ElementLocators.SMART_ERASER_ON_HOME_BUTTON_XPATH)
+        self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH, ElementLocators.TEST_IMAGE)
         self.check_history()
 
         move_space_click = wait.until(
@@ -220,16 +224,16 @@ class Basic_Tool_Test(BaseTest):
         # Switch to English
         self.switch_language(
             target_language="English",
-            language_selection_class_name=self.LANGUAGE_SELECTION_CLASS_NAME,
-            language_switch_xpath=self.SWITCH_TO_ENGLISH_LANGUAGE_XPATH_UNDER_SE,
+            language_selection_XPATH=ElementLocators.LANGUAGE_SELECTION_XPATH,
+            language_switch_xpath=ElementLocators.SWITCH_TO_ENGLISH_LANGUAGE_XPATH,
             expected_title_text="Local elimination",
             expected_title_class_name="default-box-title"
         )
         # Switch to Chinese
         self.switch_language(
             target_language="Chinese",
-            language_selection_class_name=self.LANGUAGE_SELECTION_CLASS_NAME,
-            language_switch_xpath=self.SWITCH_TO_CHINESE_LANGUAGE_XPATH_ON_SE_HOME,
+            language_selection_XPATH=ElementLocators.LANGUAGE_SELECTION_XPATH,
+            language_switch_xpath=ElementLocators.SWITCH_TO_TRADITIONAL_CHINESE_LANGUAGE_XPATH,
             expected_title_text="局部消除",
             expected_title_class_name="default-box-title"
         )
@@ -238,23 +242,23 @@ class Basic_Tool_Test(BaseTest):
         driver = self.driver
         wait = self.wait
         actions = self.actions
-        self.open_the_certain_function(self.BUZZ_SECTION_BUTTON_XPATH, self.HD_ENLARGE_ON_HOME_BUTTON_XPATH)
+        self.open_the_certain_function(ElementLocators.BUZZ_SECTION_BUTTON_XPATH, ElementLocators.HD_ENLARGE_ON_HOME_BUTTON_XPATH)
 
-        self.upload_image(self.HD_ENLARGE_UPLOAD_BUTTON_XPATH,self.TEST_IMAGE)
-        self.click_action_check_by_presence(self.HD_ENLARGE_UPLOAD_BUTTON_XPATH)
+        self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH,ElementLocators.TEST_IMAGE)
+        self.click_action_check_by_presence(ElementLocators.UPLOAD_BUTTON_XPATH)
         self.check_history()
         
         #Choose enlarge 2x
-        self.click_action_check_by_visibility(self.TWO_TIMES_ENLARGE_BUTTON_XPATH)
+        self.click_action_check_by_visibility(ElementLocators.TWO_TIMES_ENLARGE_BUTTON_XPATH)
         #Click the enlarge button
-        self.click_action_check_by_visibility(self.ENLARGE_BUTTON_XPATH)
+        self.click_action_check_by_visibility(ElementLocators.ENLARGE_BUTTON_XPATH)
         # Wait for the loading to finish
         self.wait_for_loading_to_finish("carousel-secondtip",30)
 
         #chose the 4x enlarge
-        self.click_action_check_by_visibility(self.FOUR_TIMES_ENLARGE_BUTTON_XPATH)
+        self.click_action_check_by_visibility(ElementLocators.FOUR_TIMES_ENLARGE_BUTTON_XPATH)
         #Click the enlarge button
-        self.click_action_check_by_visibility(self.ENLARGE_BUTTON_XPATH)
+        self.click_action_check_by_visibility(ElementLocators.ENLARGE_BUTTON_XPATH)
         # Wait for the loading to finish
         self.wait_for_loading_to_finish("_pictureEditorLoading_anlig_1",30)
         #delete the edited picture
@@ -272,8 +276,8 @@ class Basic_Tool_Test(BaseTest):
         # Switch to English
         self.switch_language(
             target_language="English",
-            language_selection_class_name=self.LANGUAGE_SELECTION_CLASS_NAME,
-            language_switch_xpath=self.SWITCH_TO_ENGLISH_LANGUAGE_XPATH_UNDER_AI_CUT,
+            language_selection_XPATH=ElementLocators.LANGUAGE_SELECTION_XPATH,
+            language_switch_xpath=ElementLocators.SWITCH_TO_ENGLISH_LANGUAGE_XPATH,
             expected_title_text="Lossless amplification",
             expected_title_class_name="default-box-title"  
         )
@@ -281,8 +285,8 @@ class Basic_Tool_Test(BaseTest):
         # Switch to Chinese
         self.switch_language(
             target_language="Chinese",
-            language_selection_class_name=self.LANGUAGE_SELECTION_CLASS_NAME,
-            language_switch_xpath=self.SWITCH_TO_CHINESE_LANGUAGE_XPATH_ON_AI_CUT_HOME,
+            language_selection_XPATH=ElementLocators.LANGUAGE_SELECTION_XPATH,
+            language_switch_xpath=ElementLocators.SWITCH_TO_TRADITIONAL_CHINESE_LANGUAGE_XPATH,
             expected_title_text="无损放大",
             expected_title_class_name="default-box-title"
         )
@@ -291,40 +295,40 @@ class Basic_Tool_Test(BaseTest):
         driver = self.driver
         wait = self.wait
         actions = self.actions
-        self.open_the_certain_function(self.BUZZ_SECTION_BUTTON_XPATH, self.HD_REPAIR_ON_HOME_BUTTON_XPATH)
+        self.open_the_certain_function(ElementLocators.BUZZ_SECTION_BUTTON_XPATH, ElementLocators.HD_REPAIR_ON_HOME_BUTTON_XPATH)
         
-        self.click_action_check_by_presence(self.HD_REPAIR_UPLOAD_BUTTON_XPATH)
+        self.click_action_check_by_presence(ElementLocators.UPLOAD_BUTTON_XPATH)
         self.check_history()
 
         #Click HD repair button
-        self.click_action_check_by_visibility(self.HD_REPAIR_BUTTON_XPATH)
+        self.click_action_check_by_visibility(ElementLocators.HD_REPAIR_BUTTON_XPATH)
         # Wait for the loading to finish
         wait.until(
             EC.invisibility_of_element((By.CLASS_NAME, "carousel-secondtip"))
         )
-        #delete the edited picture
-        # self.check_history()
-        # wait.until(
-        #     EC.visibility_of_element_located(
-        #         (By.XPATH, "/html/body/div[1]/div/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[2]")
-        #     )
-        # )
-        # ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"/html/body/div[1]/div/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[2]")).perform()
-        # delete_button = wait.until(
-        #     EC.visibility_of_element_located(
-        #         (By.CLASS_NAME, "item-box-delete")
-        #     )
-        # )
-        # actions.move_to_element(delete_button).click().perform()
-        # confirm_button = wait.until(
-        #     EC.visibility_of_element_located((By.XPATH, "/html/body/div[7]/div/div/div/div/div/div[2]/button[2]"))
-        # )
-        # actions.move_to_element(confirm_button).click().perform()
+        # delete the edited picture
+        self.check_history()
+        wait.until(
+            EC.visibility_of_element_located(
+                (By.XPATH, "/html/body/div[1]/div/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[2]")
+            )
+        )
+        ActionChains(driver).move_to_element(driver.find_element(By.XPATH,"/html/body/div[1]/div/div[1]/div[2]/div[1]/div/div[2]/div[2]/div/div/div[1]/div/div/div[2]")).perform()
+        delete_button = wait.until(
+            EC.visibility_of_element_located(
+                (By.CLASS_NAME, "item-box-delete")
+            )
+        )
+        actions.move_to_element(delete_button).click().perform()
+        confirm_button = wait.until(
+            EC.visibility_of_element_located((By.XPATH, "/html/body/div[7]/div/div/div/div/div/div[2]/button[2]"))
+        )
+        actions.move_to_element(confirm_button).click().perform()
         # Switch to English
         self.switch_language(
             target_language="English",
-            language_selection_class_name=self.LANGUAGE_SELECTION_CLASS_NAME,
-            language_switch_xpath=self.SWITCH_TO_ENGLISH_LANGUAGE_XPATH_UNDER_AI_CUT,
+            language_selection_XPATH=ElementLocators.LANGUAGE_SELECTION_XPATH,
+            language_switch_xpath=ElementLocators.SWITCH_TO_ENGLISH_LANGUAGE_XPATH,
             expected_title_text="HD repair",
             expected_title_class_name="default-box-title"
         )
@@ -332,8 +336,8 @@ class Basic_Tool_Test(BaseTest):
         # Switch to Chinese
         self.switch_language(
             target_language="Chinese",
-            language_selection_class_name=self.LANGUAGE_SELECTION_CLASS_NAME,
-            language_switch_xpath=self.SWITCH_TO_CHINESE_LANGUAGE_XPATH_ON_AI_CUT_HOME,
+            language_selection_XPATH=ElementLocators.LANGUAGE_SELECTION_XPATH,
+            language_switch_xpath=ElementLocators.SWITCH_TO_TRADITIONAL_CHINESE_LANGUAGE_XPATH,
             expected_title_text="高清修复",
             expected_title_class_name="default-box-title"
         )

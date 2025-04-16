@@ -1,7 +1,7 @@
-import time
 import traceback
 
 from selenium.common import TimeoutException
+from selenium.webdriver import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.action_chains import ActionChains
@@ -10,7 +10,10 @@ from selenium.webdriver.chrome.service import Service
 from HAIMETA_data_driver_framework.config.config import options as chrome_options
 from selenium.webdriver.common.by import By
 from HAIMETA_data_driver_framework.config.element_config import ElementLocators
-
+import imaplib
+import email
+import re
+import time
 from HAIMETA_data_driver_framework.config.get_logger import get_logger
 
 log=get_logger()
@@ -34,6 +37,147 @@ def open_browser(type_):
         driver=webdriver.Chrome(service=chrom_service, options=chrome_options())
         log.info("备选Chrome浏览器已成功启动")
     return driver
+
+
+def get_email_verification_code(email_address, password, wait_time=60):
+    print(f"开始尝试获取邮箱验证码，邮箱地址: {email_address}, 等待时间: {wait_time}秒")
+    imap = None
+    try:
+        # 连接网易邮箱IMAP服务器
+        imap_server = "imap.163.com"
+        imap_port = 993  # SSL端口
+        print(f"正在连接IMAP服务器: {imap_server}:{imap_port} (SSL)")
+
+        try:
+            # 使用SSL连接
+            imap = imaplib.IMAP4_SSL(imap_server, imap_port)
+            print("IMAP服务器SSL连接成功")
+        except Exception as e:
+            print(f"连接IMAP服务器失败: {str(e)}")
+            return None
+
+        # 尝试登录
+        try:
+            imap.login(email_address, password)
+            print("邮箱登录成功")
+        except imaplib.IMAP4.error as e:
+            print(f"邮箱登录失败: {str(e)}")
+            return None
+
+        # 选择收件箱前确保状态正确
+        try:
+            status, messages = imap.select('INBOX', readonly=True)  # 使用readonly模式避免锁定邮箱
+            if status != 'OK':
+                print(f"选择收件箱失败: {messages}")
+                if 'Unsafe Login' in str(messages):
+                    print("检测到不安全登录，请确保使用授权码并检查邮箱安全设置")
+                return None
+            print("成功选择收件箱")
+        except imaplib.IMAP4.error as e:
+            print(f"选择收件箱失败: {str(e)}")
+            return None
+
+        start_time = time.time()
+        while time.time() - start_time < wait_time:
+            # 搜索最新的邮件
+            print('正在搜索邮件...')
+            try:
+                # 搜索最近收到的邮件
+                status, message_numbers = imap.search(None, 'RECENT')
+                if status != 'OK' or not message_numbers[0]:
+                    # 如果没有最近的邮件，搜索所有邮件
+                    status, message_numbers = imap.search(None, 'ALL')
+
+                if status != 'OK':
+                    print(f"搜索邮件失败: {message_numbers}")
+                    time.sleep(5)
+                    continue
+
+                if not message_numbers[0]:
+                    print("收件箱为空")
+                    time.sleep(5)
+                    continue
+            except imaplib.IMAP4.error as e:
+                print(f"搜索邮件失败: {str(e)}")
+                time.sleep(5)
+                continue
+
+            latest_email_id = message_numbers[0].split()[-1]
+            print(f"找到最新邮件ID: {latest_email_id}")
+
+            # 获取邮件内容
+            print('正在获取邮件内容...')
+            try:
+                status, msg_data = imap.fetch(latest_email_id, '(RFC822)')
+                if status != 'OK':
+                    print(f"获取邮件内容失败: {msg_data}")
+                    time.sleep(5)
+                    continue
+
+                email_body = msg_data[0][1]
+                email_message = email.message_from_bytes(email_body)
+                print(f"邮件主题: {email_message['Subject']}")
+            except Exception as e:
+                print(f"获取邮件内容失败: {str(e)}")
+                time.sleep(5)
+                continue
+
+            # 获取邮件发送时间
+            print('正在解析邮件发送时间...')
+            date_tuple = email.utils.parsedate_tz(email_message['Date'])
+            if date_tuple:
+                local_date = time.localtime(email.utils.mktime_tz(date_tuple))
+                email_time = time.strftime("%Y-%m-%d %H:%M:%S", local_date)
+                print(f"邮件发送时间: {email_time}")
+
+                # 检查邮件是否是最近发送的
+                time_diff = time.time() - time.mktime(local_date)
+                print(f"邮件距现在时间: {time_diff:.2f}秒")
+                if time_diff > wait_time:
+                    print("邮件已超过等待时间，继续等待新邮件...")
+                    time.sleep(5)
+                    continue
+
+                # 解析邮件内容获取验证码
+                print('正在解析邮件内容...')
+                for part in email_message.walk():
+                    if part.get_content_type() == "text/plain":
+                        try:
+                            body = part.get_payload(decode=True).decode()
+                            print(f"邮件内容: {body[:200]}...")
+                            # 使用正则表达式匹配6位数字验证码
+                            match = re.search(r'\b\d{6}\b', body)
+                            if match:
+                                verification_code = match.group()
+                                print(f"成功获取验证码: {verification_code}")
+                                return verification_code
+                            else:
+                                print("未在邮件内容中找到6位数字验证码")
+                        except Exception as e:
+                            print(f"解析邮件内容失败: {str(e)}")
+                            continue
+
+            time.sleep(5)
+            print("继续等待新邮件...")
+
+        print(f"等待超时（{wait_time}秒），未能获取验证码")
+        return None
+
+    except Exception as e:
+        print(f"获取邮箱验证码失败: {str(e)}")
+        print(f"错误详情: {traceback.format_exc()}")
+        return None
+    finally:
+        if imap is not None:
+            try:
+                imap.close()
+            except Exception:
+                pass  # 忽略close可能的错误
+            try:
+                imap.logout()
+                print("已安全退出IMAP连接")
+            except Exception as e:
+                print(f"退出IMAP连接时发生错误: {str(e)}")
 
 
 class WebKeys:
@@ -97,7 +241,7 @@ class WebKeys:
 
     def wait_sleep(self):
         log.info("等待2秒")
-        time.sleep(1000)
+        time.sleep(5)
         log.info("等待完成")
 
     def wait_visible(self, by, value):
@@ -160,15 +304,6 @@ class WebKeys:
             log.error(f"获取元素文本失败: {by}={value}, 错误: {str(e)}")
             raise
 
-    def get_attribute(self, by, value, attribute):
-        log.info(f"获取元素属性: {by}={value}, 属性名: {attribute}")
-        try:
-            attr_value = self.locator(by, value).get_attribute(attribute)
-            log.info(f"获取到元素属性: {by}={value}, 属性名: {attribute}, 属性值: {attr_value}")
-            return attr_value
-        except Exception as e:
-            log.error(f"获取元素属性失败: {by}={value}, 属性名: {attribute}, 错误: {str(e)}")
-            raise
     
     def assert_text(self, by, value, expected):
         log.info(f"断言元素文本: {by}={value}, 预期文本: {expected}")
@@ -222,6 +357,39 @@ class WebKeys:
             self.wait_clickable(by, value)
             self.click(by, value)
             log.info(f"元素存在并已成功点击: {by}={value}")
+        except Exception as e:
+            traceback.print_exc()
+            return False, f"发生未预期的错误: {str(e)}"
+
+    def click_action_check_by_visibility(self, action_button_xpath):
+        wait = self.wait
+        action_button_click = wait.until(
+            EC.visibility_of_element_located((By.XPATH, action_button_xpath))
+        )
+        action_button_click.click()
+        return action_button_click
+
+    def click_action_check_by_presence(self, action_button_xpath):
+        wait = self.wait
+        action_button_click = wait.until(
+            EC.presence_of_element_located((By.XPATH, action_button_xpath))
+        )
+        action_button_click.click()
+
+    def click_action_check_by_element_to_be_clickable(self, action_button_xpath):
+        wait = self.wait
+        action_button_click = wait.until(
+            EC.element_to_be_clickable((By.XPATH, action_button_xpath))
+        )
+        action_button_click.click()
+
+    def action_move_double_click(self, by, value):
+        log.info(f"等待元素存在并双击: {by}={value}")
+        try:
+            self.wait_clickable(by, value)
+            element = self.locator(by, value)
+            self.action.move_to_element(element).double_click().perform()
+            log.info(f"元素存在并已成功双击: {by}={value}")
         except Exception as e:
             traceback.print_exc()
             return False, f"发生未预期的错误: {str(e)}"
@@ -309,15 +477,9 @@ class WebKeys:
                 (By.XPATH, "/html/body/div[1]/div/div[1]/div[2]/div[1]/div/div[2]")  # HISTORY LIST
             )
         ).is_displayed()
+        return HistoryCheck_list
     
     def perform_click_and_check_tab(self, element, max_retries=3):
-        """点击元素并检查是否出现新标签页，如果失败则重试
-        Args:
-            element: 要点击的元素
-            max_retries: 最大重试次数
-        Returns:
-            bool: 是否成功打开新标签页
-        """
         retry_count = 0
         initial_handles = len(self.driver.window_handles)
         
@@ -337,13 +499,13 @@ class WebKeys:
                     return False
                 time.sleep(2)
             
-    def open_the_certain_function(self,section_for_this_function_xpath,function_button_xpath):
+    def open_the_certain_function(self,section_xpath,button_xpath):
         driver = self.driver
         wait = self.wait
         self.open(self.HOME_URL)
-        self.click_clickable('xpath',section_for_this_function_xpath)
+        self.click_visible('xpath',section_xpath)
         time.sleep(2)
-        function_button_click = self.wait_visible('xpath',function_button_xpath)
+        function_button_click = self.wait_visible('xpath',button_xpath)
         if not self.perform_click_and_check_tab(function_button_click):
             raise Exception("Failed to open the section in new tab after 3 attempts")
         self.switch_tab(driver, wait)
@@ -375,36 +537,35 @@ class WebKeys:
         try:
             self.Hover_to_the_button('xpath',item_xpath)
             self.driver.find_element(By.CLASS_NAME, "item-box-delete").click()
-            delete_button = WebDriverWait(self.driver, 10).until(
-                EC.element_to_be_clickable((By.CLASS_NAME, "button.global-font-mask-medium.confirm"))
-            )
-            delete_button.click()
-            delete_success_message=self.wait_visible('xpath', "/html/body/div[7]/div/div/div/span[2]")
-            print(delete_success_message.text)
+            self.click_clickable('xpath', ElementLocators.DELETE_BUTTON_HISTORY_LIST_XPATH)# 点击删除按钮
+            delete_success_message=self.wait_visible('xpath', ElementLocators.DELETE_SUCCESS_MESSAGE_XPATH)
+            log.info(delete_success_message.text)
+            log.info(f"Successfully deleted {item_xpath}")
             return True
         except Exception as e:
-            print(f"删除历史记录项失败: {str(e)}")
+            log.info(f"Unsuccessfully delete: {str(e)}")
             return False
 
     def wait_for_loading_to_finish(self, item_class_name, process_time_limitation):
         """等待loading消失"""
         try:
-            self.wait_visible('class name', item_class_name)
-            self.wait_visible('class name', item_class_name)
-            print("Process finished")
+            WebDriverWait(self.driver, process_time_limitation).until(
+                EC.visibility_of_element_located((By.CLASS_NAME, item_class_name))
+            )
+            WebDriverWait(self.driver, process_time_limitation).until(
+                EC.invisibility_of_element((By.CLASS_NAME, item_class_name))
+            )
+            log.info("Process finished")
         except TimeoutException:
-            print("Process failed")
+            log.info("Process failed")
             return False
 
-    def publish_on_haimeta_community(self, item_to_publish_XPATH, publish_button_Xpath, publish_on_community_Xpath,
-                                     cancel_button_Xpath):
-        """发布到Haimeta社区"""
-        driver = self.driver
-        actions = self.action
+    def publish_on_haimeta_community(self, item_to_publish_XPATH=ElementLocators.INTERACTED_IMAGE_1_XPATH,
+                                     publish_button_Xpath=ElementLocators.PUBLISH_BUTTON_XPATH,
+                                     publish_on_community_Xpath=ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY,
+                                     cancel_button_Xpath=ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY):
         # Publish the image
-        actions.move_to_element(
-            driver.find_element(By.XPATH, item_to_publish_XPATH)
-        ).perform()
+        self.Hover_to_the_button('xpath', publish_button_Xpath)
         self.click_visible('xpath',publish_button_Xpath)
         # Publish on HAIMETA community
         self.click_visible('xpath',publish_on_community_Xpath)
@@ -425,7 +586,6 @@ class WebKeys:
 
     def download_image(self, item_to_download_XPATH, download_button_xpath):
         """下载图片"""
-        wait = self.wait
         driver = self.driver
         actions = self.action
         self.wait_visible('xpath', item_to_download_XPATH)
@@ -434,20 +594,19 @@ class WebKeys:
             driver.find_element(By.XPATH, item_to_download_XPATH)
         ).pause(3).perform()
 
-        self.click_action_check_by_visibility(download_button_xpath)
+        self.click_visible('xpath',download_button_xpath)
 
     def publish_on_style_library(self, item_to_publish_XPATH):
         """发布到风格库"""
         wait = self.wait
         driver = self.driver
         actions = self.action
-        actions.move_to_element(
-            driver.find_element(By.XPATH, item_to_publish_XPATH)
-        ).perform()
+        self.Hover_to_the_button('xpath', item_to_publish_XPATH)
         publish_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, ElementLocators.PUBLISH_BUTTON_XPATH_CAYL))
+            EC.visibility_of_element_located((By.XPATH, ElementLocators.PUBLISH_BUTTON_XPATH))
         )
         actions.move_to_element(publish_button_click).click().perform()
+
         publish_on_style_library_button_click = wait.until(
             EC.element_to_be_clickable((By.XPATH, ElementLocators.PUBLISH_ON_STYLE_LIBRARY_BUTTON_XPATH))
         )
@@ -469,9 +628,8 @@ class WebKeys:
         wait = self.wait
         driver = self.driver
         actions = self.action
-        actions.move_to_element(
-            driver.find_element(By.XPATH, item_to_report_XPATH)
-        ).perform()
+        self.Hover_to_the_button('xpath', three_dots_button_Xpath)
+        # click three dots button
         three_dots_button_click = wait.until(
             EC.element_to_be_clickable(
                 (By.XPATH, three_dots_button_Xpath)
@@ -494,6 +652,8 @@ class WebKeys:
         time.sleep(3)
         # Click the report button
         self.click_action_check_by_visibility(ElementLocators.CONFIRM_REPORT_BUTTON_XPATH)
+        # wait for report success message
+        self.wait_invisibility('xpath',ElementLocators.REPORT_TYPE_BUTTON_XPATH)
 
     def upload_image(self, upload_way_XPATH, upload_image_paths):
         """上传单张或多张图片
@@ -516,8 +676,8 @@ class WebKeys:
             # 单图片上传
             upload_button.send_keys(upload_image_paths)
 
-        self.wait_for_loading_to_finish("upload-loading", 20)
-        print("Upload image(s) successfully")
+        self.wait_for_loading_to_finish("task-side-upload-loading", 20)
+        log.info("Upload image(s) successfully")
 
     def choose_style_skin_texture_of_generated_image(self, style_selection_XPATH, skin_texture_input_XPATH):
 
@@ -525,14 +685,12 @@ class WebKeys:
         self.click_action_check_by_visibility(style_selection_XPATH)
         # Input the SKIN TEXTURE
         skin_texture_input = self.click_action_check_by_visibility(skin_texture_input_XPATH)
+        skin_texture_input.send_keys(Keys.CONTROL + "a")  # 全选文本
+        skin_texture_input.send_keys(Keys.BACKSPACE)  # 删除选中的文本
         skin_texture_input.send_keys("0.67")
 
     def click_create_button_xpath(self, button_Xpath):
         self.click_action_check_by_element_to_be_clickable(button_Xpath)
-
-    def click_create_button_class_name(self, button_class_name):
-        wait = self.wait
-        self.click_action_check_by_element_to_be_clickable(button_class_name)
 
     def set_up_the_size_of_the_generated_image(self, size_button_Xpath, certain_size_Xpath):
         # Set up the size of the generated image
@@ -569,59 +727,43 @@ class WebKeys:
 
     def delete_the_generated_image(self, item_to_delete_XPATH, three_dots_button_Xpath, delete_button_Xpath):
         wait = self.wait
-        driver = self.driver
         actions = self.action
-        actions.move_to_element(
-            driver.find_element(By.XPATH, item_to_delete_XPATH)
-        ).perform()
-        wait.until(EC.visibility_of_element_located((By.XPATH, three_dots_button_Xpath)))
-        actions.move_to_element(
-            driver.find_element(By.XPATH, three_dots_button_Xpath)
-        ).click().perform()
-
+        item1 = self.wait_visible('xpath',item_to_delete_XPATH)
+        actions.move_to_element(item1).pause(3).perform()
+        three_dots_button_click = self.wait_clickable('xpath',three_dots_button_Xpath)
+        actions.move_to_element(three_dots_button_click).click().perform()
         self.click_action_check_by_visibility(delete_button_Xpath)
-
         self.click_action_check_by_visibility(ElementLocators.CONFIRM_DELETE_BUTTON_XPATH)
+        time.sleep(2)
 
 
     def interact_with_single_photo_album(self):
-        wait = self.wait
-        actions = self.action
-        self.choose_style_skin_texture_of_generated_image(ElementLocators.CHOOSE_PHOTO_GENERATION_STYLE_XPATH,
-                                                          ElementLocators.INPUT_SKIN_TEXTURE_SINGLE_PHOTO_ALBUM)
-
+        self.choose_style_skin_texture_of_generated_image(ElementLocators.STYLE_CHOICE_BUTTON_XPATH,
+                                                          ElementLocators.INPUT_SKIN_TEXTURE)
         # set the number of images to generate
-        number_of_images_to_generate_button_click = wait.until(
-            EC.element_to_be_clickable((By.XPATH, ElementLocators.NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH_PHOTO_ALBUM))
-        )
-        number_of_images_to_generate_button_click.click()
+        self.click_clickable('xpath',ElementLocators.NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH)
 
         self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-        self.wait_for_loading_to_finish(item_class_name="_pictureEditorLoading_anlig_1", process_time_limitation=60)
+        self.wait_for_loading_to_finish(item_class_name=ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME,process_time_limitation=60)
 
-        second_item_selected = wait.until(
-            EC.element_to_be_clickable((By.XPATH, ElementLocators.SECOND_ITEM_SELECTED_XPATH))
-        )
-        actions.move_to_element(second_item_selected).double_click().perform()
+        self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
+
         # interact with the generated images
-        self.download_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.DOWNLOAD_BUTTON_XPATH_CAYL_AND_SINGLE_PHOTO_ABLUM)
-        self.publish_on_haimeta_community(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.PUBLISH_BUTTON_XPATH_SINGLE_PHOTO_ALBUM,
-                                          ElementLocators.PUBLISH_ON_HAIMETA_COMMUNITY_BUTTON_XPATH_SINGLE_PHOTO_ALBUM,
-                                          ElementLocators.CANCEL_PUBLISH_BUTTON_XPATH_SINGLE_PHOTO_ALBUM)
-        self.report_the_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.THREE_DOTS_BUTTON_XPATH_SINGLE_PHOTO_ALBUM,
-                              ElementLocators.REPORT_BUTTON_XPATH_ID_PHOTO_SINGLE_PHOTO_ALBUM)
-        self.delete_the_generated_image("/html/body/div[1]/div/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div",
-                                        ElementLocators.THREE_DOTS_BUTTON_XPATH_SINGLE_PHOTO_ALBUM,
-                                        ElementLocators.DELETE_BUTTON_XPATH_SINGLE_PHOTO_ALBUM)
+        self.download_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.DOWNLOAD_BUTTON_XPATH)
+        self.publish_on_haimeta_community(ElementLocators.INTERACTED_IMAGE_1_XPATH,
+                                          ElementLocators.PUBLISH_BUTTON_XPATH,
+                                          ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY,
+                                          ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY)
+        self.report_the_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.THREE_DOTS_BUTTON_XPATH,
+                              ElementLocators.REPORT_BUTTON_XPATH)
+        self.delete_the_generated_image(ElementLocators.INTERACTED_IMAGE_1_XPATH,
+                                        ElementLocators.THREE_DOTS_BUTTON_XPATH, ElementLocators.DELETE_BUTTON_XPATH)
 
     def refine_your_idea(self):
-        wait = self.wait
         driver = self.driver
         # Refine your idea
-        Refine_your_idea_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, ElementLocators.REFINE_YOUR_IDEA_BUTTON_XPATH))
-        )
-        Refine_your_idea_button_click.click()
+        self.click_visible('xpath',ElementLocators.DELETE_BUTTON_XPATH)
+
         # Wait for the loading to finish
         WebDriverWait(driver, 50).until(
             EC.visibility_of_element_located((By.XPATH, ElementLocators.REFINE_YOUR_IDEA_BUTTON_XPATH))
@@ -640,28 +782,6 @@ class WebKeys:
 
     def set_number_of_images_to_generate(self, number_of_images_to_generate_button_xpath):
         self.click_action_check_by_visibility(number_of_images_to_generate_button_xpath)
-
-    def click_action_check_by_visibility(self, action_button_xpath):
-        wait = self.wait
-        action_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, action_button_xpath))
-        )
-        action_button_click.click()
-        return action_button_click
-
-    def click_action_check_by_presence(self, action_button_xpath):
-        wait = self.wait
-        action_button_click = wait.until(
-            EC.presence_of_element_located((By.XPATH, action_button_xpath))
-        )
-        action_button_click.click()
-
-    def click_action_check_by_element_to_be_clickable(self, action_button_xpath):
-        wait = self.wait
-        action_button_click = wait.until(
-            EC.element_to_be_clickable((By.XPATH, action_button_xpath))
-        )
-        action_button_click.click()
 
     def interact_with_the_second_item_selected(self, item_xpath):
         wait = self.wait
@@ -682,3 +802,72 @@ class WebKeys:
         driver = self.driver
         wait.until(EC.number_of_windows_to_be(2))
         driver.switch_to.window(driver.window_handles[-1])
+
+    def input_invalid_format_email(self):
+        # **测试的非邮箱格式**
+        invalid_emails = ElementLocators.invalid_email_list
+
+        for invalid_email in invalid_emails:
+            print(f"🔍 正在测试非邮箱格式输入: {invalid_email}")
+
+            # **输入错误邮箱**
+            email_input = self.wait.until(
+                EC.visibility_of_element_located((By.XPATH, ElementLocators.EMAIL_INPUT_XPATH))
+            )
+            email_input.clear()
+            email_input.send_keys(invalid_email)
+
+            # **点击继续按钮**
+            self.click_clickable('xpath',ElementLocators.CONTINUE_BUTTON_XPATH)
+
+            # **检查是否出现错误提示**
+            try:
+                error_message = self.wait.until(
+                    EC.visibility_of_element_located((By.CLASS_NAME, "error-text.global-font-body-small"))
+                )
+                assert error_message is not None, "❌ 非邮箱格式输入后未显示错误提示！"
+                if error_message is None:
+                    log.error("❌ 非邮箱格式输入后未显示错误提示！")
+                    raise Exception("非邮箱格式输入后未显示错误提示！")
+                log.info(f"✅ 非邮箱格式输入 '{invalid_email}' 后，错误提示成功显示！")
+            except TimeoutException:
+                log.error(f"❌ 非邮箱格式输入 '{invalid_email}' 后，未出现错误提示，测试失败！")
+                raise
+
+            # **确保用户仍然停留在邮箱输入界面**
+            try:
+                email_input_still_present = self.wait.until(
+                    EC.presence_of_element_located((By.XPATH, ElementLocators.EMAIL_INPUT_XPATH))
+                )
+                if email_input_still_present is None:
+                    log.error("❌ 用户错误邮箱输入后仍然进入了下一步，不符合预期！")
+                    raise Exception("用户错误邮箱输入后仍然进入了下一步，不符合预期！")
+                print(f"✅ 非邮箱格式输入 '{invalid_email}' 后，未进入下一步，测试通过！")
+            except TimeoutException:
+                log.error(f"❌ 非邮箱格式输入 '{invalid_email}' 后，系统跳转到了下一步，测试失败！")
+                raise
+
+    def input_presence_10_times_while_clicking(self,input_by,input_value,text,click_by,click_value):
+        """输入框输入文本，点击按钮，循环10次"""
+        for i in range(10):
+            try:
+                self.input_presence(input_by, input_value, text)
+                self.click_clickable(click_by, click_value)
+                log.info(f"第 {i+1} 次输入和点击成功")
+            except Exception as e:
+                log.info(f"第 {i+1} 次输入和点击失败: {str(e)}")
+                time.sleep(2)
+
+    def move_action(self):
+        actions=self.action
+        driver=self.driver
+        actions.click_and_hold(driver.find_element(By.XPATH, "/html/body/flutter-view"))  # 点击并按住元素
+        actions.move_by_offset(10, 20)  # 移动到目标元素
+        actions.move_by_offset(-10, -20)
+        actions.pause(3)
+        actions.release()  # 释放鼠标
+        actions.perform()
+
+    def switch_to_default_content(self):
+        driver=self.driver
+        driver.switch_to.default_content()

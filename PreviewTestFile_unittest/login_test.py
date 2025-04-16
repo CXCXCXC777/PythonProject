@@ -8,14 +8,11 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from Preview_config import ElementLocators
 
 
 class LoginTest(unittest.TestCase):
-    from Preview_config import (EMAIL_INPUT_XPATH, CONTINUE_BUTTON_XPATH, PASSWORD_INPUT_XPATH, LOGIN_BUTTON_XPATH,
-                                THIRD_PARTY_BUTTON_XPATH, PRIVACY_POLICY_LINK_XPATH, PRIVACY_POLICY_CHECK_MESSAGE,
-                                PRIVACY_POLICY_BACK_BUTTON, USER_SERVICE_PRIVACY_LINK_XPATH,
-                                USER_SERVICE_PRIVACY_CHECK_MESSAGE, USER_SERVICE_BACK_BUTTON,USER_DISPLAY_ClASS_NAME,
-                                THIRD_PARTY_NEXT_BUTTON_XPATH)
+
 
     # 每次测试前运行一次，打开浏览器
     def setUp(self):
@@ -46,28 +43,28 @@ class LoginTest(unittest.TestCase):
 
         # 输入邮箱
         email_input = wait.until(
-            EC.visibility_of_element_located((By.XPATH, self.EMAIL_INPUT_XPATH))
+            EC.visibility_of_element_located((By.XPATH, ElementLocators.EMAIL_INPUT_XPATH))
         )
         email_input.send_keys("1974440719@qq.com")
 
         # 点击继续按钮
-        driver.find_element(By.XPATH, self.CONTINUE_BUTTON_XPATH).click()
+        driver.find_element(By.XPATH, ElementLocators.CONTINUE_BUTTON_XPATH).click()
 
         # 输入密码
         password_input = wait.until(
             EC.visibility_of_element_located(
-                (By.XPATH, self.PASSWORD_INPUT_XPATH)
+                (By.XPATH, ElementLocators.PASSWORD_INPUT_XPATH)
             )
         )
         password_input.send_keys("Tiejiayu666")
 
         # 点击登录按钮
-        driver.find_element(By.XPATH, self.LOGIN_BUTTON_XPATH).click()
+        driver.find_element(By.XPATH, ElementLocators.LOGIN_BUTTON_XPATH).click()
 
         # 首先定义元素，并等待其出现
         user_name_displayed = wait.until(
             EC.visibility_of_element_located(
-                (By.CLASS_NAME, self.USER_DISPLAY_ClASS_NAME)
+                (By.CLASS_NAME, ElementLocators.USER_DISPLAY_ClASS_NAME)
             )
         )
 
@@ -90,14 +87,14 @@ class LoginTest(unittest.TestCase):
         # **输入超长错误邮箱**
         invalid_email = "a" * 300 + "@invalid.com"  # 300个 'a' + @invalid.com
         email_input = wait.until(
-            EC.visibility_of_element_located((By.XPATH, self.EMAIL_INPUT_XPATH))
+            EC.visibility_of_element_located((By.XPATH, ElementLocators.EMAIL_INPUT_XPATH))
         )
         email_input.clear()
         email_input.send_keys(invalid_email)
 
         # **点击继续按钮**
         next_button = wait.until(
-            EC.element_to_be_clickable((By.XPATH, self.CONTINUE_BUTTON_XPATH))
+            EC.element_to_be_clickable((By.XPATH, ElementLocators.CONTINUE_BUTTON_XPATH))
         )
         next_button.click()
 
@@ -109,7 +106,7 @@ class LoginTest(unittest.TestCase):
         try:
             wait = WebDriverWait(driver, 3)
             email_input_still_present = wait.until(
-                EC.presence_of_element_located((By.XPATH, self.PASSWORD_INPUT_XPATH))
+                EC.presence_of_element_located((By.XPATH, ElementLocators.PASSWORD_INPUT_XPATH))
             )
             self.fail("❌ 用户错误邮箱输入后仍然进入了密码输入界面！测试失败！")
         except TimeoutException:
@@ -122,7 +119,7 @@ class LoginTest(unittest.TestCase):
         wait = WebDriverWait(driver, 10)
 
         third_party_button = wait.until(
-            EC.element_to_be_clickable((By.XPATH, self.THIRD_PARTY_BUTTON_XPATH))
+            EC.element_to_be_clickable((By.XPATH, ElementLocators.THIRD_PARTY_BUTTON_XPATH))
         )
         third_party_button.click()
 
@@ -131,7 +128,7 @@ class LoginTest(unittest.TestCase):
 
         third_party_login_button = wait.until(
             EC.element_to_be_clickable(
-                (By.XPATH, self.THIRD_PARTY_NEXT_BUTTON_XPATH)
+                (By.XPATH, ElementLocators.THIRD_PARTY_NEXT_BUTTON_XPATH)
             )
         )
         third_party_login_button.click()
@@ -145,14 +142,14 @@ class LoginTest(unittest.TestCase):
         wait = WebDriverWait(driver, 10)
 
         privacy_policy_link = wait.until(
-            EC.element_to_be_clickable((By.XPATH, self.PRIVACY_POLICY_LINK_XPATH))
+            EC.element_to_be_clickable((By.XPATH, ElementLocators.PRIVACY_POLICY_LINK_XPATH))
         )
         privacy_policy_link.click()
 
-        wait.until(EC.presence_of_element_located((By.XPATH, self.PRIVACY_POLICY_CHECK_MESSAGE)))
+        wait.until(EC.presence_of_element_located((By.XPATH, ElementLocators.PRIVACY_POLICY_CHECK_MESSAGE)))
         Page_Message = driver.find_element(By.XPATH, "/html/body/div/div/div/div/p[1]/span[2]").text
         print("✅ 隐私政策页面成功打开！\n 打印页面出现内容:\n " + Page_Message)
-        driver.find_element(By.XPATH, self.PRIVACY_POLICY_BACK_BUTTON).click()
+        driver.find_element(By.XPATH, ElementLocators.PRIVACY_POLICY_BACK_BUTTON).click()
         print("并且成功返回主界面")
 
     # 测试用例5：用户协议界面进入测试，能够正常进入该界面然后回到主界面
@@ -162,16 +159,16 @@ class LoginTest(unittest.TestCase):
 
         # 进入用户服务协议页面（保持等待）
         user_service_privacy_link = wait.until(
-            EC.element_to_be_clickable((By.XPATH, self.USER_SERVICE_PRIVACY_LINK_XPATH))
+            EC.element_to_be_clickable((By.XPATH, ElementLocators.USER_SERVICE_PRIVACY_LINK_XPATH))
         )
         user_service_privacy_link.click()
 
-        wait.until(EC.presence_of_element_located((By.XPATH, self.USER_SERVICE_PRIVACY_CHECK_MESSAGE)))
+        wait.until(EC.presence_of_element_located((By.XPATH, ElementLocators.USER_SERVICE_PRIVACY_CHECK_MESSAGE)))
         Page_Message = driver.find_element(By.XPATH, "/html/body/div/div/div/div/p[1]").text
         print("用户服务协议页面打开成功！\n 打印页面出现内容\n " + Page_Message)
 
         # 直接点击返回按钮（不等待元素可点击）
-        driver.find_element(By.XPATH, self.USER_SERVICE_BACK_BUTTON).click()
+        driver.find_element(By.XPATH, ElementLocators.USER_SERVICE_BACK_BUTTON).click()
         print("并且成功返回主界面")
 
     def test_invalid_email_format(self):
@@ -196,14 +193,14 @@ class LoginTest(unittest.TestCase):
 
             # **输入错误邮箱**
             email_input = wait.until(
-                EC.visibility_of_element_located((By.XPATH, self.EMAIL_INPUT_XPATH))
+                EC.visibility_of_element_located((By.XPATH, ElementLocators.EMAIL_INPUT_XPATH))
             )
             email_input.clear()
             email_input.send_keys(invalid_email)
 
             # **点击继续按钮**
             next_button = wait.until(
-                EC.element_to_be_clickable((By.XPATH, self.CONTINUE_BUTTON_XPATH))
+                EC.element_to_be_clickable((By.XPATH, ElementLocators.CONTINUE_BUTTON_XPATH))
             )
             next_button.click()
 
@@ -220,7 +217,7 @@ class LoginTest(unittest.TestCase):
             # **确保用户仍然停留在邮箱输入界面**
             try:
                 email_input_still_present = wait.until(
-                    EC.presence_of_element_located((By.XPATH, self.EMAIL_INPUT_XPATH))
+                    EC.presence_of_element_located((By.XPATH, ElementLocators.EMAIL_INPUT_XPATH))
                 )
                 self.assertIsNotNone(email_input_still_present, "❌ 用户错误邮箱输入后仍然进入了下一步，不符合预期！")
                 print(f"✅ 非邮箱格式输入 '{invalid_email}' 后，未进入下一步，测试通过！")

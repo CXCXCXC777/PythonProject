@@ -19,27 +19,35 @@ def arguments(data):
         for temp in str_temp:
             t = temp.split("=", 1)
             if len(t) == 2:  # Make sure we have both key and value
-                if t[1].startswith('self.'):
-                    # 从ElementLocators类中获取对应的xpath值
-                    attr_name = t[1].replace('self.', '')
-                    if hasattr(ElementLocators, attr_name):
-                        temp_data[t[0]] = getattr(ElementLocators, attr_name)
+                # 移除所有多余的空格，包括前后和中间的空格
+                key = "".join(t[0].split())
+                value = t[1].strip()
+                # 检查是否是ElementLocators中的属性
+                if hasattr(ElementLocators, value):
+                    temp_data[key] = getattr(ElementLocators, value)
                 else:
-                    temp_data[t[0]] = t[1]
+                    temp_data[key] = value
     return temp_data
 
 def run(file_name):
     global success, fail, failed_cases
+    current_sheet = None  # 用于跟踪当前正在处理的sheet名称
     try:
         # 读取excel
         excel = openpyxl.load_workbook(file_name)
         # 考虑多个sheet页面需要执行，所以获取全部sheet页面
         sheets = excel.sheetnames
         for name in sheets:
-            sheet =excel[name]
+            current_sheet = name  # 更新当前sheet名称
+            # 新增过滤条件：跳过包含_template的sheet和临时文件
+            if '_template' in name.lower() or name.startswith('~$'):
+                log.info(f'跳过工作表: {name}')
+                continue
+                
+            sheet = excel[name]
             log.info(f'正在执行{name}测试用例')
             for values in sheet.values:
-                if type(values[0]) is int :
+                if type(values[0]) is int:
                     test_data = arguments(values[2])
                     if values[1]=='open_browser':
                         wk=WebKeys(**test_data)
@@ -58,7 +66,8 @@ def run(file_name):
     except Exception as e:
         log.error(traceback.format_exc())
         fail += 1
-        failed_cases.append(file_name+':'+name)
+        if current_sheet:  # 只在有当前sheet名称时添加到失败列表
+            failed_cases.append(file_name+':'+current_sheet)
     finally:
         if 'excel' in locals():  # 确保 excel 变量已定义
             excel.close()
