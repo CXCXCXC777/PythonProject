@@ -13,6 +13,7 @@ class ElementLocators:
     THIRD_PARTY_BUTTON_XPATH = "//*[@id='first-page']/button"
     THIRD_PARTY_NEXT_BUTTON_XPATH = "/html/body/div/div/div[3]/div/div/div/button"
 
+
     # Privacy policy and USER SERVICE locators
     PRIVACY_POLICY_LINK_XPATH = "//*[@id='first-page']/div[4]/div/div/span[2]"
     PRIVACY_POLICY_CHECK_MESSAGE = "/html/body/div/div/div/div/p[1]/span[37]"
@@ -21,7 +22,14 @@ class ElementLocators:
     USER_SERVICE_PRIVACY_CHECK_MESSAGE = "/html/body/div/div/div/div/p[3]/span[44]"
     USER_SERVICE_BACK_BUTTON = "//*[@id='root']/div/button"
     ERROR_MESSAGE_ON_LOGIN_PAGE_XPATH = "/div/div/div/span[2]"
-    GET_VERIFICATION_CODE_BUTTON_XPATH = "/html/body/div/div/div[3]/div/div/div[1]/div[2]"
+    GET_VERIFICATION_CODE_BUTTON_XPATH = "//div[@class='code-button']"
+    VERIFICATION_CODE_INPUT_XPATH="//input[@type='text']"
+    VERIFICATION_CODE_ERROR_MESSAGE_XPATH = "//div[@class='error-text']"
+    TEN_TIMES_ERROR_MESSAGE_XPATH = "//div[@class='lock-container']/div[2]"
+    ERROR_MESSAGE_AFTER_INPUT_WRONG_PASSWORD='//div[@class="error-text global-font-body-small"]'
+    WRONG_PASSWORD="123141231312"
+    LOCK_TIP_XPATH="//div[@class='lock-tip global-font-body-medium']"
+
 
     # Home page locators
 

@@ -1,4 +1,3 @@
-import time
 import traceback
 
 from selenium.common import TimeoutException
@@ -10,7 +9,10 @@ from selenium.webdriver.chrome.service import Service
 from HAIMETA_data_driver_framework.config.config import options as chrome_options
 from selenium.webdriver.common.by import By
 from HAIMETA_data_driver_framework.config.element_config import ElementLocators
-
+import imaplib
+import email
+import re
+import time
 from HAIMETA_data_driver_framework.config.get_logger import get_logger
 
 log=get_logger()
@@ -97,7 +99,7 @@ class WebKeys:
 
     def wait_sleep(self):
         log.info("等待2秒")
-        time.sleep(1000)
+        time.sleep(5)
         log.info("等待完成")
 
     def wait_visible(self, by, value):
@@ -682,3 +684,219 @@ class WebKeys:
         driver = self.driver
         wait.until(EC.number_of_windows_to_be(2))
         driver.switch_to.window(driver.window_handles[-1])
+
+    def input_invalid_format_email(self):
+
+
+        # **测试的非邮箱格式**
+        invalid_emails = [
+            "invalidemail.com",  # 缺少 @
+            "invalid@com",  # 缺少 .
+            "123456789",  # 纯数字
+            "@invalid.com",  # 只包含 @
+            "invalid@.com",  # @ 后面直接是 .
+            "invalid@domain..com"  # 连续两个点
+        ]
+
+        for invalid_email in invalid_emails:
+            print(f"🔍 正在测试非邮箱格式输入: {invalid_email}")
+
+            # **输入错误邮箱**
+            email_input = self.wait.until(
+                EC.visibility_of_element_located((By.XPATH, ElementLocators.EMAIL_INPUT_XPATH))
+            )
+            email_input.clear()
+            email_input.send_keys(invalid_email)
+
+            # **点击继续按钮**
+            next_button = self.wait.until(
+                EC.element_to_be_clickable((By.XPATH, ElementLocators.CONTINUE_BUTTON_XPATH))
+            )
+            next_button.click()
+
+            # **检查是否出现错误提示**
+            try:
+                error_message = self.wait.until(
+                    EC.visibility_of_element_located((By.CLASS_NAME, "error-text.global-font-body-small"))
+                )
+                assert error_message is not None, "❌ 非邮箱格式输入后未显示错误提示！"
+                if error_message is None:
+                    log.error("❌ 非邮箱格式输入后未显示错误提示！")
+                    raise Exception("非邮箱格式输入后未显示错误提示！")
+                log.info(f"✅ 非邮箱格式输入 '{invalid_email}' 后，错误提示成功显示！")
+            except TimeoutException:
+                log.error(f"❌ 非邮箱格式输入 '{invalid_email}' 后，未出现错误提示，测试失败！")
+                raise
+
+            # **确保用户仍然停留在邮箱输入界面**
+            try:
+                email_input_still_present = self.wait.until(
+                    EC.presence_of_element_located((By.XPATH, ElementLocators.EMAIL_INPUT_XPATH))
+                )
+                if email_input_still_present is None:
+                    log.error("❌ 用户错误邮箱输入后仍然进入了下一步，不符合预期！")
+                    raise Exception("用户错误邮箱输入后仍然进入了下一步，不符合预期！")
+                print(f"✅ 非邮箱格式输入 '{invalid_email}' 后，未进入下一步，测试通过！")
+            except TimeoutException:
+                log.error(f"❌ 非邮箱格式输入 '{invalid_email}' 后，系统跳转到了下一步，测试失败！")
+                raise
+
+    def input_presence_10_times_while_clicking(self,input_by,input_value,text,click_by,click_value):
+        """输入框输入文本，点击按钮，循环10次"""
+        for i in range(10):
+            try:
+                self.input_presence(input_by, input_value, text)
+                self.click_clickable(click_by, click_value)
+                log.info(f"第 {i+1} 次输入和点击成功")
+            except Exception as e:
+                log.info(f"第 {i+1} 次输入和点击失败: {str(e)}")
+                time.sleep(2)
+
+    def get_email_verification_code(self, email_address, password, wait_time=60):
+        """从网易邮箱获取验证码
+        Args:
+            email_address: 网易邮箱地址
+            password: 邮箱密码或授权码
+            wait_time: 等待验证码邮件的最长时间（秒）
+        Returns:
+            str: 验证码，如果获取失败则返回None
+        """
+
+        print(f"开始尝试获取邮箱验证码，邮箱地址: {email_address}, 等待时间: {wait_time}秒")
+        imap = None
+        try:
+            # 连接网易邮箱IMAP服务器
+            imap_server = "imap.163.com"
+            imap_port = 993  # SSL端口
+            print(f"正在连接IMAP服务器: {imap_server}:{imap_port} (SSL)")
+            
+            try:
+                # 使用SSL连接
+                imap = imaplib.IMAP4_SSL(imap_server, imap_port)
+                print("IMAP服务器SSL连接成功")
+            except Exception as e:
+                print(f"连接IMAP服务器失败: {str(e)}")
+                return None
+
+            # 尝试登录
+            try:
+                imap.login(email_address, password)
+                print("邮箱登录成功")
+            except imaplib.IMAP4.error as e:
+                print(f"邮箱登录失败: {str(e)}")
+                return None
+
+            # 选择收件箱前确保状态正确
+            try:
+                status, messages = imap.select('INBOX', readonly=True)  # 使用readonly模式避免锁定邮箱
+                if status != 'OK':
+                    print(f"选择收件箱失败: {messages}")
+                    if 'Unsafe Login' in str(messages):
+                        print("检测到不安全登录，请确保使用授权码并检查邮箱安全设置")
+                    return None
+                print("成功选择收件箱")
+            except imaplib.IMAP4.error as e:
+                print(f"选择收件箱失败: {str(e)}")
+                return None
+
+            start_time = time.time()
+            while time.time() - start_time < wait_time:
+                # 搜索最新的邮件
+                print('正在搜索邮件...')
+                try:
+                    # 搜索最近收到的邮件
+                    status, message_numbers = imap.search(None, 'RECENT')
+                    if status != 'OK' or not message_numbers[0]:
+                        # 如果没有最近的邮件，搜索所有邮件
+                        status, message_numbers = imap.search(None, 'ALL')
+                    
+                    if status != 'OK':
+                        print(f"搜索邮件失败: {message_numbers}")
+                        time.sleep(5)
+                        continue
+                    
+                    if not message_numbers[0]:
+                        print("收件箱为空")
+                        time.sleep(5)
+                        continue
+                except imaplib.IMAP4.error as e:
+                    print(f"搜索邮件失败: {str(e)}")
+                    time.sleep(5)
+                    continue
+
+                latest_email_id = message_numbers[0].split()[-1]
+                print(f"找到最新邮件ID: {latest_email_id}")
+
+                # 获取邮件内容
+                print('正在获取邮件内容...')
+                try:
+                    status, msg_data = imap.fetch(latest_email_id, '(RFC822)')
+                    if status != 'OK':
+                        print(f"获取邮件内容失败: {msg_data}")
+                        time.sleep(5)
+                        continue
+                        
+                    email_body = msg_data[0][1]
+                    email_message = email.message_from_bytes(email_body)
+                    print(f"邮件主题: {email_message['Subject']}")
+                except Exception as e:
+                    print(f"获取邮件内容失败: {str(e)}")
+                    time.sleep(5)
+                    continue
+
+                # 获取邮件发送时间
+                print('正在解析邮件发送时间...')
+                date_tuple = email.utils.parsedate_tz(email_message['Date'])
+                if date_tuple:
+                    local_date = time.localtime(email.utils.mktime_tz(date_tuple))
+                    email_time = time.strftime("%Y-%m-%d %H:%M:%S", local_date)
+                    print(f"邮件发送时间: {email_time}")
+
+                    # 检查邮件是否是最近发送的
+                    time_diff = time.time() - time.mktime(local_date)
+                    print(f"邮件距现在时间: {time_diff:.2f}秒")
+                    if time_diff > wait_time:
+                        print("邮件已超过等待时间，继续等待新邮件...")
+                        time.sleep(5)
+                        continue
+
+                    # 解析邮件内容获取验证码
+                    print('正在解析邮件内容...')
+                    for part in email_message.walk():
+                        if part.get_content_type() == "text/plain":
+                            try:
+                                body = part.get_payload(decode=True).decode()
+                                print(f"邮件内容: {body[:200]}...")
+                                # 使用正则表达式匹配6位数字验证码
+                                match = re.search(r'\b\d{6}\b', body)
+                                if match:
+                                    verification_code = match.group()
+                                    print(f"成功获取验证码: {verification_code}")
+                                    return verification_code
+                                else:
+                                    print("未在邮件内容中找到6位数字验证码")
+                            except Exception as e:
+                                print(f"解析邮件内容失败: {str(e)}")
+                                continue
+
+                time.sleep(5)
+                print("继续等待新邮件...")
+
+            print(f"等待超时（{wait_time}秒），未能获取验证码")
+            return None
+
+        except Exception as e:
+            print(f"获取邮箱验证码失败: {str(e)}")
+            print(f"错误详情: {traceback.format_exc()}")
+            return None
+        finally:
+            if imap is not None:
+                try:
+                    imap.close()
+                except Exception:
+                    pass  # 忽略close可能的错误
+                try:
+                    imap.logout()
+                    print("已安全退出IMAP连接")
+                except Exception as e:
+                    print(f"退出IMAP连接时发生错误: {str(e)}")

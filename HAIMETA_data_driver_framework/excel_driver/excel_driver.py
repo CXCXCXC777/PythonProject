@@ -30,16 +30,23 @@ def arguments(data):
 
 def run(file_name):
     global success, fail, failed_cases
+    current_sheet = None  # 用于跟踪当前正在处理的sheet名称
     try:
         # 读取excel
         excel = openpyxl.load_workbook(file_name)
         # 考虑多个sheet页面需要执行，所以获取全部sheet页面
         sheets = excel.sheetnames
         for name in sheets:
-            sheet =excel[name]
+            current_sheet = name  # 更新当前sheet名称
+            # 新增过滤条件：跳过包含_template的sheet和临时文件
+            if '_template' in name.lower() or name.startswith('~$'):
+                log.info(f'跳过工作表: {name}')
+                continue
+                
+            sheet = excel[name]
             log.info(f'正在执行{name}测试用例')
             for values in sheet.values:
-                if type(values[0]) is int :
+                if type(values[0]) is int:
                     test_data = arguments(values[2])
                     if values[1]=='open_browser':
                         wk=WebKeys(**test_data)
@@ -58,7 +65,8 @@ def run(file_name):
     except Exception as e:
         log.error(traceback.format_exc())
         fail += 1
-        failed_cases.append(file_name+':'+name)
+        if current_sheet:  # 只在有当前sheet名称时添加到失败列表
+            failed_cases.append(file_name+':'+current_sheet)
     finally:
         if 'excel' in locals():  # 确保 excel 变量已定义
             excel.close()
