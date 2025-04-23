@@ -1,0 +1,1250 @@
+return NoneNo symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 13:59:23 - fileLogger - WARNING - 
+成功用例数：0条
+失败用例数：1条
+失败用例具体情况如下：['./test_data\\album_test-cases.xlsx:case1']
+    
+    
+2025-04-23 13:59:51 - fileLogger - INFO - 正在执行case1测试用例
+2025-04-23 13:59:51 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-23 13:59:51 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-23 13:59:52 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-23 13:59:52 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-23 13:59:52 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-23 13:59:52 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-23 13:59:52 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-23 13:59:52 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-23 13:59:52 - fileLogger - INFO - 等待元素存在并输入: 1974440719@qq.com
+2025-04-23 13:59:52 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-23 13:59:59 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-23 13:59:59 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
+2025-04-23 13:59:59 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-23 13:59:59 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-23 13:59:59 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-23 13:59:59 - fileLogger - INFO - 元素存在并已成功输入: 1974440719@qq.com
+2025-04-23 13:59:59 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 13:59:59 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 13:59:59 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 13:59:59 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 13:59:59 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 13:59:59 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 13:59:59 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 13:59:59 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 13:59:59 - fileLogger - INFO - 等待元素存在并输入: Tiejiayu666
+2025-04-23 13:59:59 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
+2025-04-23 14:00:00 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
+2025-04-23 14:00:00 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
+2025-04-23 14:00:00 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
+2025-04-23 14:00:00 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
+2025-04-23 14:00:00 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
+2025-04-23 14:00:00 - fileLogger - INFO - 元素存在并已成功输入: Tiejiayu666
+2025-04-23 14:00:00 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:00 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:00 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:00 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:00 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:00 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:00 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:00 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:00 - fileLogger - INFO - 移动到元素: xpath=//div[@class="avatar-wrap"]
+2025-04-23 14:00:00 - fileLogger - INFO - 等待元素可见: xpath=//div[@class="avatar-wrap"]
+2025-04-23 14:00:11 - fileLogger - ERROR - 等待元素可见超时: xpath=//div[@class="avatar-wrap"], 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 14:00:11 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-23 14:00:11 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-23 14:00:22 - fileLogger - ERROR - 等待元素可见超时: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span, 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 14:00:22 - fileLogger - ERROR - 等待元素可见并点击失败: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span, 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 14:00:22 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 333, in click_visible
+    self.wait_visible(by, value)
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 250, in wait_visible
+    element = self.wait.until(EC.visibility_of_element_located((by, value)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 14:00:22 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
+2025-04-23 14:00:22 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div/main/section[1]/h1/span[1]
+2025-04-23 14:00:32 - fileLogger - ERROR - 等待元素可见超时: xpath=/html/body/div/div/main/section[1]/h1/span[1], 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 14:00:32 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\excel_driver\excel_driver.py", line 55, in run
+    status=getattr(wk, values[1])(**test_data, expected=values[4])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 310, in assert_text
+    self.wait_visible(by, value)
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 250, in wait_visible
+    element = self.wait.until(EC.visibility_of_element_located((by, value)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 14:00:32 - fileLogger - WARNING - 
+成功用例数：0条
+失败用例数：1条
+失败用例具体情况如下：['./test_data\\Login_test_cases.xlsx:case1']
+    
+    
+2025-04-23 14:00:44 - fileLogger - INFO - 正在执行case1测试用例
+2025-04-23 14:00:44 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-23 14:00:44 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-23 14:00:45 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-23 14:00:45 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-23 14:00:45 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-23 14:00:45 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-23 14:00:45 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-23 14:00:45 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-23 14:00:45 - fileLogger - INFO - 等待元素存在并输入: 1974440719@qq.com
+2025-04-23 14:00:45 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-23 14:00:45 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-23 14:00:45 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
+2025-04-23 14:00:45 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-23 14:00:45 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-23 14:00:45 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-23 14:00:45 - fileLogger - INFO - 元素存在并已成功输入: 1974440719@qq.com
+2025-04-23 14:00:45 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 14:00:45 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 14:00:46 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 14:00:46 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 14:00:46 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 14:00:46 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 14:00:46 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 14:00:46 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 14:00:46 - fileLogger - INFO - 等待元素存在并输入: Tiejiayu666
+2025-04-23 14:00:46 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
+2025-04-23 14:00:47 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
+2025-04-23 14:00:47 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
+2025-04-23 14:00:47 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
+2025-04-23 14:00:47 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
+2025-04-23 14:00:47 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
+2025-04-23 14:00:47 - fileLogger - INFO - 元素存在并已成功输入: Tiejiayu666
+2025-04-23 14:00:47 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:47 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:47 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:47 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:47 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:47 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:47 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:47 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
+2025-04-23 14:00:47 - fileLogger - INFO - 移动到元素: xpath=//div[@class="avatar-wrap"]
+2025-04-23 14:00:47 - fileLogger - INFO - 等待元素可见: xpath=//div[@class="avatar-wrap"]
+2025-04-23 14:00:57 - fileLogger - ERROR - 等待元素可见超时: xpath=//div[@class="avatar-wrap"], 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 14:00:57 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-23 14:00:57 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-23 14:01:08 - fileLogger - ERROR - 等待元素可见超时: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span, 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 14:01:08 - fileLogger - ERROR - 等待元素可见并点击失败: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span, 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 14:01:08 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 333, in click_visible
+    self.wait_visible(by, value)
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 250, in wait_visible
+    element = self.wait.until(EC.visibility_of_element_located((by, value)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 14:01:08 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
+2025-04-23 14:01:08 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div/main/section[1]/h1/span[1]
+2025-04-23 15:14:37 - fileLogger - INFO - 正在执行case1测试用例
+2025-04-23 15:14:37 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-23 15:14:37 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-23 15:14:38 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-23 15:14:38 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-23 15:14:38 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-23 15:14:38 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-23 15:14:38 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-23 15:14:39 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-23 15:14:39 - fileLogger - INFO - 等待元素存在并输入: 1974440719@qq.com
+2025-04-23 15:14:39 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-23 15:14:39 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-23 15:14:39 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
+2025-04-23 15:14:39 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-23 15:14:39 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-23 15:14:39 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-23 15:14:39 - fileLogger - INFO - 元素存在并已成功输入: 1974440719@qq.com
+2025-04-23 15:14:39 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:14:39 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:14:39 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:14:39 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:14:39 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:14:39 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:14:39 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:14:39 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:14:39 - fileLogger - INFO - 等待元素存在并输入: Tiejiayu666
+2025-04-23 15:14:39 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
+2025-04-23 15:14:41 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
+2025-04-23 15:14:41 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
+2025-04-23 15:14:41 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
+2025-04-23 15:14:41 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
+2025-04-23 15:14:41 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
+2025-04-23 15:14:41 - fileLogger - INFO - 元素存在并已成功输入: Tiejiayu666
+2025-04-23 15:14:41 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
+2025-04-23 15:14:41 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
+2025-04-23 15:14:41 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
+2025-04-23 15:14:41 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
+2025-04-23 15:14:41 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
+2025-04-23 15:14:41 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
+2025-04-23 15:14:41 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
+2025-04-23 15:14:41 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
+2025-04-23 15:14:41 - fileLogger - INFO - 移动到元素: xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:14:41 - fileLogger - INFO - 等待元素可见: xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:14:51 - fileLogger - ERROR - 等待元素可见超时: xpath=//div[@class="avatar-wrap"], 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:14:51 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-23 15:14:51 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-23 15:15:02 - fileLogger - ERROR - 等待元素可见超时: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span, 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:15:02 - fileLogger - ERROR - 等待元素可见并点击失败: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span, 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:15:02 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 333, in click_visible
+    self.wait_visible(by, value)
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 250, in wait_visible
+    element = self.wait.until(EC.visibility_of_element_located((by, value)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 15:15:02 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
+2025-04-23 15:15:02 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div/main/section[1]/h1/span[1]
+2025-04-23 15:15:12 - fileLogger - ERROR - 等待元素可见超时: xpath=/html/body/div/div/main/section[1]/h1/span[1], 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:15:12 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\excel_driver\excel_driver.py", line 55, in run
+    status=getattr(wk, values[1])(**test_data, expected=values[4])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 310, in assert_text
+    self.wait_visible(by, value)
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 250, in wait_visible
+    element = self.wait.until(EC.visibility_of_element_located((by, value)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 15:15:12 - fileLogger - WARNING - 
+成功用例数：0条
+失败用例数：1条
+失败用例具体情况如下：['./test_data\\Login_test_cases.xlsx:case1']
+    
+    
+2025-04-23 15:22:10 - fileLogger - INFO - 正在执行case1测试用例
+2025-04-23 15:22:10 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-23 15:22:10 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-23 15:22:11 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-23 15:22:11 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-23 15:22:11 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-23 15:22:11 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-23 15:22:11 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-23 15:22:11 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-23 15:22:11 - fileLogger - INFO - 等待元素存在并输入: 1974440719@qq.com
+2025-04-23 15:22:11 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-23 15:22:11 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-23 15:22:11 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
+2025-04-23 15:22:11 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-23 15:22:11 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-23 15:22:11 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-23 15:22:11 - fileLogger - INFO - 元素存在并已成功输入: 1974440719@qq.com
+2025-04-23 15:22:11 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:22:11 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:22:11 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:22:11 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:22:11 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:22:11 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:22:11 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:22:11 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:22:11 - fileLogger - INFO - 等待元素存在并输入: Tiejiayu666
+2025-04-23 15:22:11 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
+2025-04-23 15:22:12 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
+2025-04-23 15:22:12 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
+2025-04-23 15:22:12 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
+2025-04-23 15:22:12 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
+2025-04-23 15:22:12 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
+2025-04-23 15:22:12 - fileLogger - INFO - 元素存在并已成功输入: Tiejiayu666
+2025-04-23 15:22:12 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
+2025-04-23 15:22:12 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
+2025-04-23 15:22:12 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
+2025-04-23 15:22:12 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
+2025-04-23 15:22:12 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
+2025-04-23 15:22:12 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
+2025-04-23 15:22:12 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
+2025-04-23 15:22:12 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
+2025-04-23 15:22:12 - fileLogger - INFO - 移动到元素: xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:22:12 - fileLogger - INFO - 等待元素可见: xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:22:23 - fileLogger - ERROR - 等待元素可见超时: xpath=//div[@class="avatar-wrap"], 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:22:23 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-23 15:22:23 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-23 15:22:34 - fileLogger - ERROR - 等待元素可见超时: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span, 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:22:34 - fileLogger - ERROR - 等待元素可见并点击失败: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span, 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:22:34 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 333, in click_visible
+    self.wait_visible(by, value)
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 250, in wait_visible
+    element = self.wait.until(EC.visibility_of_element_located((by, value)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 15:22:34 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
+2025-04-23 15:22:34 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div/main/section[1]/h1/span[1]
+2025-04-23 15:22:44 - fileLogger - ERROR - 等待元素可见超时: xpath=/html/body/div/div/main/section[1]/h1/span[1], 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:22:44 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\excel_driver\excel_driver.py", line 55, in run
+    status=getattr(wk, values[1])(**test_data, expected=values[4])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 310, in assert_text
+    self.wait_visible(by, value)
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 250, in wait_visible
+    element = self.wait.until(EC.visibility_of_element_located((by, value)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 15:22:44 - fileLogger - WARNING - 
+成功用例数：0条
+失败用例数：1条
+失败用例具体情况如下：['./test_data\\Login_test_cases.xlsx:case1']
+    
+    
+2025-04-23 15:23:43 - fileLogger - INFO - 正在执行case1测试用例
+2025-04-23 15:23:43 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-23 15:23:43 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-23 15:23:45 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-23 15:23:45 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-23 15:23:45 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-23 15:23:45 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-23 15:23:45 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-23 15:23:45 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-23 15:23:45 - fileLogger - INFO - 等待元素存在并输入: 1974440719@qq.com
+2025-04-23 15:23:45 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-23 15:23:45 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-23 15:23:45 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
+2025-04-23 15:23:45 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-23 15:23:45 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-23 15:23:45 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-23 15:23:45 - fileLogger - INFO - 元素存在并已成功输入: 1974440719@qq.com
+2025-04-23 15:23:45 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:23:45 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:23:45 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:23:45 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:23:45 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:23:45 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:23:45 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:23:45 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:23:45 - fileLogger - INFO - 等待元素存在并输入: Tiejiayu666
+2025-04-23 15:23:45 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
+2025-04-23 15:23:47 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
+2025-04-23 15:23:47 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
+2025-04-23 15:23:47 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
+2025-04-23 15:23:47 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
+2025-04-23 15:23:47 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
+2025-04-23 15:23:47 - fileLogger - INFO - 元素存在并已成功输入: Tiejiayu666
+2025-04-23 15:23:47 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
+2025-04-23 15:23:47 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
+2025-04-23 15:23:47 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
+2025-04-23 15:23:47 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
+2025-04-23 15:23:47 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
+2025-04-23 15:23:47 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
+2025-04-23 15:23:47 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
+2025-04-23 15:23:47 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
+2025-04-23 15:23:47 - fileLogger - INFO - 移动到元素: xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:23:47 - fileLogger - INFO - 等待元素可见: xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:23:58 - fileLogger - ERROR - 等待元素可见超时: xpath=//div[@class="avatar-wrap"], 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:23:58 - fileLogger - INFO - 等待元素可见并点击: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-23 15:23:58 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span
+2025-04-23 15:24:08 - fileLogger - ERROR - 等待元素可见超时: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span, 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:24:08 - fileLogger - ERROR - 等待元素可见并点击失败: xpath=/html/body/div[3]/div/div/div/div/div/ul/li[4]/span, 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:24:08 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 333, in click_visible
+    self.wait_visible(by, value)
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 250, in wait_visible
+    element = self.wait.until(EC.visibility_of_element_located((by, value)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 15:24:08 - fileLogger - INFO - 断言元素文本: xpath=/html/body/div/div/main/section[1]/h1/span[1], 预期文本: Type or Click,
+2025-04-23 15:24:08 - fileLogger - INFO - 等待元素可见: xpath=/html/body/div/div/main/section[1]/h1/span[1]
+2025-04-23 15:24:19 - fileLogger - ERROR - 等待元素可见超时: xpath=/html/body/div/div/main/section[1]/h1/span[1], 错误: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:24:19 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\excel_driver\excel_driver.py", line 55, in run
+    status=getattr(wk, values[1])(**test_data, expected=values[4])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 310, in assert_text
+    self.wait_visible(by, value)
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 250, in wait_visible
+    element = self.wait.until(EC.visibility_of_element_located((by, value)))
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 146, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12DF747]
+	(No symbol) [0x00007FF6A12DF97C]
+	(No symbol) [0x00007FF6A13333C7]
+	(No symbol) [0x00007FF6A130792F]
+	(No symbol) [0x00007FF6A13300B8]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 15:24:19 - fileLogger - WARNING - 
+成功用例数：0条
+失败用例数：1条
+失败用例具体情况如下：['./test_data\\Login_test_cases.xlsx:case1']
+    
+    
+2025-04-23 15:34:58 - fileLogger - INFO - 正在执行case1测试用例
+2025-04-23 15:34:58 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-23 15:34:58 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-23 15:34:59 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-23 15:34:59 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-23 15:34:59 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-23 15:34:59 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-23 15:34:59 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-23 15:35:00 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-23 15:35:00 - fileLogger - INFO - 等待元素存在并输入: 1974440719@qq.com
+2025-04-23 15:35:00 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-23 15:35:00 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-23 15:35:00 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
+2025-04-23 15:35:00 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-23 15:35:00 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-23 15:35:00 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-23 15:35:00 - fileLogger - INFO - 元素存在并已成功输入: 1974440719@qq.com
+2025-04-23 15:35:00 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:35:00 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:35:00 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:35:00 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:35:00 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:35:00 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:35:00 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:35:00 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:35:00 - fileLogger - INFO - 等待元素存在并输入: Tiejiayu666
+2025-04-23 15:35:00 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
+2025-04-23 15:35:01 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
+2025-04-23 15:35:01 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
+2025-04-23 15:35:01 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
+2025-04-23 15:35:01 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
+2025-04-23 15:35:01 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
+2025-04-23 15:35:01 - fileLogger - INFO - 元素存在并已成功输入: Tiejiayu666
+2025-04-23 15:35:01 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
+2025-04-23 15:35:01 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
+2025-04-23 15:35:01 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
+2025-04-23 15:35:01 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
+2025-04-23 15:35:01 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
+2025-04-23 15:35:01 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
+2025-04-23 15:35:01 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
+2025-04-23 15:35:01 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
+2025-04-23 15:35:01 - fileLogger - INFO - 移动到元素: xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:35:01 - fileLogger - INFO - 等待元素可见: xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:35:12 - fileLogger - WARNING - 等待元素可见超时 (尝试 1/3): xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:35:23 - fileLogger - WARNING - 等待元素可见超时 (尝试 2/3): xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:37:07 - fileLogger - INFO - 正在执行case1测试用例
+2025-04-23 15:37:07 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-23 15:37:07 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-23 15:37:10 - fileLogger - ERROR - 启动浏览器失败: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12C5AEF]
+	(No symbol) [0x00007FF6A12C1A6D]
+	(No symbol) [0x00007FF6A1315C58]
+	(No symbol) [0x00007FF6A1315210]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+2025-04-23 15:37:10 - fileLogger - INFO - 尝试使用Chrome浏览器作为备选
+2025-04-23 15:37:13 - fileLogger - ERROR - Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 27, in open_browser
+    driver = webdriver.Chrome(service=chrom_service, options=chrome_options())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 45, in __init__
+    super().__init__(
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 66, in __init__
+    super().__init__(command_executor=executor, options=options)
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 250, in __init__
+    self.start_session(capabilities)
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 342, in start_session
+    response = self.execute(Command.NEW_SESSION, caps)["value"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12C5AEF]
+	(No symbol) [0x00007FF6A12C1A6D]
+	(No symbol) [0x00007FF6A1315C58]
+	(No symbol) [0x00007FF6A1315210]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\excel_driver\excel_driver.py", line 53, in run
+    wk=WebKeys(**test_data)
+       ^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 188, in __init__
+    self.driver = open_browser(type_)
+                  ^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\web_keys\web_keys.py", line 37, in open_browser
+    driver=webdriver.Chrome(service=chrom_service, options=chrome_options())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\chrome\webdriver.py", line 45, in __init__
+    super().__init__(
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\chromium\webdriver.py", line 66, in __init__
+    super().__init__(command_executor=executor, options=options)
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 250, in __init__
+    self.start_session(capabilities)
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 342, in start_session
+    response = self.execute(Command.NEW_SESSION, caps)["value"]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 429, in execute
+    self.error_handler.check_response(response)
+  File "D:\PycharmProjects\PythonProject\.venv\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.SessionNotCreatedException: Message: session not created: probably user data directory is already in use, please specify a unique value for --user-data-dir argument, or don't use --user-data-dir
+Stacktrace:
+	GetHandleVerifier [0x00007FF6A149DF85+26693]
+	(No symbol) [0x00007FF6A13FEAD0]
+	(No symbol) [0x00007FF6A12891CA]
+	(No symbol) [0x00007FF6A12C5AEF]
+	(No symbol) [0x00007FF6A12C1A6D]
+	(No symbol) [0x00007FF6A1315C58]
+	(No symbol) [0x00007FF6A1315210]
+	(No symbol) [0x00007FF6A13076C3]
+	(No symbol) [0x00007FF6A12D0490]
+	(No symbol) [0x00007FF6A12D1743]
+	GetHandleVerifier [0x00007FF6A17F436D+3525677]
+	GetHandleVerifier [0x00007FF6A1807F3B+3606523]
+	GetHandleVerifier [0x00007FF6A17FCEE3+3561379]
+	GetHandleVerifier [0x00007FF6A1567C0A+853194]
+	(No symbol) [0x00007FF6A140990F]
+	(No symbol) [0x00007FF6A1405674]
+	(No symbol) [0x00007FF6A1405816]
+	(No symbol) [0x00007FF6A13F4D89]
+	BaseThreadInitThunk [0x00007FF99A347034+20]
+	RtlUserThreadStart [0x00007FF99B0C2651+33]
+
+
+2025-04-23 15:37:13 - fileLogger - WARNING - 
+成功用例数：0条
+失败用例数：1条
+失败用例具体情况如下：['./test_data\\Login_test_cases.xlsx:case1']
+    
+    
+2025-04-23 15:37:20 - fileLogger - INFO - 正在执行case1测试用例
+2025-04-23 15:37:20 - fileLogger - INFO - 初始化WebKeys实例
+2025-04-23 15:37:20 - fileLogger - INFO - 正在打开浏览器: chrome
+2025-04-23 15:37:21 - fileLogger - INFO - Chrome浏览器已成功启动
+2025-04-23 15:37:21 - fileLogger - INFO - 设置隐式等待时间: 5秒
+2025-04-23 15:37:21 - fileLogger - INFO - 设置显式等待时间: 10秒
+2025-04-23 15:37:21 - fileLogger - INFO - WebKeys实例初始化完成
+2025-04-23 15:37:21 - fileLogger - INFO - 打开URL: https://preview.haimeta.com/login
+2025-04-23 15:37:21 - fileLogger - INFO - URL打开成功: https://preview.haimeta.com/login
+2025-04-23 15:37:21 - fileLogger - INFO - 等待元素存在并输入: 1974440719@qq.com
+2025-04-23 15:37:21 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='first-email']
+2025-04-23 15:37:22 - fileLogger - INFO - 元素已可见: xpath=//input[@id='first-email']
+2025-04-23 15:37:22 - fileLogger - INFO - 输入文本: xpath=//input[@id='first-email'], 文本内容: 1974440719@qq.com
+2025-04-23 15:37:22 - fileLogger - INFO - 定位元素: xpath=//input[@id='first-email']
+2025-04-23 15:37:22 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='first-email']
+2025-04-23 15:37:22 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='first-email']
+2025-04-23 15:37:22 - fileLogger - INFO - 元素存在并已成功输入: 1974440719@qq.com
+2025-04-23 15:37:22 - fileLogger - INFO - 等待元素可见并点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:37:22 - fileLogger - INFO - 等待元素可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:37:22 - fileLogger - INFO - 元素已可见: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:37:22 - fileLogger - INFO - 点击元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:37:22 - fileLogger - INFO - 定位元素: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:37:22 - fileLogger - INFO - 元素定位成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:37:22 - fileLogger - INFO - 元素点击成功: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:37:22 - fileLogger - INFO - 元素可见并已成功点击: xpath=//div[@id='first-page']/form/div[2]/button
+2025-04-23 15:37:22 - fileLogger - INFO - 等待元素存在并输入: Tiejiayu666
+2025-04-23 15:37:22 - fileLogger - INFO - 等待元素可见: xpath=//input[@id='login-password']
+2025-04-23 15:37:23 - fileLogger - INFO - 元素已可见: xpath=//input[@id='login-password']
+2025-04-23 15:37:23 - fileLogger - INFO - 输入文本: xpath=//input[@id='login-password'], 文本内容: Tiejiayu666
+2025-04-23 15:37:23 - fileLogger - INFO - 定位元素: xpath=//input[@id='login-password']
+2025-04-23 15:37:23 - fileLogger - INFO - 元素定位成功: xpath=//input[@id='login-password']
+2025-04-23 15:37:23 - fileLogger - INFO - 文本输入成功: xpath=//input[@id='login-password']
+2025-04-23 15:37:23 - fileLogger - INFO - 元素存在并已成功输入: Tiejiayu666
+2025-04-23 15:37:23 - fileLogger - INFO - 等待元素可见并点击: xpath=//form[@class='login-form']/button
+2025-04-23 15:37:23 - fileLogger - INFO - 等待元素可见: xpath=//form[@class='login-form']/button
+2025-04-23 15:37:23 - fileLogger - INFO - 元素已可见: xpath=//form[@class='login-form']/button
+2025-04-23 15:37:23 - fileLogger - INFO - 点击元素: xpath=//form[@class='login-form']/button
+2025-04-23 15:37:23 - fileLogger - INFO - 定位元素: xpath=//form[@class='login-form']/button
+2025-04-23 15:37:23 - fileLogger - INFO - 元素定位成功: xpath=//form[@class='login-form']/button
+2025-04-23 15:37:23 - fileLogger - INFO - 元素点击成功: xpath=//form[@class='login-form']/button
+2025-04-23 15:37:23 - fileLogger - INFO - 元素可见并已成功点击: xpath=//form[@class='login-form']/button
+2025-04-23 15:37:23 - fileLogger - INFO - 移动到元素: xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:37:23 - fileLogger - INFO - 等待元素可见: xpath=//div[@class="avatar-wrap"]
+2025-04-23 15:37:34 - fileLogger - WARNING - 等待元素可见超时 (尝试 1/3): xpath=//div[@class="avatar-wrap"]

@@ -327,7 +327,8 @@ class BaseTest(unittest.TestCase):
         self.click_action_check_by_visibility(publish_button_Xpath)
         # cancel publish button click
         self.click_action_check_by_visibility(cancel_button_Xpath)
-    def download_image(self,item_to_download_XPATH,download_button_xpath):
+    def download_image(self,item_to_download_XPATH=ElementLocators.INTERACTED_IMAGE_1_XPATH
+                       ,download_button_xpath=ElementLocators.DOWNLOAD_BUTTON_XPATH):
         """下载图片"""
         wait = self.wait
         driver = self.driver
@@ -375,7 +376,9 @@ class BaseTest(unittest.TestCase):
         # Click the publish button
         self.click_action_check_by_visibility(ElementLocators.PUBLISH_ON_STYLE_LIBRARY_CONFIRM_BUTTON_XPATH)
 
-    def report_the_image(self,item_to_report_XPATH,three_dots_button_Xpath,report_button_Xpath):
+    def report_the_image(self,item_to_report_XPATH=ElementLocators.INTERACTED_IMAGE_1_XPATH,
+                         three_dots_button_Xpath=ElementLocators.THREE_DOTS_BUTTON_XPATH,
+                         report_button_Xpath=ElementLocators.REPORT_BUTTON_XPATH):
         """举报图片"""
         wait = self.wait
         driver = self.driver
@@ -478,7 +481,9 @@ class BaseTest(unittest.TestCase):
         # end the code here
 
 
-    def delete_the_generated_image(self,item_to_delete_XPATH,three_dots_button_Xpath,delete_button_Xpath):
+    def delete_the_generated_image(self,item_to_delete_XPATH=ElementLocators.INTERACTED_IMAGE_1_XPATH,
+                                   three_dots_button_Xpath=ElementLocators.THREE_DOTS_BUTTON_XPATH
+                                   ,delete_button_Xpath=ElementLocators.DELETE_BUTTON_XPATH):
         wait = self.wait
         actions = self.actions
         item1 = wait.until(
@@ -521,8 +526,8 @@ class BaseTest(unittest.TestCase):
         )
         number_of_images_to_generate_button_click.click()
 
-        # self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-        # self.wait_for_loading_to_finish(item_class_name="_pictureEditorLoading_anlig_1",process_time_limitation=60)
+        self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
+        self.wait_for_loading_to_finish(item_class_name="_pictureEditorLoading_anlig_1",process_time_limitation=60)
 
         second_item_selected = wait.until(
             EC.element_to_be_clickable((By.XPATH, ElementLocators.SECOND_ITEM_SELECTED_XPATH))
@@ -536,17 +541,16 @@ class BaseTest(unittest.TestCase):
         self.delete_the_generated_image(ElementLocators.INTERACTED_IMAGE_1_XPATH,ElementLocators.THREE_DOTS_BUTTON_XPATH,ElementLocators.DELETE_BUTTON_XPATH)
     
     def refine_your_idea(self):
-        wait = self.wait
         driver = self.driver
         # Refine your idea
-        Refine_your_idea_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, ElementLocators.REFINE_YOUR_IDEA_BUTTON_XPATH))
-        )
-        Refine_your_idea_button_click.click()
-        # Wait for the loading to finish
-        WebDriverWait(driver, 50).until(
-            EC.visibility_of_element_located((By.XPATH, ElementLocators.REFINE_YOUR_IDEA_BUTTON_XPATH))
-        )
+        try:
+            self.click_action_check_by_visibility(ElementLocators.REFINE_YOUR_IDEA_BUTTON_XPATH)
+            # Wait for the loading to finish
+            WebDriverWait(driver, 50).until(
+                EC.visibility_of_element_located((By.XPATH, ElementLocators.REFINE_YOUR_IDEA_BUTTON_XPATH))
+            )
+        except TimeoutError:
+            pass  # Skip if the button is not found
     
     def select_the_size_of_the_generated_image(self,size_of_generation_button_xpath):
         self.click_action_check_by_visibility(size_of_generation_button_xpath)

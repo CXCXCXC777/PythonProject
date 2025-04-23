@@ -10,7 +10,7 @@ def options():
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--start-maximized')
         # 修改用户数据目录的路径格式
-        chrome_options.add_argument('--user-data-dir=D:\\ChromeUserData')  # 使用双反斜杠
+        chrome_options.add_argument(r'--user-data-dir=E:\User Data')
         # 添加一些常用的选项来提高稳定性
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')

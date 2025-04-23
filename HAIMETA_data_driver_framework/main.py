@@ -5,17 +5,19 @@ from HAIMETA_data_driver_framework.config.email_sender import EmailSender
 
 if __name__ == '__main__':
     cases = []
-    # test_data_path = r'D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\test_data'
     test_data_path = './test_data'
 
     for path, dirs, files in os.walk(test_data_path):
         for file in files:
             file_name, file_ext = os.path.splitext(file)  # 分离文件名和扩展名
             # 排除临时文件和特定标记的文件
-            if file_ext == '.xlsx' and not (file_name.startswith('~$') or '_P' in file_name):
-                # 添加完整的文件路径，包括扩展名
-                full_path = os.path.join(test_data_path, file)
-                cases.append(full_path)
+            if file_ext == '.xlsx' and not file_name.startswith('~$'):
+                if '_P' in file_name:
+                    print(f'current file is pending: {file}')
+                else:
+                    # 添加完整的文件路径，包括扩展名
+                    full_path = os.path.join(test_data_path, file)
+                    cases.append(full_path)
             else:
                 print(f'Current file is not a excel file: {file}')
     

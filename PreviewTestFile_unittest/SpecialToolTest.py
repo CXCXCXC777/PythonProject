@@ -8,8 +8,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 class Special_Tool_Test(BaseTest):
     def test_create_as_you_like(self):
-        wait=self.wait
-        actions=self.actions
         self.open_the_certain_function(ElementLocators.BUZZ_SECTION_BUTTON_XPATH,ElementLocators.CREATE_AS_YOU_LIKE_UNDER_BUZZ_BUTTON_XPATH)
 
         self.input_prompt_box_XPATH(ElementLocators.INPUT_PROMPT_BOX_XPATH, "a beautiful girl")
@@ -59,7 +57,7 @@ class Special_Tool_Test(BaseTest):
         wait= self.wait
         actions= self.actions
         self.open_the_certain_function(ElementLocators.WORK_SECTION_BUTTON_XPATH,ElementLocators.CREATE_CLOTHES_BUTTON_UNDER_WORK_SECTION)
-        self.input_prompt_box_XPATH(ElementLocators.INPUT_PROMPT_BOX_XPATH, "A big and cut lion")
+        self.input_prompt_box_XPATH(ElementLocators.INPUT_PROMPT_BOX_XPATH, "A big and cute lion")
         self.refine_your_idea()
         self.click_action_check_by_visibility(ElementLocators.STYLE_CHOICE_BUTTON_XPATH)
 
@@ -115,8 +113,7 @@ class Special_Tool_Test(BaseTest):
        actions.move_to_element(start_training_click).double_click().perform()
 
        # 退出训练
-       driver.find_element(By.XPATH, "//i[@class='ic_close iconfont']").click()
-       
+       self.click_action_check_by_visibility(ElementLocators.CLOSE_WINDOWS_BUTTON_XPATH)
         # set the style for the pet
        self.click_action_check_by_visibility(ElementLocators.STYLE_CHOICE_BUTTON_XPATH)
 

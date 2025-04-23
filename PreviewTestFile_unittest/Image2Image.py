@@ -61,14 +61,8 @@ class Image2ImageTest(BaseTest):
                                         ElementLocators.THREE_DOTS_BUTTON_XPATH, ElementLocators.DELETE_BUTTON_XPATH)
 
     def common_step_for_I2I_personal_avatar(self, section_for_this_button_xpath,button_xpath,upload_image_absolute_path):
-        driver = self.driver
-        wait = self.wait
-        actions = self.actions
         self.open_the_certain_function(section_for_this_button_xpath,button_xpath)
-
-
         self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH, upload_image_absolute_path)
-
         # choose the style
         self.click_action_check_by_visibility(ElementLocators.STYLE_CHOICE_BUTTON_XPATH)
         # Select the number of images to generate
@@ -86,19 +80,12 @@ class Image2ImageTest(BaseTest):
         self.delete_the_generated_image(ElementLocators.INTERACTED_IMAGE_1_XPATH,ElementLocators.THREE_DOTS_BUTTON_XPATH, ElementLocators.DELETE_BUTTON_XPATH)
 
     def common_step_for_I2I_home_design(self, section_for_this_button_xpath,button_xpath,upload_image_absolute_path,style_choice):
-        driver = self.driver
-        wait = self.wait
-        actions = self.actions
         self.open_the_certain_function(section_for_this_button_xpath, button_xpath)
 
 
         self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH, upload_image_absolute_path)
 
         # choose the style
-        style_choice_button_click = wait.until(
-            EC.visibility_of_element_located((By.XPATH, style_choice))
-        )
-        style_choice_button_click.click()
         self.click_action_check_by_visibility(style_choice)
 
         # Select the number of images to generate

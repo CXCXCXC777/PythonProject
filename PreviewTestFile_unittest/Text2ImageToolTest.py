@@ -18,6 +18,7 @@ class Text2Image_Test(BaseTest):
 
         self.input_prompt_box_XPATH(ElementLocators.INPUT_PROMPT_BOX_XPATH, " blue sky")
 
+        self.refine_your_idea()
         # Refine your idea
         try:
             self.click_action_check_by_visibility(ElementLocators.REFINE_YOUR_IDEA_BUTTON_XPATH)
@@ -56,8 +57,6 @@ class Text2Image_Test(BaseTest):
         self.click_action_check_by_visibility(ElementLocators.STYLE_CHOICE_BUTTON_XPATH)
         # Select the size of generation 
         self.click_action_check_by_visibility(ElementLocators.SIZE_OF_GENERATION_BUTTON_XPATH)
-
-
         # Select the number of images to generate
         self.click_action_check_by_visibility(ElementLocators.NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH)
         # self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)

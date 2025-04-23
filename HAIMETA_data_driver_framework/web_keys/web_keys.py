@@ -244,35 +244,50 @@ class WebKeys:
         time.sleep(5)
         log.info("等待完成")
 
-    def wait_visible(self, by, value):
+    def wait_visible(self, by, value, max_retries=3, retry_interval=1):
         log.info(f"等待元素可见: {by}={value}")
-        try:
-            element = self.wait.until(EC.visibility_of_element_located((by, value)))
-            log.info(f"元素已可见: {by}={value}")
-            return element
-        except Exception as e:
-            log.error(f"等待元素可见超时: {by}={value}, 错误: {str(e)}")
-            raise
-    
-    def wait_presence(self, by, value):
-        log.info(f"等待元素存在: {by}={value}")
-        try:
-            element = self.wait.until(EC.presence_of_element_located((by, value)))
-            log.info(f"元素已存在: {by}={value}")
-            return element
-        except Exception as e:
-            log.error(f"等待元素存在超时: {by}={value}, 错误: {str(e)}")
-            raise
+        for attempt in range(max_retries):
+            try:
+                element = self.wait.until(EC.visibility_of_element_located((by, value)))
+                log.info(f"元素已可见: {by}={value}")
+                return element
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    log.warning(f"等待元素可见超时 (尝试 {attempt + 1}/{max_retries}): {by}={value}")
+                    time.sleep(retry_interval)
+                else:
+                    log.error(f"等待元素可见最终超时: {by}={value}, 错误: {str(e)}")
+                    return None
 
-    def wait_clickable(self, by, value):
+    def wait_presence(self, by, value, max_retries=3, retry_interval=1):
+        log.info(f"等待元素存在: {by}={value}")
+        for attempt in range(max_retries):
+            try:
+                element = self.wait.until(EC.presence_of_element_located((by, value)))
+                log.info(f"元素已存在: {by}={value}")
+                return element
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    log.warning(f"等待元素存在超时 (尝试 {attempt + 1}/{max_retries}): {by}={value}")
+                    time.sleep(retry_interval)
+                else:
+                    log.error(f"等待元素存在最终超时: {by}={value}, 错误: {str(e)}")
+                    return None
+
+    def wait_clickable(self, by, value, max_retries=3, retry_interval=1):
         log.info(f"等待元素可点击: {by}={value}")
-        try:
-            element = self.wait.until(EC.element_to_be_clickable((by, value)))
-            log.info(f"元素已可点击: {by}={value}")
-            return element
-        except Exception as e:
-            log.error(f"等待元素可点击超时: {by}={value}, 错误: {str(e)}")
-            raise
+        for attempt in range(max_retries):
+            try:
+                element = self.wait.until(EC.element_to_be_clickable((by, value)))
+                log.info(f"元素已可点击: {by}={value}")
+                return element
+            except Exception as e:
+                if attempt < max_retries - 1:
+                    log.warning(f"等待元素可点击超时 (尝试 {attempt + 1}/{max_retries}): {by}={value}")
+                    time.sleep(retry_interval)
+                else:
+                    log.error(f"等待元素可点击最终超时: {by}={value}, 错误: {str(e)}")
+                    return None
 
     def wait_invisibility(self, by, value):
         log.info(f"等待元素不可见: {by}={value}")
@@ -282,7 +297,7 @@ class WebKeys:
             return result
         except Exception as e:
             log.error(f"等待元素不可见超时: {by}={value}, 错误: {str(e)}")
-            raise
+            return None
 
     def move_to_element(self, by, value):
         log.info(f"移动到元素: {by}={value}")
@@ -292,7 +307,7 @@ class WebKeys:
             log.info(f"已成功移动到元素: {by}={value}")
         except Exception as e:
             log.error(f"移动到元素失败: {by}={value}, 错误: {str(e)}")
-            raise
+            return False
     
     def get_text(self, by, value):
         log.info(f"获取元素文本: {by}={value}")
@@ -302,7 +317,7 @@ class WebKeys:
             return text
         except Exception as e:
             log.error(f"获取元素文本失败: {by}={value}, 错误: {str(e)}")
-            raise
+            return False
 
     
     def assert_text(self, by, value, expected):
@@ -428,7 +443,7 @@ class WebKeys:
         log.info(f"移动到元素: {by}={value}")
         try:
             self.wait_visible(by, value)
-            self.action.move_to_element(self.locator(by, value)).perform()
+            self.action.move_to_element(self.locator(by, value)).pause(2).perform()
         except Exception as e:
             traceback.print_exc()
             return False, f"发生未预期的错误: {str(e)}"
@@ -584,16 +599,15 @@ class WebKeys:
         # cancel publish button click
         self.click_visible('xpath',cancel_button_Xpath)
 
-    def download_image(self, item_to_download_XPATH, download_button_xpath):
+    def download_image(self, item_to_download_XPATH=ElementLocators.INTERACTED_IMAGE_1_XPATH
+                       , download_button_xpath=ElementLocators.DOWNLOAD_BUTTON_XPATH):
         """下载图片"""
         driver = self.driver
         actions = self.action
         self.wait_visible('xpath', item_to_download_XPATH)
-
         actions.move_to_element(
             driver.find_element(By.XPATH, item_to_download_XPATH)
         ).pause(3).perform()
-
         self.click_visible('xpath',download_button_xpath)
 
     def publish_on_style_library(self, item_to_publish_XPATH):
@@ -623,12 +637,13 @@ class WebKeys:
         # Click the publish button
         self.click_action_check_by_visibility(ElementLocators.PUBLISH_ON_STYLE_LIBRARY_CONFIRM_BUTTON_XPATH)
 
-    def report_the_image(self, item_to_report_XPATH, three_dots_button_Xpath, report_button_Xpath):
+    def report_the_image(self, item_to_report_XPATH=ElementLocators.INTERACTED_IMAGE_1_XPATH,
+                         three_dots_button_Xpath=ElementLocators.THREE_DOTS_BUTTON_XPATH,
+                         report_button_Xpath=ElementLocators.REPORT_BUTTON_XPATH):
         """举报图片"""
         wait = self.wait
-        driver = self.driver
         actions = self.action
-        self.Hover_to_the_button('xpath', three_dots_button_Xpath)
+        self.Hover_to_the_button('xpath', item_to_report_XPATH)
         # click three dots button
         three_dots_button_click = wait.until(
             EC.element_to_be_clickable(
@@ -638,7 +653,6 @@ class WebKeys:
         actions.move_to_element(
             three_dots_button_click
         ).click().perform()
-
         # click report button
         self.click_action_check_by_element_to_be_clickable(report_button_Xpath)
 
@@ -666,7 +680,6 @@ class WebKeys:
         upload_button = wait.until(
             EC.presence_of_element_located((By.XPATH, upload_way_XPATH))
         )
-
         # 处理多图片上传
         if isinstance(upload_image_paths, (list, tuple)):
             # 将多个路径用 \n 连接，Selenium会将其识别为多文件上传
@@ -725,8 +738,9 @@ class WebKeys:
         # can not locate th save button after adjusting the position of the generated image
         # end the code here
 
-    def delete_the_generated_image(self, item_to_delete_XPATH, three_dots_button_Xpath, delete_button_Xpath):
-        wait = self.wait
+    def delete_the_generated_image(self, item_to_delete_XPATH=ElementLocators.INTERACTED_IMAGE_1_XPATH,
+                                   three_dots_button_Xpath=ElementLocators.THREE_DOTS_BUTTON_XPATH
+                                   , delete_button_Xpath=ElementLocators.DELETE_BUTTON_XPATH):
         actions = self.action
         item1 = self.wait_visible('xpath',item_to_delete_XPATH)
         actions.move_to_element(item1).pause(3).perform()

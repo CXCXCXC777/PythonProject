@@ -226,7 +226,7 @@ class ElementLocators:
     SWITCH_TASK_T2I_XPATH="//div[@class='picture-editor-radio-group']/div[1]"
 
     DELETE_BUTTON_HISTORY_LIST_XPATH="//div[@class='handle-btn']/button[2]"
-    DELETE_SUCCESS_MESSAGE_XPATH="//div[@class='ant-message-notice-content']/div/span[2]"
+    DELETE_SUCCESS_MESSAGE_XPATH="//div[@class='ant-message-notice-content']//span"
     # Configuration
     LOGIN_URL = "https://preview.haimeta.com/login"
     HOME_URL = "https://preview.haimeta.com/"
