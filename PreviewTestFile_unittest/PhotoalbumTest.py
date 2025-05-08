@@ -13,18 +13,8 @@ class Photo_Album_Test(BaseTest):
         self.open_the_certain_function(ElementLocators.PHOTO_ALBUM_SECTION_BUTTON_XPATH,ElementLocators.ID_PHOTO_BUTTON_XPATH)
         self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH,ElementLocators.TEST_FEMALE_PHOTO)
         self.choose_style_skin_texture_of_generated_image(ElementLocators.STYLE_CHOICE_BUTTON_XPATH,ElementLocators.INPUT_SKIN_TEXTURE)
-        self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-        self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME,process_time_limitation=50)
-
-        second_item_selected = wait.until(
-            EC.visibility_of_element_located((By.XPATH, ElementLocators.SECOND_ITEM_SELECTED_XPATH))
-        )
-        actions.move_to_element(second_item_selected).click().perform()
-
-        #interact with the generated images
-        self.download_image(ElementLocators.INTERACTED_IMAGE_1_XPATH,ElementLocators.DOWNLOAD_BUTTON_XPATH)
-        self.publish_on_haimeta_community(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.PUBLISH_BUTTON_XPATH , ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY, ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY)
-        self.report_the_image(ElementLocators.INTERACTED_IMAGE_1_XPATH,ElementLocators.THREE_DOTS_BUTTON_XPATH,ElementLocators.REPORT_BUTTON_XPATH)
+        self.start_creation()
+        self.interact_with_the_generated_image()
         
         # Set up the Size of the generated image
         self.set_up_the_size_of_the_generated_image(ElementLocators.SET_SIZE_BUTTON_XPATH,ElementLocators.INS_SIZE_BUTTON_XPATH)

@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 from Preview_config import ElementLocators
+from webdriver_manager.chrome import ChromeDriverManager
 
 class BaseTest(unittest.TestCase):
     @classmethod
@@ -20,7 +21,7 @@ class BaseTest(unittest.TestCase):
         options.add_argument('--start-maximized')
         options.add_argument(r'--user-data-dir=E:\User Data') #加载本地文件
         options.add_experimental_option('excludeSwitches',["enable-logging","enable-automation"])
-        cls.driver = webdriver.Chrome(service=service,options=options)
+        cls.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options)
         cls.wait = WebDriverWait(cls.driver, 9)  # 增加默认等待时间
         cls.actions = ActionChains(cls.driver)
         # 先访问首页检查是否已登录
@@ -65,7 +66,6 @@ class BaseTest(unittest.TestCase):
         try:
             # 等待页面加载完成
             wait.until(lambda driver: driver.execute_script('return document.readyState') == 'complete')
-
             def input_and_click(input_xpath, input_data, click_xpath):
                 wait = cls.wait
                 input_box = wait.until(
@@ -78,7 +78,6 @@ class BaseTest(unittest.TestCase):
                     EC.element_to_be_clickable((By.XPATH, click_xpath))
                 )
                 click_button.click()
-
             # 等待邮箱输入框可见并可交互
             input_and_click(ElementLocators.EMAIL_INPUT_XPATH,ElementLocators.VALID_EMAIL_ACCOUNT,ElementLocators.CONTINUE_BUTTON_XPATH)
             # 等待密码输入框出现并可交互
@@ -306,7 +305,6 @@ class BaseTest(unittest.TestCase):
         self.click_action_check_by_visibility(publish_button_Xpath)
         # Publish on HAIMETA community
         self.click_action_check_by_visibility(publish_on_community_Xpath)
-        
         # Input the title
         title_input = wait.until(
             EC.visibility_of_element_located((By.XPATH, ElementLocators.TITLE_INPUT_XPATH))
@@ -439,7 +437,7 @@ class BaseTest(unittest.TestCase):
         # Choose the style of generated image
         self.click_action_check_by_visibility(style_selection_XPATH)
         # Input the SKIN TEXTURE
-        skin_texture_input= self.click_action_check_by_visibility(skin_texture_input_XPATH)
+        skin_texture_input= self.click_action_check_by_presence(skin_texture_input_XPATH)
         skin_texture_input.send_keys(Keys.CONTROL + "a")  # 全选文本
         skin_texture_input.send_keys(Keys.BACKSPACE)  # 删除选中的文本
         skin_texture_input.send_keys("0.67")
@@ -517,7 +515,6 @@ class BaseTest(unittest.TestCase):
 
     def interact_with_single_photo_album(self):
         wait = self.wait
-        actions = self.actions
         self.choose_style_skin_texture_of_generated_image(ElementLocators.STYLE_CHOICE_BUTTON_XPATH, ElementLocators.INPUT_SKIN_TEXTURE)
 
         # set the number of images to generate
@@ -526,14 +523,8 @@ class BaseTest(unittest.TestCase):
         )
         number_of_images_to_generate_button_click.click()
 
-        self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-        self.wait_for_loading_to_finish(item_class_name="_pictureEditorLoading_anlig_1",process_time_limitation=60)
-
-        second_item_selected = wait.until(
-            EC.element_to_be_clickable((By.XPATH, ElementLocators.SECOND_ITEM_SELECTED_XPATH))
-        )
-        actions.move_to_element(second_item_selected).double_click().perform()
-
+        self.start_creation()
+        self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
         #interact with the generated images
         self.download_image(ElementLocators.INTERACTED_IMAGE_1_XPATH,ElementLocators.DOWNLOAD_BUTTON_XPATH)
         self.publish_on_haimeta_community(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.PUBLISH_BUTTON_XPATH, ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY, ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY)
@@ -555,10 +546,10 @@ class BaseTest(unittest.TestCase):
     def select_the_size_of_the_generated_image(self,size_of_generation_button_xpath):
         self.click_action_check_by_visibility(size_of_generation_button_xpath)
 
-    def input_prompt_box_XPATH(self, input_prompt_box_class_name, input_prompt_box_input_data):
+    def input_prompt(self, input_prompt_box_input_data):
         wait = self.wait
         Input_prompt_box = wait.until(
-            EC.presence_of_element_located((By.XPATH, input_prompt_box_class_name))
+            EC.presence_of_element_located((By.XPATH, ElementLocators.INPUT_PROMPT_BOX_XPATH))
         )
         Input_prompt_box.click()
         Input_prompt_box.send_keys(input_prompt_box_input_data)
@@ -581,6 +572,7 @@ class BaseTest(unittest.TestCase):
             EC.presence_of_element_located((By.XPATH, action_button_xpath))
         )
         action_button_click.click()
+        return action_button_click
 
     def click_action_check_by_element_to_be_clickable(self,action_button_xpath):
         wait = self.wait
@@ -588,6 +580,7 @@ class BaseTest(unittest.TestCase):
             EC.element_to_be_clickable((By.XPATH, action_button_xpath))
         )
         action_button_click.click()
+        return action_button_click
 
     def interact_with_the_second_item_selected(self,item_xpath):
         wait = self.wait
@@ -611,3 +604,50 @@ class BaseTest(unittest.TestCase):
         wait.until(EC.element_to_be_clickable((By.XPATH, input_xpath)))
         input_box.clear()
         input_box.send_keys(input_data)
+
+    def start_creation(self):
+        self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
+        # Wait for the loading to finish
+        self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME, process_time_limitation=60)
+
+    def interact_with_the_generated_image(self):
+        self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
+        self.download_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.DOWNLOAD_BUTTON_XPATH)
+        self.publish_on_haimeta_community(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.PUBLISH_BUTTON_XPATH,
+                                          ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY,
+                                          ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY)
+        self.report_the_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.THREE_DOTS_BUTTON_XPATH, ElementLocators.REPORT_BUTTON_XPATH)
+        self.delete_the_generated_image(
+            ElementLocators.INTERACTED_IMAGE_1_XPATH,
+            ElementLocators.THREE_DOTS_BUTTON_XPATH , ElementLocators.DELETE_BUTTON_XPATH )
+    def interact_with_the_generated_create_clothes_image(self):
+        actions=self.actions
+        wait=self.wait
+        self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
+        # Download the image
+        self.download_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.DOWNLOAD_BUTTON_XPATH)
+        # Publish the image
+        self.publish_on_haimeta_community(ElementLocators.INTERACTED_IMAGE_1_XPATH,
+                                          ElementLocators.PUBLISH_BUTTON_XPATH,
+                                          ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY,
+                                          ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY)
+        # Report the image
+        self.report_the_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.THREE_DOTS_BUTTON_XPATH,
+                              ElementLocators.REPORT_BUTTON_XPATH)
+
+        # Download Pattern
+        download_pattern_button_click = wait.until(
+            EC.element_to_be_clickable((By.XPATH, ElementLocators.DOWNLOAD_PATTERN_BUTTON_XPATH))
+        )
+        actions.move_to_element(download_pattern_button_click).double_click().perform()
+
+    def interact_with_the_generated_without_deletion(self):
+        self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
+        # interact with the generated images
+        self.download_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.DOWNLOAD_BUTTON_XPATH)
+        self.publish_on_haimeta_community(ElementLocators.INTERACTED_IMAGE_1_XPATH,
+                                          ElementLocators.PUBLISH_BUTTON_XPATH,
+                                          ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY,
+                                          ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY)
+        self.report_the_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.THREE_DOTS_BUTTON_XPATH,
+                              ElementLocators.REPORT_BUTTON_XPATH)

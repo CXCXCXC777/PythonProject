@@ -1,6 +1,6 @@
 import traceback
 
-from selenium.common import TimeoutException
+from selenium.common import TimeoutException, ElementNotInteractableException
 from selenium.webdriver import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -15,6 +15,8 @@ import email
 import re
 import time
 from HAIMETA_data_driver_framework.config.get_logger import get_logger
+from webdriver_manager.chrome import ChromeDriverManager
+
 
 log=get_logger()
 
@@ -24,7 +26,7 @@ def open_browser(type_):
     try:
         if type_ == "chrome":
             chrom_service = Service(r'D:\PycharmProjects\PythonProject\HAIMETA_data_driver_framework\config\chromedriver.exe')
-            driver = webdriver.Chrome(service=chrom_service, options=chrome_options())
+            driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options())
             log.info("Chrome浏览器已成功启动")
         else:
             log.info(f"尝试启动{type_}浏览器")
@@ -193,23 +195,47 @@ class WebKeys:
         self.action=ActionChains(self.driver)
         log.info("WebKeys实例初始化完成")
 
-    def click(self, by, value):
-        log.info(f"点击元素: {by}={value}")
-        try:
-            self.locator(by,value).click()
-            log.info(f"元素点击成功: {by}={value}")
-        except Exception as e:
-            log.error(f"元素点击失败: {by}={value}, 错误: {str(e)}")
-            raise
+    def click(self, by, value, retry_times=3, retry_interval=1):
+        log.info(f"点击元素: {by}={value}, 最大重试次数: {retry_times}")
+        last_exception = None
+        for attempt in range(retry_times):
+            try:
+                element = self.locator(by, value)
+                if not element.is_displayed() or not element.is_enabled():
+                    raise ElementNotInteractableException(f"元素不可交互: {by}={value}")
+                element.click()
+                log.info(f"元素点击成功: {by}={value}")
+                return True
+            except Exception as e:
+                last_exception = e
+                if attempt < retry_times - 1:
+                    log.warning(f"点击元素失败: {by}={value}, 重试第{attempt + 1}次, 错误: {str(e)}")
+                    time.sleep(retry_interval)
+                    continue
+        log.error(f"元素点击最终失败: {by}={value}, 已重试{retry_times}次, 最后一次错误: {str(last_exception)}")
+        raise last_exception
 
-    def input(self,by, value, text):
-        log.info(f"输入文本: {by}={value}, 文本内容: {text}")
-        try:
-            self.locator(by,value).send_keys(text)
-            log.info(f"文本输入成功: {by}={value}")
-        except Exception as e:
-            log.error(f"文本输入失败: {by}={value}, 错误: {str(e)}")
-            raise
+    def input(self, by, value, text, retry_times=3, retry_interval=1, clear_first=True):
+        log.info(f"输入文本: {by}={value}, 文本内容: {text}, 最大重试次数: {retry_times}")
+        last_exception = None
+        for attempt in range(retry_times):
+            try:
+                element = self.locator(by, value)
+                if not element.is_displayed() or not element.is_enabled():
+                    raise ElementNotInteractableException(f"元素不可交互: {by}={value}")
+                if clear_first:
+                    element.clear()
+                element.send_keys(text)
+                log.info(f"文本输入成功: {by}={value}")
+                return True
+            except Exception as e:
+                last_exception = e
+                if attempt < retry_times - 1:
+                    log.warning(f"文本输入失败: {by}={value}, 重试第{attempt + 1}次, 错误: {str(e)}")
+                    time.sleep(retry_interval)
+                    continue
+        log.error(f"文本输入最终失败: {by}={value}, 已重试{retry_times}次, 最后一次错误: {str(last_exception)}")
+        raise last_exception
     
     def open(self, url):
         log.info(f"打开URL: {url}")
@@ -239,55 +265,40 @@ class WebKeys:
             log.error(f"关闭浏览器失败: {str(e)}")
             raise
 
-    def wait_sleep(self):
-        log.info("等待2秒")
-        time.sleep(5)
+    def wait_sleep(self, seconds=2):
+        log.info(f"等待{seconds}秒")
+        time.sleep(seconds)
         log.info("等待完成")
 
-    def wait_visible(self, by, value, max_retries=3, retry_interval=1):
+    def wait_visible(self, by, value):
         log.info(f"等待元素可见: {by}={value}")
-        for attempt in range(max_retries):
-            try:
-                element = self.wait.until(EC.visibility_of_element_located((by, value)))
-                log.info(f"元素已可见: {by}={value}")
-                return element
-            except Exception as e:
-                if attempt < max_retries - 1:
-                    log.warning(f"等待元素可见超时 (尝试 {attempt + 1}/{max_retries}): {by}={value}")
-                    time.sleep(retry_interval)
-                else:
-                    log.error(f"等待元素可见最终超时: {by}={value}, 错误: {str(e)}")
-                    return None
+        try:
+            element = self.wait.until(EC.visibility_of_element_located((by, value)))
+            log.info(f"元素已可见: {by}={value}")
+            return element
+        except Exception as e:
+            log.error(f"等待元素可见超时: {by}={value}, 错误: {str(e)}")
+            return None
 
-    def wait_presence(self, by, value, max_retries=3, retry_interval=1):
+    def wait_presence(self, by, value):
         log.info(f"等待元素存在: {by}={value}")
-        for attempt in range(max_retries):
-            try:
-                element = self.wait.until(EC.presence_of_element_located((by, value)))
-                log.info(f"元素已存在: {by}={value}")
-                return element
-            except Exception as e:
-                if attempt < max_retries - 1:
-                    log.warning(f"等待元素存在超时 (尝试 {attempt + 1}/{max_retries}): {by}={value}")
-                    time.sleep(retry_interval)
-                else:
-                    log.error(f"等待元素存在最终超时: {by}={value}, 错误: {str(e)}")
-                    return None
+        try:
+            element = self.wait.until(EC.presence_of_element_located((by, value)))
+            log.info(f"元素已存在: {by}={value}")
+            return element
+        except Exception as e:
+            log.error(f"等待元素存在超时: {by}={value}, 错误: {str(e)}")
+            return None
 
-    def wait_clickable(self, by, value, max_retries=3, retry_interval=1):
+    def wait_clickable(self, by, value):
         log.info(f"等待元素可点击: {by}={value}")
-        for attempt in range(max_retries):
-            try:
-                element = self.wait.until(EC.element_to_be_clickable((by, value)))
-                log.info(f"元素已可点击: {by}={value}")
-                return element
-            except Exception as e:
-                if attempt < max_retries - 1:
-                    log.warning(f"等待元素可点击超时 (尝试 {attempt + 1}/{max_retries}): {by}={value}")
-                    time.sleep(retry_interval)
-                else:
-                    log.error(f"等待元素可点击最终超时: {by}={value}, 错误: {str(e)}")
-                    return None
+        try:
+            element = self.wait.until(EC.element_to_be_clickable((by, value)))
+            log.info(f"元素已可点击: {by}={value}")
+            return element
+        except Exception as e:
+            log.error(f"等待元素可点击超时: {by}={value}, 错误: {str(e)}")
+            return None
 
     def wait_invisibility(self, by, value):
         log.info(f"等待元素不可见: {by}={value}")
@@ -517,7 +528,7 @@ class WebKeys:
     def open_the_certain_function(self,section_xpath,button_xpath):
         driver = self.driver
         wait = self.wait
-        self.open(self.HOME_URL)
+        self.open(ElementLocators.HOME_URL)
         self.click_visible('xpath',section_xpath)
         time.sleep(2)
         function_button_click = self.wait_visible('xpath',button_xpath)
@@ -757,9 +768,7 @@ class WebKeys:
         # set the number of images to generate
         self.click_clickable('xpath',ElementLocators.NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH)
 
-        self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-        self.wait_for_loading_to_finish(item_class_name=ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME,process_time_limitation=60)
-
+        self.start_creation()
         self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
 
         # interact with the generated images
@@ -786,10 +795,10 @@ class WebKeys:
     def select_the_size_of_the_generated_image(self, size_of_generation_button_xpath):
         self.click_action_check_by_visibility(size_of_generation_button_xpath)
 
-    def input_prompt_box_CLASS_NAME(self, input_prompt_box_class_name, input_prompt_box_input_data):
+    def input_prompt_box_CLASS_NAME(self, input_prompt_box_input_data):
         wait = self.wait
         Input_prompt_box = wait.until(
-            EC.presence_of_element_located((By.CLASS_NAME, input_prompt_box_class_name))
+            EC.presence_of_element_located((By.CLASS_NAME, ElementLocators.INPUT_PROMPT_BOX_XPATH))
         )
         Input_prompt_box.click()
         Input_prompt_box.send_keys(input_prompt_box_input_data)
@@ -814,9 +823,24 @@ class WebKeys:
     def thirdparty_switch(self):
         wait = self.wait
         driver = self.driver
+
         wait.until(EC.number_of_windows_to_be(2))
         driver.switch_to.window(driver.window_handles[-1])
 
+    def switch_to_previous_window(self):
+        """
+        切换回上一个窗口
+        """
+        log.info("尝试切换回上一个窗口")
+        try:
+            self.driver.switch_to.window(self.driver.window_handles[0])
+            log.info("成功切换回上一个窗口")
+            return True
+        except Exception as e:
+            log.error(f"切换回上一个窗口失败: {str(e)}")
+            log.error(traceback.format_exc())
+            return False
+    
     def input_invalid_format_email(self):
         # **测试的非邮箱格式**
         invalid_emails = ElementLocators.invalid_email_list
@@ -885,3 +909,9 @@ class WebKeys:
     def switch_to_default_content(self):
         driver=self.driver
         driver.switch_to.default_content()
+
+    def start_creation(self):
+        self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
+        # Wait for the loading to finish
+        self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME, process_time_limitation=60)
+

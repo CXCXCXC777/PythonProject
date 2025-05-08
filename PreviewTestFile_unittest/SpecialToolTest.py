@@ -1,16 +1,14 @@
 from BaseTest import BaseTest
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC, wait
-from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support import expected_conditions as EC
 from Preview_config import ElementLocators
-import time
-from selenium.webdriver.support.ui import WebDriverWait
+
 
 class Special_Tool_Test(BaseTest):
     def test_create_as_you_like(self):
-        self.open_the_certain_function(ElementLocators.BUZZ_SECTION_BUTTON_XPATH,ElementLocators.CREATE_AS_YOU_LIKE_UNDER_BUZZ_BUTTON_XPATH)
+        self.open_the_certain_function(ElementLocators.BUZZ_SECTION_BUTTON_XPATH, ElementLocators.CREATE_AS_YOU_LIKE_UNDER_BUZZ_SECTION_XPATH)
 
-        self.input_prompt_box_XPATH(ElementLocators.INPUT_PROMPT_BOX_XPATH, "a beautiful girl")
+        self.input_prompt("a BIG volcano")
         self.refine_your_idea()
 
         self.select_the_size_of_the_generated_image(ElementLocators.SIZE_OF_GENERATION_BUTTON_XPATH)
@@ -18,9 +16,7 @@ class Special_Tool_Test(BaseTest):
         # Select the number of images to generate
         self.set_number_of_images_to_generate(ElementLocators.NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH)
         # Click the generate button
-        # self.click_create_button_class_name(ElementLocators.CREATE_BUTTON_XPATH)
-        # # Wait for the loading to finish
-        # self.wait_for_loading_to_finish(item_class_name="_pictureEditorLoading_anlig_1",process_time_limitation=30)
+        self.start_creation()
 
         self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
         # Interact with the generated images
@@ -57,28 +53,18 @@ class Special_Tool_Test(BaseTest):
         wait= self.wait
         actions= self.actions
         self.open_the_certain_function(ElementLocators.WORK_SECTION_BUTTON_XPATH,ElementLocators.CREATE_CLOTHES_BUTTON_UNDER_WORK_SECTION)
-        self.input_prompt_box_XPATH(ElementLocators.INPUT_PROMPT_BOX_XPATH, "A big and cute lion")
+        self.input_prompt("A big and cute lion")
         self.refine_your_idea()
+        # select the pattern style
         self.click_action_check_by_visibility(ElementLocators.STYLE_CHOICE_BUTTON_XPATH)
 
-        # Click the generate button
-        # self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-        # # Wait for the loading to finish
-        # self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME,process_time_limitation=50)
-        #interact with the generated images
-        self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
-        # Download the image
-        self.download_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.DOWNLOAD_BUTTON_XPATH)
-        # Publish the image
-        self.publish_on_haimeta_community(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.PUBLISH_BUTTON_XPATH, ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY, ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY)
-        # Report the image
-        # self.report_the_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.THREE_DOTS_BUTTON_XPATH, ElementLocators.REPORT_BUTTON_XPATH)
+        # select the clothing style
+        self.click_action_check_by_presence(ElementLocators.CLOTHING_STYLE_BUTTON_XPATH)
 
-        # Download Pattern
-        download_pattern_button_click = wait.until(
-            EC.element_to_be_clickable((By.XPATH, ElementLocators.DOWNLOAD_PATTERN_BUTTON_XPATH))
-        )
-        actions.move_to_element(download_pattern_button_click).double_click().perform()
+        # Click the generate button
+        self.start_creation()
+        #interact with the generated images
+        self.interact_with_the_generated_create_clothes_image()
 
         # test image 2 image
         add_new_item_button_click = wait.until(
@@ -91,16 +77,12 @@ class Special_Tool_Test(BaseTest):
 
         #upload image
         self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH, ElementLocators.TEST_IMAGE)
-        
-        self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-        # Wait for the loading to finish
-        self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME,process_time_limitation=30)
-
+        # chose the clothing style
+        self.click_action_check_by_visibility(ElementLocators.STYLE_CHOICE_BUTTON_XPATH)
+        self.start_creation()
+        self.interact_with_the_generated_image()
 
     def test_style_your_pet(self):
-       driver=self.driver
-       actions=self.actions
-       wait=self.wait
        # open the pet section
        self.open_the_certain_function(ElementLocators.PET_SECTION_BUTTON_XPATH,ElementLocators.STYLE_YOUR_PET_ON_HOME_UNDER_PET_SECTION_XPATH)
        # add pet data set
@@ -108,10 +90,7 @@ class Special_Tool_Test(BaseTest):
        # upload image
        self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH, ElementLocators.PET_IMAGE_DATA_SET)
        # wait for the loading to finish
-       start_training_click=wait.until(EC.element_to_be_clickable((By.XPATH, ElementLocators.START_TRAINING_BUTTON_XPATH)))
-       # start training
-       actions.move_to_element(start_training_click).double_click().perform()
-
+       self.start_creation()
        # 退出训练
        self.click_action_check_by_visibility(ElementLocators.CLOSE_WINDOWS_BUTTON_XPATH)
         # set the style for the pet
@@ -120,35 +99,16 @@ class Special_Tool_Test(BaseTest):
        # set the number of image to generate
        self.click_action_check_by_element_to_be_clickable(ElementLocators.NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH)
 
-       self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-       # wait for the loading to finish
-       self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME,process_time_limitation=50)
+       self.start_creation()
 
        #interact with the generated images
-       self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
-       # Download the image
-       self.download_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.DOWNLOAD_BUTTON_XPATH)
-       # Publish the image
-       self.publish_on_haimeta_community(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.PUBLISH_BUTTON_XPATH, ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY, ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY)
-       # Report the image
-       self.report_the_image(ElementLocators.INTERACTED_IMAGE_1_XPATH,ElementLocators.THREE_DOTS_BUTTON_XPATH,ElementLocators.REPORT_BUTTON_XPATH)
+       self.interact_with_the_generated_image()
 
-       self.delete_the_generated_image(ElementLocators.INTERACTED_IMAGE_1_XPATH,ElementLocators.THREE_DOTS_BUTTON_XPATH,ElementLocators.DELETE_BUTTON_XPATH)
 
     def test_character_stickers(self):
         self.open_the_certain_function(ElementLocators.ART_SECTION_BUTTON_XPATH, ElementLocators.CHARACTER_STICKERS_UNDER_ART_BUTTON_XPATH)
         self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH, ElementLocators.TEST_FEMALE_PHOTO)
-        # self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-        # # Wait for the loading to finish
-        # self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME, process_time_limitation=60)
+        self.start_creation()
         # interact with the image
-        self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
-        self.download_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.DOWNLOAD_BUTTON_XPATH)
-        self.publish_on_haimeta_community(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.PUBLISH_BUTTON_XPATH,
-                                          ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY,
-                                          ElementLocators.PUBLISH_INTERACTION_ELEMENT_ON_HAIMETA_COMMUNITY)
-        self.report_the_image(ElementLocators.INTERACTED_IMAGE_1_XPATH, ElementLocators.THREE_DOTS_BUTTON_XPATH, ElementLocators.REPORT_BUTTON_XPATH)
-        self.delete_the_generated_image(
-            ElementLocators.INTERACTED_IMAGE_1_XPATH,
-            ElementLocators.THREE_DOTS_BUTTON_XPATH , ElementLocators.DELETE_BUTTON_XPATH )
+        self.interact_with_the_generated_image()
 

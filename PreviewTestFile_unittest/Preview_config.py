@@ -51,7 +51,7 @@ class ElementLocators:
     PHOTO_ALBUM_SECTION_BUTTON_XPATH = "(//div[@role='tab'])[3]"
 
     # buzz section tools locators
-    DREAM_HOME_DESIGN_UNDER_BUZZ_SECTION_XPATH = "(//div[@class='cardPercentage'])[2]/div"
+    DREAM_HOME_DESIGN_UNDER_BUZZ_SECTION_XPATH = "(//div[@class='cardPercentage'])[3]/div"
 
     # Portraits section locators
     ID_PHOTO_BUTTON_XPATH = "(//div[@class='cardPercentage'])[6]/div"
@@ -67,39 +67,34 @@ class ElementLocators:
     FANTASY_TALES_UNDER_LIFE_BUTTON_XPATH = "(//div[@class='cardPercentage'])[13]/div"
 
     # social entertainment tool locators
-    CREATE_AS_YOU_LIKE_UNDER_BUZZ_BUTTON_XPATH = "(//div[@class='cardPercentage'])[1]/div"
-    PERSONAL_AVATAR_BUTTON_UNDER_ART_SECTION_XPATH = "(//div[@class='cardPercentage'])[6]/div"
+    CREATE_AS_YOU_LIKE_UNDER_BUZZ_SECTION_XPATH = "(//div[@class='cardPercentage'])[2]/div"
+    PERSONAL_AVATAR_BUTTON_UNDER_ART_SECTION_XPATH = "(//div[@class='cardPercentage'])[7]/div"
 
     # products design locators
-    CREATE_CLOTHES_BUTTON_UNDER_WORK_SECTION = "(//div[@class='cardPercentage'])[1]/div"
-    CREATE_NAIL_ART_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[2]/div"
-    CREATE_TATTOO_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[8]/div"
-    CREATE_TOY_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[3]/div"
-    ME_TIME_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[9]/div"
+    CREATE_CLOTHES_BUTTON_UNDER_WORK_SECTION = "(//div[@class='cardPercentage'])[2]/div"
+    CREATE_NAIL_ART_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[10]/div"
+    CREATE_TATTOO_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[9]/div"
+    CREATE_TOY_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[4]/div"
+    ME_TIME_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[11]/div"
 
     # business design locators
-    CREATE_CHARACTER_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[4]/div"
-    CREATE_LOGO_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[6]/div"
-    STOCK_IMAGE_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[12]/div"
-    CHARACTER_TEXTURE_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[7]/div"
-    CHARACTER_PORTRAIT_STUDIO_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[11]/div"
-    CREATE_PRODUCT_UNDER_WORK_BUTTON_XPATH = "(//div[@class='cardPercentage'])[10]/div"
+    CREATE_CHARACTER_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[5]/div"
+    CREATE_LOGO_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[7]/div"
+    STOCK_IMAGE_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[14]/div"
+    CHARACTER_TEXTURE_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[8]/div"
+    CHARACTER_PORTRAIT_STUDIO_BUTTON_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[13]/div"
+    CREATE_PRODUCT_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[12]/div"
+    CREATE_RING_UNDER_WORK_SECTION_XPATH = "(//div[@class='cardPercentage'])[1]/div"
 
     # art section locators
     TEXTURE_LABEL_BUTTON_UNDER_ART_SECTION_XPATH = "(//div[@class='cardPercentage'])[2]/div"
     STYLE_BUTTON_UNDER_ART_SECTION_XPATH = "(//div[@class='cardPercentage'])[3]/div"
-    CREATE_WALLPAPER_BUTTON_UNDER_ART_SECTION_XPATH = "(//div[@class='cardPercentage'])[4]/div"
+    CREATE_WALLPAPER_BUTTON_UNDER_ART_SECTION_XPATH = "(//div[@class='cardPercentage'])[5]/div"
     TRENDY_ART_BUTTON_UNDER_ART_SECTION_XPATH = "(//div[@class='cardPercentage'])[1]/div"
-    PATTERN_BUTTON_UNDER_ART_SECTION_XPATH = "(//div[@class='cardPercentage'])[5]/div"
-    CHARACTER_STICKERS_UNDER_ART_BUTTON_XPATH = "(//div[@class='cardPercentage'])[7]/div"
-
+    PATTERN_BUTTON_UNDER_ART_SECTION_XPATH = "(//div[@class='cardPercentage'])[6]/div"
+    CHARACTER_STICKERS_UNDER_ART_BUTTON_XPATH = "(//div[@class='cardPercentage'])[8]/div"
+    ANIMAL_AND_ME_UNDER_ART_BUTTON_XPATH = "(//div[@class='cardPercentage'])[4]/div"
     UPLOAD_BUTTON_XPATH="//input[@name='file']"
-
-    # PE page locators
-
-    # BG page locators
-
-    # SE page locators
 
     # HD enlarge page locators
     TWO_TIMES_ENLARGE_BUTTON_XPATH = "//div[@class='item-box']/div[1]"
@@ -201,13 +196,14 @@ class ElementLocators:
     # Pet page locators
     PET_SECTION_BUTTON_XPATH = "(//div[@role='tab'])[3]"
     STYLE_YOUR_PET_ON_HOME_UNDER_PET_SECTION_XPATH = "(//div[@class='cardPercentage'])[1]/div"
-    START_TRAINING_BUTTON_XPATH = "//div[@class='batch-upload-buttons']/span[2]/button"
+    START_TRAINING_BUTTON_XPATH = "//div[@class='batch-upload-buttons']//button"
     ADD_PET_DATA_SET_BUTTON_XPATH = "//div[@class='upload-item']/i"
     CLOSE_WINDOWS_BUTTON_XPATH = "//i[@class='ic_close iconfont']"
 
 
     # T2I page locators
     STYLE_CHOICE_BUTTON_XPATH = "(//div[contains(@class, 'template-list')])[1]/div[1]/div"
+    CLOTHING_STYLE_BUTTON_XPATH = "(//div[contains(@class, 'template-list')])[1]/div[2]/div"
 
     # I2I page locators
     RENDERING_RESULT_XPATH_I2I = "//div[@class='picture-editor-radio-group']/div[1]"
