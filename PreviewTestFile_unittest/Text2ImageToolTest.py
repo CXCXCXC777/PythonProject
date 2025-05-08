@@ -1,14 +1,9 @@
 import unittest
 
-from selenium.webdriver.common import action_chains, actions
-from urllib3.util import wait
+
 from BaseTest import BaseTest
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.action_chains import ActionChains
-import time
 from Preview_config import ElementLocators
-from selenium.webdriver.support.ui import WebDriverWait
+
 
 class Text2Image_Test(BaseTest):
     def common_step_for_T2I(self,section_for_this_button_xpath,button_xpath):

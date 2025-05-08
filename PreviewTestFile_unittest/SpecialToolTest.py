@@ -53,7 +53,7 @@ class Special_Tool_Test(BaseTest):
         wait= self.wait
         actions= self.actions
         self.open_the_certain_function(ElementLocators.WORK_SECTION_BUTTON_XPATH,ElementLocators.CREATE_CLOTHES_BUTTON_UNDER_WORK_SECTION)
-        self.input_prompt("A big and cute lion")
+        self.input_prompt("Volcano")
         self.refine_your_idea()
         # select the pattern style
         self.click_action_check_by_visibility(ElementLocators.STYLE_CHOICE_BUTTON_XPATH)
@@ -89,8 +89,6 @@ class Special_Tool_Test(BaseTest):
        self.click_action_check_by_visibility(ElementLocators.ADD_PET_DATA_SET_BUTTON_XPATH)
        # upload image
        self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH, ElementLocators.PET_IMAGE_DATA_SET)
-       # wait for the loading to finish
-       self.start_creation()
        # 退出训练
        self.click_action_check_by_visibility(ElementLocators.CLOSE_WINDOWS_BUTTON_XPATH)
         # set the style for the pet

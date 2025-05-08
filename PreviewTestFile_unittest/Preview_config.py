@@ -158,7 +158,7 @@ class ElementLocators:
     CONFIRM_DELETE_BUTTON_XPATH = "//button[@class='confirm-content-buttons--confirm']"
     INTERACTED_ITEM_PREVIEW_ITEM_XPATH = "//div[@class='preview-item']"
     DELETE_BUTTON_XPATH = "(//div[@class='dropdown-item'])[1]/p"
-    SECOND_ITEM_SELECTED_XPATH = "(//div[@class='item--background'])[4]"
+    SECOND_ITEM_SELECTED_XPATH = "(//div[@class='item--background'])[2]"
 
     # CHINESE AESTHETICS page locators
 

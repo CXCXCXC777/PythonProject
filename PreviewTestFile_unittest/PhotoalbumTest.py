@@ -7,9 +7,6 @@ from Preview_config import ElementLocators
 
 class Photo_Album_Test(BaseTest):
     def test_id_photo(self):
-        driver = self.driver
-        wait = self.wait
-        actions = self.actions
         self.open_the_certain_function(ElementLocators.PHOTO_ALBUM_SECTION_BUTTON_XPATH,ElementLocators.ID_PHOTO_BUTTON_XPATH)
         self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH,ElementLocators.TEST_FEMALE_PHOTO)
         self.choose_style_skin_texture_of_generated_image(ElementLocators.STYLE_CHOICE_BUTTON_XPATH,ElementLocators.INPUT_SKIN_TEXTURE)

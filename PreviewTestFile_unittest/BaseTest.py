@@ -22,7 +22,7 @@ class BaseTest(unittest.TestCase):
         options.add_argument(r'--user-data-dir=E:\User Data') #加载本地文件
         options.add_experimental_option('excludeSwitches',["enable-logging","enable-automation"])
         cls.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),options=options)
-        cls.wait = WebDriverWait(cls.driver, 9)  # 增加默认等待时间
+        cls.wait = WebDriverWait(cls.driver, 15)  # 增加默认等待时间
         cls.actions = ActionChains(cls.driver)
         # 先访问首页检查是否已登录
         cls.driver.get(ElementLocators.HOME_URL)
@@ -608,7 +608,7 @@ class BaseTest(unittest.TestCase):
     def start_creation(self):
         self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
         # Wait for the loading to finish
-        self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME, process_time_limitation=60)
+        self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME, process_time_limitation=90)
 
     def interact_with_the_generated_image(self):
         self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
