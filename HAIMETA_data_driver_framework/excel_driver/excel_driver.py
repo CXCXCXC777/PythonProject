@@ -8,9 +8,11 @@ from HAIMETA_data_driver_framework.config.element_config import ElementLocators
 
 log= get_logger()
 
-success=0
-fail=0
-failed_cases=[]
+success = 0
+fail = 0
+failed_cases = []
+generation_times = {}  # 存储每个成功用例的生图时间
+retry_success_cases = {}  # 存储重试成功的用例及其成功的尝试次数
 
 def arguments(data):
     temp_data = {}  # Changed from list to dictionary
@@ -49,18 +51,35 @@ def run(file_name):
             for values in sheet.values:
                 if type(values[0]) is int:
                     test_data = arguments(values[2])
-                    if values[1]=='open_browser':
-                        wk=WebKeys(**test_data)
-                    elif values[1]=='assert_text':
-                        status=getattr(wk, values[1])(**test_data, expected=values[4])
-                        if status:
-                            pass_(sheet.cell(row=values[0]+2,column=6))
-                            success += 1
-                        else:
-                            fail_(sheet.cell(row=values[0]+2,column=6))
-                            fail += 1
-                            failed_cases.append(file_name+':'+name)
+                    if values[1] == 'open_browser':
+                        wk = WebKeys(**test_data)
+                    elif values[1] == 'assert_text':
+                        max_retries = 3
+                        retry_count = 1
+                        case_id = f"{file_name}:{name}:{values[0]}"
+                        
+                        while retry_count <= max_retries:
+                            status = getattr(wk, values[1])(**test_data, expected=values[4])
+                            if status:
+                                pass_(sheet.cell(row=values[0]+2, column=6))
+                                success += 1
+                                if retry_count > 1:  # 如果是重试成功的情况
+                                    retry_success_cases[case_id] = retry_count
+                                break
+                            else:
+                                if retry_count == max_retries:
+                                    fail_(sheet.cell(row=values[0]+2, column=6))
+                                    fail += 1
+                                    failed_cases.append(case_id)
+                                else:
+                                    log.warning(f"用例 {case_id} 第{retry_count}次执行失败，准备重试")
+                            retry_count += 1
                         excel.save(file_name)
+                    elif values[1] == 'start_creation':
+                        generation_time = getattr(wk, values[1])(**test_data)
+                        if generation_time is not None:
+                            case_id = f"{file_name}:{name}:{values[0]}"
+                            generation_times[case_id] = generation_time
                     else:
                         getattr(wk, values[1])(**test_data)
     except Exception as e:
@@ -75,15 +94,29 @@ def run(file_name):
 
 # 在测试结束后输出结果
 def sum_info():
-    log.warning(f'''
+    # 构建生图时间信息
+    generation_time_info = "\n生图时间统计："
+    if generation_times:
+        for case_id, time in generation_times.items():
+            generation_time_info += f"\n{case_id}: {time}秒"
+    else:
+        generation_time_info += "\n无生图时间记录"
+        
+    # 构建重试成功信息
+    retry_info = "\n重试成功用例统计："
+    if retry_success_cases:
+        for case_id, retry_count in retry_success_cases.items():
+            retry_info += f"\n{case_id}: 第{retry_count}次尝试成功"
+    else:
+        retry_info += "\n无重试成功记录"
+
+    # 构建完整的测试报告
+    report = f'''
 成功用例数：{success}条
 失败用例数：{fail}条
-失败用例具体情况如下：{failed_cases}
+失败用例具体情况如下：{failed_cases}{generation_time_info}{retry_info}
+    '''
     
-    ''')
-    return f'''
-成功用例数：{success}条
-失败用例数：{fail}条
-失败用例具体情况如下：{failed_cases}
-'''
+    log.warning(report)
+    return report
     

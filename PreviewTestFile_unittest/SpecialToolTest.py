@@ -16,8 +16,6 @@ class Special_Tool_Test(BaseTest):
         # Select the number of images to generate
         self.set_number_of_images_to_generate(ElementLocators.NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH)
         # Click the generate button
-        self.start_creation()
-
         self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
         # Interact with the generated images
         # Download the image

@@ -75,7 +75,7 @@ class ElementLocators:
     FANTASY_TALES_UNDER_LIFE_BUTTON_XPATH = "(//div[@class='cardPercentage'])[13]/div"
 
     # social entertainment tool locators
-    CREATE_AS_YOU_LIKE_UNDER_BUZZ_BUTTON_XPATH = "(//div[@class='cardPercentage'])[1]/div"
+    CREATE_AS_YOU_LIKE_UNDER_BUZZ_BUTTON_XPATH = "(//div[@class='cardPercentage'])[2]/div"
     PERSONAL_AVATAR_BUTTON_UNDER_ART_SECTION_XPATH = "(//div[@class='cardPercentage'])[6]/div"
 
     # products design locators

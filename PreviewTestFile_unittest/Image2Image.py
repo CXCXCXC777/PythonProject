@@ -6,13 +6,13 @@ from Preview_config import ElementLocators
 
 class Image2ImageTest(BaseTest):
 
-    def common_step_for_I2I(self, section_for_this_button_xpath,button_xpath,upload_image_absolute_path,stylc_choice):
+    def common_step_for_I2I(self, section_for_this_button_xpath,button_xpath,upload_image_absolute_path,style_choice):
         self.open_the_certain_function(section_for_this_button_xpath,button_xpath)
 
         self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH,upload_image_absolute_path)
 
         # choose the style
-        self.click_action_check_by_visibility(stylc_choice)
+        self.click_action_check_by_visibility(style_choice)
 
         # Select the size of generation
         self.click_action_check_by_visibility(ElementLocators.SIZE_OF_GENERATION_BUTTON_XPATH)
@@ -26,14 +26,11 @@ class Image2ImageTest(BaseTest):
 
     def common_step_for_I2I_character_texture(self, section_for_this_button_xpath,button_xpath,upload_image_absolute_path):
         self.open_the_certain_function(section_for_this_button_xpath, button_xpath)
-
         self.upload_image(ElementLocators.UPLOAD_BUTTON_XPATH, upload_image_absolute_path)
-
         # choose the style
         self.click_action_check_by_visibility(ElementLocators.STYLE_CHOICE_BUTTON_XPATH)
         # Select the rendering result
         self.click_action_check_by_visibility(ElementLocators.RENDERING_RESULT_XPATH_I2I)
-
         # Select the number of images to generate
         self.click_action_check_by_visibility(ElementLocators.NUMBER_OF_IMAGES_TO_GENERATE_BUTTON_XPATH)
         self.start_creation()

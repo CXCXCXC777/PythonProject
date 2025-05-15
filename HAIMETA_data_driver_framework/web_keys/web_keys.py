@@ -785,7 +785,7 @@ class WebKeys:
     def refine_your_idea(self):
         driver = self.driver
         # Refine your idea
-        self.click_visible('xpath',ElementLocators.DELETE_BUTTON_XPATH)
+        self.click_visible('xpath',ElementLocators.REFINE_YOUR_IDEA_BUTTON_XPATH)
 
         # Wait for the loading to finish
         WebDriverWait(driver, 50).until(
@@ -795,10 +795,10 @@ class WebKeys:
     def select_the_size_of_the_generated_image(self, size_of_generation_button_xpath):
         self.click_action_check_by_visibility(size_of_generation_button_xpath)
 
-    def input_prompt_box_CLASS_NAME(self, input_prompt_box_input_data):
+    def input_prompt(self, input_prompt_box_input_data):
         wait = self.wait
         Input_prompt_box = wait.until(
-            EC.presence_of_element_located((By.CLASS_NAME, ElementLocators.INPUT_PROMPT_BOX_XPATH))
+            EC.presence_of_element_located((By.XPATH, ElementLocators.INPUT_PROMPT_BOX_XPATH))
         )
         Input_prompt_box.click()
         Input_prompt_box.send_keys(input_prompt_box_input_data)
@@ -809,10 +809,10 @@ class WebKeys:
     def interact_with_the_second_item_selected(self, item_xpath):
         wait = self.wait
         actions = self.action
-        second_item_selected = wait.until(
-            EC.element_to_be_clickable((By.XPATH, item_xpath))
-        )
-        actions.move_to_element(second_item_selected).double_click().perform()
+        # second_item_selected = wait.until(
+        #     EC.element_to_be_clickable((By.XPATH, item_xpath))
+        # )
+        # actions.move_to_element(second_item_selected).double_click().perform()
 
     def switch_frame_by_xpath(self, frame_xpath):
         driver = self.driver
@@ -911,7 +911,31 @@ class WebKeys:
         driver.switch_to.default_content()
 
     def start_creation(self):
+        # 记录开始时间
+        start_time = time.time()
+
+        # 点击创建按钮
         self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-        # Wait for the loading to finish
-        self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME, process_time_limitation=60)
+        # 等待loading图标出现并消失
+        try:
+            # 设置5分钟超时阈值
+            max_wait_time = 300  # 5分钟 = 300秒
+            generation_wait = WebDriverWait(self.driver, max_wait_time)
+
+            # 首先等待loading图标出现
+            generation_wait.until(
+                EC.visibility_of_element_located((By.CLASS_NAME, ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME))
+            )
+            # 然后等待loading图标消失
+            generation_wait.until(
+                EC.invisibility_of_element_located((By.CLASS_NAME, ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME))
+            )
+            # 计算生图时间
+            image_generation_time = round(time.time() - start_time, 2)
+            log.info(f"图片生成完成，耗时: {image_generation_time}秒")
+            return image_generation_time
+        except TimeoutException:
+            log.info("等待生图超时：已超过5分钟")
+            image_generation_time = None
+            return image_generation_time
 

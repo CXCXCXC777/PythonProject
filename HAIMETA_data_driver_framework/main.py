@@ -28,17 +28,17 @@ if __name__ == '__main__':
 
     sum_info()
 
-    # # 获取测试结果摘要
-    # test_results = sum_info()
+    # 获取测试结果摘要
+    test_results = sum_info()
 
-    # # 配置邮件发送
-    # email_sender = EmailSender()
-    # # 设置邮件配置（请替换为实际的邮箱信息）
-    # email_sender.set_email_config(
-    #     sender_email="volcanokdoething@163.com",  # 发件人邮箱
-    #     sender_password="GTTUF33SZzR2qEAq",    # 发件人邮箱授权码
-    #     receiver_email="tiejiayu@haimeta.com"  # 收件人邮箱
-    # )
-    #
-    # # 发送测试报告
-    # email_sender.send_report(test_results)
+    # 配置邮件发送
+    email_sender = EmailSender()
+    # 设置邮件配置（请替换为实际的邮箱信息）
+    email_sender.set_email_config(
+        sender_email="volcanokdoething@163.com",  # 发件人邮箱
+        sender_password="ZVRMG3BjcVzJtsa8",    # 发件人邮箱授权码
+        receiver_email="tiejiayu@haimeta.com"  # 收件人邮箱
+    )
+
+    # 发送测试报告
+    email_sender.send_report(test_results)

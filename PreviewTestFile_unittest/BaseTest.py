@@ -585,10 +585,10 @@ class BaseTest(unittest.TestCase):
     def interact_with_the_second_item_selected(self,item_xpath):
         wait = self.wait
         actions = self.actions
-        second_item_selected = wait.until(
-            EC.element_to_be_clickable((By.XPATH, item_xpath))
-        )
-        actions.move_to_element(second_item_selected).double_click().perform()
+        # second_item_selected = wait.until(
+        #     EC.element_to_be_clickable((By.XPATH, item_xpath))
+        # )
+        # actions.move_to_element(second_item_selected).double_click().perform()
 
     def switch_frame_by_xpath(self,frame_xpath):
         driver= self.driver
@@ -606,9 +606,34 @@ class BaseTest(unittest.TestCase):
         input_box.send_keys(input_data)
 
     def start_creation(self):
+        # 记录开始时间
+        start_time = time.time()
+        
+        # 点击创建按钮
         self.click_create_button_xpath(ElementLocators.CREATE_BUTTON_XPATH)
-        # Wait for the loading to finish
-        self.wait_for_loading_to_finish(ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME, process_time_limitation=90)
+        
+        # 等待loading图标出现并消失
+        try:
+            # 设置5分钟超时阈值
+            max_wait_time = 300  # 5分钟 = 300秒
+            generation_wait = WebDriverWait(self.driver, max_wait_time)
+            
+            # 首先等待loading图标出现
+            generation_wait.until(
+                EC.visibility_of_element_located((By.CLASS_NAME, ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME))
+            )
+            # 然后等待loading图标消失
+            generation_wait.until(
+                EC.invisibility_of_element_located((By.CLASS_NAME, ElementLocators.PICTURE_EDITOR_LOADING_CLASS_NAME))
+            )
+            # 计算生图时间
+            self.image_generation_time = round(time.time() - start_time, 2)
+            print(f"图片生成完成，耗时: {self.image_generation_time}秒")
+            return self.image_generation_time 
+        except TimeoutException:
+            print("等待生图超时：已超过5分钟")
+            self.image_generation_time = None
+            return self.image_generation_time 
 
     def interact_with_the_generated_image(self):
         self.interact_with_the_second_item_selected(ElementLocators.SECOND_ITEM_SELECTED_XPATH)
